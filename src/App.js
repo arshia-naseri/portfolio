@@ -1,5 +1,10 @@
+import Desktop from "./Desktop view/desktop";
 function App() {
-  return <div className=" text-5xl font-serif w-fit bg-red-300">Test file</div>;
+  return (
+    <>
+      <Desktop />
+    </>
+  );
 }
 
 export default App;
