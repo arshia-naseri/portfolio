@@ -1,3 +1,52 @@
+@font-face {
+  font-family: "minecraft";
+  src: url("./Assets/fonts/Monocraft.ttf");
+}
+
+@font-face {
+  font-family: "vcr";
+  src: url("./Assets/fonts/VCR_OSD_MONO.ttf");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* Desktop */
+  /* ?Rec button animation (blink) */
+  @keyframes blink {
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-rec-button {
+    animation: blink 1.3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-text-flicker {
+    animation-duration: 0.06s;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes textflicker {
+    from {
+      /* text-shadow: 0.06rem 0 0.6rem #e3e1dd; */
+      text-shadow: -0.06rem 0 0.65rem #f20000, 0.06rem 0 0.81rem #0008f2,
+        0.09rem 0 0.1rem #02cf24;
+    }
+    to {
+      text-shadow: 0.07rem 0 0.15rem #f20000, -0.06rem 0 0.15rem #0008f2,
+        -0.09rem 0 0.45rem #02cf24;
+      /* text-shadow: -0.03rem 0 0.6rem #e3e1dd; */
+    }
+  }
+
+  .navBarStrokeEffect {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(240, 234, 214);
+  }
+}
