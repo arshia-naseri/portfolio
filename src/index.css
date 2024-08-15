@@ -49,4 +49,9 @@
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: rgb(240, 234, 214);
   }
+
+  .navRotate {
+    transform-origin: left;
+    transform: rotate(90deg) translateY(-100%);
+  }
 }

@@ -1,20 +1,63 @@
+import { useRef } from "react";
+
 const Desktop = () => {
+  const navBarRef = useRef();
+  const mainSectionRef = useRef();
+  const projectsSectionRef = useRef();
+  const aboutSectionRef = useRef();
+  const arcadeSectionRef = useRef();
+
+  const arrowClicked = (e) => {
+    navBarRef.current.classList.toggle("navRotate");
+  };
   return (
     <main className="">
-      <ul className=" mt-8 ml-3 flex justify-evenly blur-[.6px] z-10 w-6/12 fixed font-vcr text-xl text-mainWhite tracking-[.3rem]">
-        <li className=" navBarStrokeEffect cursor-pointer shadow-mainWhite stroke-red-600 stroke-[3px]">
+      <ul
+        ref={navBarRef}
+        className=" mt-8 ml-3 flex justify-evenly blur-[.6px] z-10 w-6/12 fixed font-vcr text-xl text-mainWhite tracking-[.3rem] transition-all"
+      >
+        <li
+          onClick={() =>
+            mainSectionRef.current.scrollIntoView({ behavior: "smooth" })
+          }
+          className=" navBarStrokeEffect cursor-pointer shadow-mainWhite stroke-red-600 stroke-[3px]"
+        >
           TITLE
         </li>
         <li>|</li>
-        <li className=" cursor-pointer">PROJECTS</li>
+        <li
+          onClick={() =>
+            projectsSectionRef.current.scrollIntoView({ behavior: "smooth" })
+          }
+          className=" cursor-pointer"
+        >
+          PROJECTS
+        </li>
         <li>|</li>
-        <li className=" cursor-pointer">ABOUT ME</li>
+        <li
+          onClick={() =>
+            aboutSectionRef.current.scrollIntoView({ behavior: "smooth" })
+          }
+          className=" cursor-pointer"
+        >
+          ABOUT ME
+        </li>
         <li>|</li>
-        <li className=" cursor-pointer">ARCADE</li>
+        <li
+          onClick={() =>
+            arcadeSectionRef.current.scrollIntoView({ behavior: "smooth" })
+          }
+          className=" cursor-pointer"
+        >
+          ARCADE
+        </li>
       </ul>
       <section>
         {/* Main Section */}
-        <section className=" p-8 bg-vcrBlack h-screen blur-[.5px] ">
+        <section
+          ref={mainSectionRef}
+          className=" p-8 bg-vcrBlack h-screen blur-[.5px] "
+        >
           <div
             data-overlay
             className=" bg-black/10 pointer-events-none z-10 absolute left-0 top-0 w-full h-full"
@@ -34,7 +77,10 @@ const Desktop = () => {
               ARSHIA
             </section>
             <section className=" flex justify-between text-mainWhite">
-              <div className=" animate-text-flicker ml-8 text-8xl font-minecraft animate-[bounce_1s_infinite,textflicker_0.06s_infinite_alternate]">
+              <div
+                onClick={arrowClicked}
+                className=" animate-text-flicker ml-8 text-8xl font-minecraft animate-[bounce_1s_infinite,textflicker_0.06s_infinite_alternate]"
+              >
                 ↓
               </div>
               <section className="animate-text-flicker flex flex-col items-end font-vcr text-xl">
@@ -45,9 +91,15 @@ const Desktop = () => {
           </section>
         </section>
 
-        <section className=" p-3 bg-blue-200 h-screen">Projects</section>
-        <section className=" p-3 bg-green-200 h-screen">About</section>
-        <section className=" p-3 bg-orange-200 h-screen">Game</section>
+        <section ref={projectsSectionRef} className=" p-3 bg-blue-200 h-screen">
+          Projects
+        </section>
+        <section ref={aboutSectionRef} className=" p-3 bg-green-200 h-screen">
+          About
+        </section>
+        <section ref={arcadeSectionRef} className=" p-3 bg-orange-200 h-screen">
+          Game
+        </section>
       </section>
     </main>
   );
