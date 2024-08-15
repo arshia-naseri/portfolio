@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import smoothscroll from "smoothscroll-polyfill";
 
 const Desktop = () => {
   const navBarRef = useRef();
@@ -7,20 +8,23 @@ const Desktop = () => {
   const aboutSectionRef = useRef();
   const arcadeSectionRef = useRef();
 
-  const arrowClicked = (e) => {
-    navBarRef.current.classList.toggle("navRotate");
-  };
+  useEffect(() => {
+    smoothscroll.polyfill();
+    window.__forceSmoothScrollPolyfill__ = true;
+  }, []);
+
   return (
-    <main className="">
+    <main className="DesktopMain">
       <ul
         ref={navBarRef}
-        className=" mt-8 ml-3 flex justify-evenly blur-[.6px] z-10 w-6/12 fixed font-vcr text-xl text-mainWhite tracking-[.3rem] transition-all"
+        id="DesktopNavBar"
+        className=" mt-8 ml-8 flex justify-evenly blur-[.6px] z-10 gap-3 fixed font-vcr text-xl text-mainWhite tracking-[.3rem] transition-all"
       >
         <li
           onClick={() =>
             mainSectionRef.current.scrollIntoView({ behavior: "smooth" })
           }
-          className=" navBarStrokeEffect cursor-pointer shadow-mainWhite stroke-red-600 stroke-[3px]"
+          className="noHighlightClicked navBarStrokeEffect cursor-pointer shadow-mainWhite stroke-red-600 stroke-[3px]"
         >
           TITLE
         </li>
@@ -29,7 +33,7 @@ const Desktop = () => {
           onClick={() =>
             projectsSectionRef.current.scrollIntoView({ behavior: "smooth" })
           }
-          className=" cursor-pointer"
+          className="noHighlightClicked cursor-pointer"
         >
           PROJECTS
         </li>
@@ -38,7 +42,7 @@ const Desktop = () => {
           onClick={() =>
             aboutSectionRef.current.scrollIntoView({ behavior: "smooth" })
           }
-          className=" cursor-pointer"
+          className="noHighlightClicked cursor-pointer"
         >
           ABOUT ME
         </li>
@@ -47,7 +51,7 @@ const Desktop = () => {
           onClick={() =>
             arcadeSectionRef.current.scrollIntoView({ behavior: "smooth" })
           }
-          className=" cursor-pointer"
+          className="noHighlightClicked cursor-pointer"
         >
           ARCADE
         </li>
@@ -60,8 +64,8 @@ const Desktop = () => {
         >
           <div
             data-overlay
-            className=" bg-black/10 pointer-events-none z-10 absolute left-0 top-0 w-full h-full"
-          ></div>
+            className=" mainVhsStaticDiv pointer-events-none z-20 absolute left-0 top-0 w-full h-full"
+          />
           <section className=" w-full h-full inline-flex flex-col">
             <nav className=" ml-auto font-vcr flex flex-col items-end text-xl text-mainWhite">
               <section className=" flex gap-2">
@@ -78,8 +82,12 @@ const Desktop = () => {
             </section>
             <section className=" flex justify-between text-mainWhite">
               <div
-                onClick={arrowClicked}
-                className=" animate-text-flicker ml-8 text-8xl font-minecraft animate-[bounce_1s_infinite,textflicker_0.06s_infinite_alternate]"
+                onClick={() =>
+                  projectsSectionRef.current.scrollIntoView({
+                    behavior: "smooth",
+                  })
+                }
+                className="noHighlightClicked cursor-pointer animate-text-flicker ml-8 text-8xl font-minecraft animate-[bounce_1s_infinite,textflicker_0.06s_infinite_alternate]"
               >
                 ↓
               </div>
@@ -91,8 +99,23 @@ const Desktop = () => {
           </section>
         </section>
 
-        <section ref={projectsSectionRef} className=" p-3 bg-blue-200 h-screen">
-          Projects
+        <section
+          ref={projectsSectionRef}
+          className=" p-8 bg-mainWhite h-screen"
+        >
+          <section className=" bg-red-400 flex flex-col w-full h-full ml-8">
+            <div className=" font-vcr text-4xl tracking-[1rem]">PROJECTS</div>
+            <section className=" bg-green-400 flex flex-col">
+              <section className=" flex text-7xl gap-1 ml-auto mr-5 font-vcr noHighlightClicked">
+                <div className=" cursor-pointer opacity-40">◄</div>
+                <div className=" cursor-pointer">►</div>
+              </section>
+              <section></section>
+            </section>
+            <div className="noHighlightClicked mt-auto cursor-pointer text-3xl font-minecraft animate-[bounce_1s_infinite]">
+              ↓
+            </div>
+          </section>
         </section>
         <section ref={aboutSectionRef} className=" p-3 bg-green-200 h-screen">
           About

@@ -12,6 +12,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-mainWhite: rgb(240, 234, 214);
+  --color-vcrBlack: rgb(29, 31, 34);
+}
 @layer components {
   /* Desktop */
   /* ?Rec button animation (blink) */
@@ -45,13 +49,52 @@
     }
   }
 
-  .navBarStrokeEffect {
+  /* .navBarStrokeEffect {
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: rgb(240, 234, 214);
-  }
+  } */
 
   .navRotate {
-    transform-origin: left;
+    transform-origin: top left;
     transform: rotate(90deg) translateY(-100%);
+  }
+
+  /* ? To prevent div from being highlighted due to over-clicking */
+  .noHighlightClicked {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .noHighlightClicked:focus {
+    outline: none !important;
+  }
+
+  /* ? Static look coming from .gif file */
+  .mainVhsStaticDiv {
+    background: url("./Assets/images/vhs-static.gif");
+    opacity: 30%;
+  }
+
+  #DesktopNavBar {
+    animation: navbar-scroll-animation linear forwards;
+    animation-timeline: scroll();
+  }
+
+  @keyframes navbar-scroll-animation {
+    18% {
+      scale: 0.7;
+    }
+    25%,
+    100% {
+      transform-origin: top left;
+      scale: 1;
+      transform: rotate(90deg) translateY(-100%);
+      color: var(--color-vcrBlack);
+    }
   }
 }
