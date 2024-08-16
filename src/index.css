@@ -149,13 +149,16 @@
   }
 
   @keyframes navbar-third-item {
-    70% {
+    0%,
+    40% {
+      text-shadow: none;
+    }
+    50% {
       text-shadow: var(--size-outline-width) 0 var(--color-outline),
         calc(var(--size-outline-width) * -1) 0 var(--color-outline),
         0 var(--size-outline-width) var(--color-outline),
         0 calc(var(--size-outline-width) * -1) var(--color-outline);
     }
-    75%,
     100% {
       text-shadow: none;
     }
@@ -163,7 +166,7 @@
 
   @keyframes navbar-fourth-item {
     0%,
-    75% {
+    60% {
       text-shadow: none;
     }
     100% {
