@@ -15,6 +15,8 @@
 :root {
   --color-mainWhite: rgb(240, 234, 214);
   --color-vcrBlack: rgb(29, 31, 34);
+  --color-outline: var(--color-mainWhite);
+  --size-outline-width: 1px;
 }
 @layer components {
   /* Desktop */
@@ -49,10 +51,9 @@
     }
   }
 
-  /* .navBarStrokeEffect {
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: rgb(240, 234, 214);
-  } */
+  .navBarStrokeEffect {
+    -webkit-text-stroke-color: var(--color-outline);
+  }
 
   .navRotate {
     transform-origin: top left;
@@ -75,6 +76,7 @@
   }
 
   /* ? Static look coming from .gif file */
+  /* ? REMEMBER that this based on 4 pages total, re-adjust for more/less pages  */
   .mainVhsStaticDiv {
     background: url("./Assets/images/vhs-static.gif");
     opacity: 30%;
@@ -82,7 +84,7 @@
 
   #DesktopNavBar {
     animation: navbar-scroll-animation linear forwards;
-    animation-timeline: scroll();
+    animation-timeline: scroll(y);
   }
 
   @keyframes navbar-scroll-animation {
@@ -92,9 +94,83 @@
     25%,
     100% {
       transform-origin: top left;
+      --color-outline: var(--color-vcrBlack);
       scale: 1;
       transform: rotate(90deg) translateY(-100%);
       color: var(--color-vcrBlack);
+    }
+  }
+
+  /* Auto bold while scrolling */
+  #DesktopNavBar li:nth-child(1) {
+    animation: navbar-first-item linear forwards;
+    animation-timeline: scroll(y);
+  }
+
+  #DesktopNavBar li:nth-child(3) {
+    animation: navbar-second-item linear forwards;
+    animation-timeline: scroll(y);
+  }
+
+  #DesktopNavBar li:nth-child(5) {
+    animation: navbar-third-item linear forwards;
+    animation-timeline: scroll(y);
+  }
+
+  #DesktopNavBar li:nth-child(7) {
+    animation: navbar-fourth-item linear forwards;
+    animation-timeline: scroll(y);
+  }
+
+  @keyframes navbar-first-item {
+    0% {
+      text-shadow: var(--size-outline-width) 0 var(--color-outline),
+        calc(var(--size-outline-width) * -1) 0 var(--color-outline),
+        0 var(--size-outline-width) var(--color-outline),
+        0 calc(var(--size-outline-width) * -1) var(--color-outline);
+    }
+    25%,
+    100% {
+      text-shadow: none;
+    }
+  }
+
+  @keyframes navbar-second-item {
+    30% {
+      text-shadow: var(--size-outline-width) 0 var(--color-outline),
+        calc(var(--size-outline-width) * -1) 0 var(--color-outline),
+        0 var(--size-outline-width) var(--color-outline),
+        0 calc(var(--size-outline-width) * -1) var(--color-outline);
+    }
+    50%,
+    100% {
+      text-shadow: none;
+    }
+  }
+
+  @keyframes navbar-third-item {
+    70% {
+      text-shadow: var(--size-outline-width) 0 var(--color-outline),
+        calc(var(--size-outline-width) * -1) 0 var(--color-outline),
+        0 var(--size-outline-width) var(--color-outline),
+        0 calc(var(--size-outline-width) * -1) var(--color-outline);
+    }
+    75%,
+    100% {
+      text-shadow: none;
+    }
+  }
+
+  @keyframes navbar-fourth-item {
+    0%,
+    75% {
+      text-shadow: none;
+    }
+    100% {
+      text-shadow: var(--size-outline-width) 0 var(--color-outline),
+        calc(var(--size-outline-width) * -1) 0 var(--color-outline),
+        0 var(--size-outline-width) var(--color-outline),
+        0 calc(var(--size-outline-width) * -1) var(--color-outline);
     }
   }
 }

@@ -10,7 +10,6 @@ const Desktop = () => {
 
   useEffect(() => {
     smoothscroll.polyfill();
-    window.__forceSmoothScrollPolyfill__ = true;
   }, []);
 
   return (
@@ -24,7 +23,7 @@ const Desktop = () => {
           onClick={() =>
             mainSectionRef.current.scrollIntoView({ behavior: "smooth" })
           }
-          className="noHighlightClicked navBarStrokeEffect cursor-pointer shadow-mainWhite stroke-red-600 stroke-[3px]"
+          className="noHighlightClicked cursor-pointer shadow-mainWhite stroke-red-600 stroke-[3px]"
         >
           TITLE
         </li>
