@@ -1,4 +1,35 @@
 const MainPage = ({ mainSectionRef, projectsSectionRef }) => {
+  const getFormatedTime = () => {
+    const now = new Date();
+    let hours = now.getHours() % 12 ? now.getHours() % 12 : 12;
+    let minuts =
+      now.getMinutes() < 10 ? `0${now.getMinutes()}` : now.getMinutes();
+
+    let period = now.getHours() >= 12 ? "PM" : "AM";
+    return `${period} ${hours}:${minuts}`;
+  };
+
+  const getFormatedDate = () => {
+    const now = new Date();
+    const monthNames = [
+      "JAN",
+      "FEB",
+      "MAR",
+      "APR",
+      "MAY",
+      "JUN",
+      "JUL",
+      "AUG",
+      "SEP",
+      "OCT",
+      "NOV",
+      "DEC",
+    ];
+
+    return `${
+      monthNames[now.getMonth()]
+    } ${now.getDate()} ${now.getFullYear()}`;
+  };
   return (
     <>
       <section
@@ -35,8 +66,8 @@ const MainPage = ({ mainSectionRef, projectsSectionRef }) => {
               ↓
             </div>
             <section className="animate-text-flicker flex flex-col items-end font-vcr text-xl">
-              <div>AM 12:24</div>
-              <div>APR 14 2024</div>
+              <div>{getFormatedTime()}</div>
+              <div>{getFormatedDate()}</div>
             </section>
           </section>
         </section>
