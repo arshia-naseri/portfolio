@@ -4,6 +4,8 @@ import Navbar from "./_navbar";
 import MainPage from "./pages/main-page";
 import ProjectPage from "./pages/project-page";
 
+window.__forceSmoothScrollPolyfill__ = true;
+
 const Desktop = () => {
   const navBarRef = useRef();
   const mainSectionRef = useRef();
