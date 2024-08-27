@@ -22,10 +22,10 @@ const ProjectPage = ({ projectsSectionRef }) => {
       projectElm.getBoundingClientRect().right;
 
     if (
-      leftValue > 0 &&
-      leftValue < parentElm.getBoundingClientRect().width &&
-      rightValue > 0 &&
-      rightValue < parentElm.getBoundingClientRect().width
+      leftValue >= 0 &&
+      leftValue <= parentElm.getBoundingClientRect().width &&
+      rightValue >= 0 &&
+      rightValue <= parentElm.getBoundingClientRect().width
     ) {
       console.log("in bound");
       return true;
@@ -50,7 +50,11 @@ const ProjectPage = ({ projectsSectionRef }) => {
       index++
     ) {
       let currentProject = projectCarouselRef.current.children[index];
-      if (isProjectInView(currentProject)) {
+
+      if (
+        isProjectInView(currentProject) ||
+        currentProject.getBoundingClientRect().left < 0
+      ) {
         continue;
       }
 
@@ -61,7 +65,7 @@ const ProjectPage = ({ projectsSectionRef }) => {
 
       break;
     }
-    console.log("push value:", pushLeftValue);
+
     projectCarouselRef.current.scrollTo({
       left: pushLeftValue,
       behavior: "smooth",
