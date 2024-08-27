@@ -4,21 +4,70 @@ import FloppyDisk from "../../Componants/_floppyDisk";
 const ProjectPage = ({ projectsSectionRef }) => {
   const projectCarouselRef = useRef();
 
-  const nextProjectPage = () => {
-    const notSeenProject = projectCarouselRef.current.children[2];
-    // console.log(notSeenProject);
-
-    // window.__forceSmoothScrollPolyfill__ = false;
-    // console.log(window.__forceSmoothScrollPolyfill__);
-    notSeenProject.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-    });
-
-    // setTimeout(() => {
-    //   document.body.style.overflowY = "auto";
-    // }, 500);
+  const getScrollPercentage = (elm) => {
+    return (elm.scrollLeft / (elm.scrollWidth - elm.clientWidth)) * 100;
   };
+  const isProjectInView = (
+    projectElm,
+    parentElm = projectCarouselRef.current
+  ) => {
+    const viewError = 0;
+
+    let leftValue =
+      projectElm.getBoundingClientRect().left -
+      parentElm.getBoundingClientRect().left;
+
+    let rightValue =
+      parentElm.getBoundingClientRect().right -
+      projectElm.getBoundingClientRect().right;
+
+    if (
+      leftValue > 0 &&
+      leftValue < parentElm.getBoundingClientRect().width &&
+      rightValue > 0 &&
+      rightValue < parentElm.getBoundingClientRect().width
+    ) {
+      console.log("in bound");
+      return true;
+    }
+    return false;
+  };
+
+  const nextProjectPage = () => {
+    let alreadyPushed = false;
+    let pushLeftValue;
+    if (getScrollPercentage(projectCarouselRef.current) > 75) {
+      pushLeftValue =
+        projectCarouselRef.current.scrollWidth -
+        projectCarouselRef.current.clientWidth;
+
+      alreadyPushed = true;
+    }
+
+    for (
+      let index = 0;
+      index < projectCarouselRef.current.children.length && !alreadyPushed;
+      index++
+    ) {
+      let currentProject = projectCarouselRef.current.children[index];
+      if (isProjectInView(currentProject)) {
+        continue;
+      }
+
+      pushLeftValue =
+        currentProject.getBoundingClientRect().left -
+        projectCarouselRef.current.getBoundingClientRect().left +
+        projectCarouselRef.current.scrollLeft;
+
+      break;
+    }
+    console.log("push value:", pushLeftValue);
+    projectCarouselRef.current.scrollTo({
+      left: pushLeftValue,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <section
