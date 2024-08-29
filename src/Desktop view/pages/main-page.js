@@ -34,34 +34,34 @@ const MainPage = ({ mainSectionRef, projectsSectionRef }) => {
     <>
       <section
         ref={mainSectionRef}
-        className=" p-8 bg-vcrBlack h-screen blur-[.5px] "
+        className="h-screen bg-vcrBlack p-8 blur-[.5px]"
       >
         <div
           data-overlay
-          className=" mainVhsStaticDiv pointer-events-none z-20 absolute left-0 top-0 w-full h-full"
+          className="mainVhsStaticDiv pointer-events-none absolute left-0 top-0 z-20 h-full w-full"
         />
-        <section className=" w-full h-full inline-flex flex-col">
-          <nav className=" ml-auto font-vcr flex flex-col items-end text-xl text-mainWhite">
-            <section className=" flex gap-2">
+        <section className="inline-flex h-full w-full flex-col">
+          <nav className="ml-auto flex flex-col items-end font-vcr text-xl text-mainWhite">
+            <section className="flex gap-2">
               <div>PLAY</div>
               <div>►</div>
             </section>
-            <section className="flex items-center gap-2 ">
+            <section className="flex items-center gap-2">
               <div>REC</div>
-              <div className="animate-rec-button size-3 bg-red-500 rounded-full"></div>
+              <div className="animate-rec-button size-3 rounded-full bg-red-500"></div>
             </section>
           </nav>
-          <section className="animate-text-flicker mx-auto my-auto text-mainWhite font-vcr tracking-[3rem] text-9xl">
+          <section className="animate-text-flicker mx-auto my-auto font-vcr text-9xl tracking-[3rem] text-mainWhite">
             ARSHIA
           </section>
-          <section className=" flex justify-between text-mainWhite">
+          <section className="flex justify-between text-mainWhite">
             <div
               onClick={() =>
                 projectsSectionRef.current.scrollIntoView({
                   behavior: "smooth",
                 })
               }
-              className="noHighlightClicked cursor-pointer animate-text-flicker ml-8 text-8xl font-minecraft animate-[bounce_1s_infinite,textflicker_0.06s_infinite_alternate]"
+              className="noHighlightClicked animate-text-flicker ml-8 animate-[bounce_1s_infinite,textflicker_0.06s_infinite_alternate] cursor-pointer font-minecraft text-8xl"
             >
               ↓
             </div>

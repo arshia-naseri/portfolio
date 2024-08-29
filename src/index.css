@@ -41,11 +41,15 @@
   @keyframes textflicker {
     from {
       /* text-shadow: 0.06rem 0 0.6rem #e3e1dd; */
-      text-shadow: -0.06rem 0 0.65rem #f20000, 0.06rem 0 0.81rem #0008f2,
+      text-shadow:
+        -0.06rem 0 0.65rem #f20000,
+        0.06rem 0 0.81rem #0008f2,
         0.09rem 0 0.1rem #02cf24;
     }
     to {
-      text-shadow: 0.07rem 0 0.15rem #f20000, -0.06rem 0 0.15rem #0008f2,
+      text-shadow:
+        0.07rem 0 0.15rem #f20000,
+        -0.06rem 0 0.15rem #0008f2,
         -0.09rem 0 0.45rem #02cf24;
       /* text-shadow: -0.03rem 0 0.6rem #e3e1dd; */
     }
@@ -124,7 +128,8 @@
 
   @keyframes navbar-first-item {
     0% {
-      text-shadow: var(--size-outline-width) 0 var(--color-outline),
+      text-shadow:
+        var(--size-outline-width) 0 var(--color-outline),
         calc(var(--size-outline-width) * -1) 0 var(--color-outline),
         0 var(--size-outline-width) var(--color-outline),
         0 calc(var(--size-outline-width) * -1) var(--color-outline);
@@ -137,7 +142,8 @@
 
   @keyframes navbar-second-item {
     30% {
-      text-shadow: var(--size-outline-width) 0 var(--color-outline),
+      text-shadow:
+        var(--size-outline-width) 0 var(--color-outline),
         calc(var(--size-outline-width) * -1) 0 var(--color-outline),
         0 var(--size-outline-width) var(--color-outline),
         0 calc(var(--size-outline-width) * -1) var(--color-outline);
@@ -153,7 +159,8 @@
       text-shadow: none;
     }
     60% {
-      text-shadow: var(--size-outline-width) 0 var(--color-outline),
+      text-shadow:
+        var(--size-outline-width) 0 var(--color-outline),
         calc(var(--size-outline-width) * -1) 0 var(--color-outline),
         0 var(--size-outline-width) var(--color-outline),
         0 calc(var(--size-outline-width) * -1) var(--color-outline);
@@ -169,10 +176,33 @@
       text-shadow: none;
     }
     100% {
-      text-shadow: var(--size-outline-width) 0 var(--color-outline),
+      text-shadow:
+        var(--size-outline-width) 0 var(--color-outline),
         calc(var(--size-outline-width) * -1) 0 var(--color-outline),
         0 var(--size-outline-width) var(--color-outline),
         0 calc(var(--size-outline-width) * -1) var(--color-outline);
     }
+  }
+
+  .win98-project-shadow {
+    box-shadow:
+      -0.5px -0.5px 0 0.5px #c0c0c0,
+      0 0 0 1px #808080,
+      -0.5px -0.5px 0 1.5px #ffffff,
+      0 0 0 2px #0a0a0a;
+  }
+  .win98-scrollbar::-webkit-scrollbar {
+    width: 17px;
+    height: 1.2rem;
+    background-color: rgb(192, 192, 192);
+  }
+
+  .win98-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(224, 224, 224);
+    border: 2px solid rgb(192, 192, 192);
+  }
+
+  .win98-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(208, 208, 208);
   }
 }

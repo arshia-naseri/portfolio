@@ -33,10 +33,10 @@ const Desktop = () => {
         />
         <ProjectPage projectsSectionRef={projectsSectionRef} />
 
-        <section ref={aboutSectionRef} className=" p-3 bg-green-200 h-screen">
+        <section ref={aboutSectionRef} className="h-screen bg-green-200 p-3">
           About
         </section>
-        <section ref={arcadeSectionRef} className=" p-3 bg-orange-200 h-screen">
+        <section ref={arcadeSectionRef} className="h-screen bg-orange-200 p-3">
           Game
         </section>
       </section>

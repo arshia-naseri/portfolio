@@ -10,13 +10,13 @@ const Navbar = ({
       <ul
         ref={navBarRef}
         id="DesktopNavBar"
-        className=" mt-8 ml-8 flex justify-evenly blur-[.6px] z-10 gap-3 fixed font-vcr text-xl text-mainWhite tracking-[.3rem] transition-all"
+        className="fixed z-10 ml-8 mt-8 flex justify-evenly gap-3 font-vcr text-xl tracking-[.3rem] text-mainWhite blur-[.6px] transition-all"
       >
         <li
           onClick={() =>
             mainSectionRef.current.scrollIntoView({ behavior: "smooth" })
           }
-          className="noHighlightClicked cursor-pointer shadow-mainWhite stroke-red-600 stroke-[3px]"
+          className="noHighlightClicked cursor-pointer stroke-red-600 stroke-[3px] shadow-mainWhite"
         >
           TITLE
         </li>
