@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import FloppyDisk from "../../Componants/_floppyDisk";
 
-const ProjectPage = ({ projectsSectionRef }) => {
+const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
   const projectCarouselRef = useRef();
   const btnNextProject = useRef();
   const btnPreProject = useRef();
@@ -137,7 +137,7 @@ const ProjectPage = ({ projectsSectionRef }) => {
     <>
       <section
         ref={projectsSectionRef}
-        className="h-screen bg-mainWhite p-8 pl-20"
+        className="h-screen border border-b border-vcrBlack/20 bg-mainWhite p-8 pl-20"
       >
         <section className="mt-7 flex h-full w-full flex-col">
           <div className="px-10 font-vcr text-5xl tracking-[1rem]">
@@ -170,7 +170,6 @@ const ProjectPage = ({ projectsSectionRef }) => {
               <section
                 ref={projectCarouselRef}
                 onScroll={changeBtnOpacity}
-                data-scroll-dir="x"
                 className="win98-scrollbar relative ml-auto mr-auto flex gap-16 overflow-x-scroll p-10 pb-6"
               >
                 <FloppyDisk
@@ -207,7 +206,14 @@ const ProjectPage = ({ projectsSectionRef }) => {
               </div>
             </section>
           </section>
-          <div className="noHighlightClicked mt-auto animate-[bounce_1s_infinite] cursor-pointer font-minecraft text-3xl">
+          <div
+            className="noHighlightClicked mt-auto animate-[bounce_1s_infinite] cursor-pointer font-minecraft text-5xl"
+            onClick={() =>
+              aboutSectionRef.current.scrollIntoView({
+                behavior: "smooth",
+              })
+            }
+          >
             ↓
           </div>
         </section>

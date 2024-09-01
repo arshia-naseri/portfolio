@@ -3,6 +3,7 @@ import smoothscroll from "smoothscroll-polyfill";
 import Navbar from "./_navbar";
 import MainPage from "./pages/main-page";
 import ProjectPage from "./pages/project-page";
+import AboutPage from "./pages/about-page";
 
 window.__forceSmoothScrollPolyfill__ = true;
 
@@ -31,11 +32,16 @@ const Desktop = () => {
           mainSectionRef={mainSectionRef}
           projectsSectionRef={projectsSectionRef}
         />
-        <ProjectPage projectsSectionRef={projectsSectionRef} />
+        <ProjectPage
+          projectsSectionRef={projectsSectionRef}
+          aboutSectionRef={aboutSectionRef}
+        />
 
-        <section ref={aboutSectionRef} className="h-screen bg-green-200 p-3">
-          About
-        </section>
+        <AboutPage
+          aboutSectionRef={aboutSectionRef}
+          arcadeSectionRef={arcadeSectionRef}
+        />
+
         <section ref={arcadeSectionRef} className="h-screen bg-orange-200 p-3">
           Game
         </section>

@@ -83,7 +83,7 @@
   /* ? REMEMBER that this based on 4 pages total, re-adjust for more/less pages  */
   .mainVhsStaticDiv {
     background: url("./Assets/images/vhs-static.gif");
-    opacity: 30%;
+    opacity: 20%;
   }
 
   #DesktopNavBar {
@@ -184,6 +184,7 @@
     }
   }
 
+  /* ? Gives it a windows98 file explorer look */
   .win98-project-shadow {
     box-shadow:
       -0.5px -0.5px 0 0.5px #c0c0c0,
@@ -191,17 +192,18 @@
       -0.5px -0.5px 0 1.5px #ffffff,
       0 0 0 2px #0a0a0a;
   }
+
+  /* ? For windows98 scrollbar */
+  /* ! Height of scrollbar is very important for the customized buttons */
   .win98-scrollbar::-webkit-scrollbar {
     width: 17px;
     height: 1.2rem;
     background-color: rgb(192, 192, 192);
   }
-
   .win98-scrollbar::-webkit-scrollbar-thumb {
     background-color: rgb(224, 224, 224);
     border: 2px solid rgb(192, 192, 192);
   }
-
   .win98-scrollbar::-webkit-scrollbar-thumb:hover {
     background-color: rgb(208, 208, 208);
   }

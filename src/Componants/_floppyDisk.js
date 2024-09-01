@@ -3,7 +3,7 @@ import floppyTop from "../Assets/images/floppy-top.png";
 const FloppyDisk = ({ floppyColor, lineColor, width }) => {
   return (
     <>
-      <section style={{ width }} className="flex shrink-0 flex-col">
+      <section style={{ width }} className="flex shrink-0 flex-col font-vcr">
         <img
           alt="Floppy top"
           src={floppyTop}
@@ -44,6 +44,9 @@ const FloppyDisk = ({ floppyColor, lineColor, width }) => {
                   />
                 </section>
               </div>
+              <button className="win98-project-shadow mt-1 bg-slate-300 p-0.5 text-xs hover:bg-slate-400">
+                <u>C</u>lick for More...
+              </button>
             </section>
           </section>
 
