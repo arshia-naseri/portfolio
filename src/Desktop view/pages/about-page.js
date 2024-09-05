@@ -1,5 +1,6 @@
 import { useContext, useRef } from "react";
 import { materialContext } from "../../App";
+import checkLogo from "../../Assets/images/check-1.png";
 
 const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
   const { about } = useContext(materialContext);
@@ -106,18 +107,39 @@ const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
           </section>
         </main>
       </section>
+
       <dialog
         ref={copyDialog}
         id="copyDialog"
-        className="noHighlightClicked mt-[20vh] h-2/5 w-2/5"
+        className="win98-window mt-[20vh] w-3/5 font-minecraft outline-none after:!bg-opacity-90"
         onClick={(e) => (e.target.id === "copyDialog" ? closeDialog() : null)}
       >
-        <main className="win98-project-shadow h-full w-full">
-          <div>{about.emailURL}</div>
+        <main className="h-full w-full bg-[rgb(192,192,192)]">
+          <nav className="flex h-fit items-center bg-gradient-to-r from-[rgb(0,0,125)] to-[rgb(60,130,300)] px-1">
+            <div className="text-white">Email Copied</div>
+            <button
+              className="win98-window ml-auto flex aspect-square h-3 items-center justify-center bg-[rgb(192,192,192)] p-0 font-vcr text-sm hover:bg-[rgb(160,160,160)]"
+              onClick={closeDialog}
+            >
+              X
+            </button>
+          </nav>
+
+          <section className="flex flex-col p-3">
+            <div>You just copied MY email!</div>
+            <section className="flex gap-2">
+              <div>{about.emailURL}</div>
+              <img
+                src={checkLogo}
+                alt="check logo"
+                className="aspect-square h-6 animate-[wiggle_1s_ease-in-out_infinite]"
+              />
+            </section>
+          </section>
         </main>
       </dialog>
     </>
   );
 };
-
+// rgb => 0,0,125, 60, 130, 200
 export default AboutPage;
