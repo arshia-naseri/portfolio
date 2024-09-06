@@ -5,6 +5,8 @@ import UniversityLogo from "./Assets/images/university-logo.webp";
 import EmailLogo from "./Assets/images/email-logo.webp";
 import LinkedInLogo from "./Assets/images/linkedin-logo.webp";
 import GithubLogo from "./Assets/images/github-logo.webp";
+// import PcPixelatedPic from "./Assets/images/pc-pixelated.webp";
+import PcPixelatedPic from "./Assets/images/pc-blink-pixelated.webp";
 
 export const materialContext = createContext();
 
@@ -22,6 +24,9 @@ function App() {
       linkedInURL: "https://www.linkedin.com/in/arshia-naseri/",
       githubLogo: GithubLogo,
       githubURL: "https://github.com/arshia-naseri",
+    },
+    arcade: {
+      pcPixelatedPic: PcPixelatedPic,
     },
   };
 

@@ -4,6 +4,7 @@ import Navbar from "./_navbar";
 import MainPage from "./pages/main-page";
 import ProjectPage from "./pages/project-page";
 import AboutPage from "./pages/about-page";
+import ArcadePage from "./pages/arcade-page";
 
 window.__forceSmoothScrollPolyfill__ = true;
 
@@ -42,9 +43,10 @@ const Desktop = () => {
           arcadeSectionRef={arcadeSectionRef}
         />
 
-        <section ref={arcadeSectionRef} className="h-screen bg-orange-200 p-3">
-          Game
-        </section>
+        <ArcadePage
+          arcadeSectionRef={arcadeSectionRef}
+          mainSectionRef={mainSectionRef}
+        />
       </section>
     </main>
   );

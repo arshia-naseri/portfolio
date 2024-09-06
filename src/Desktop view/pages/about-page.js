@@ -21,7 +21,7 @@ const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
     <>
       <section
         ref={aboutSectionRef}
-        className="h-screen bg-mainWhite p-8 pl-20 font-vcr"
+        className="h-screen border-b border-vcrBlack/20 bg-mainWhite p-8 pl-20 font-vcr"
       >
         <main className="mt-7 flex h-full flex-col">
           <div className="px-10 text-5xl tracking-[1rem]">ABOUT ME</div>
@@ -37,7 +37,7 @@ const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
                 rel="noreferrer"
                 href={about.universityURL}
                 title={about.universityURL}
-                className="flex items-center gap-3"
+                className="flex w-fit items-center gap-3"
               >
                 <img
                   src={about.universityLogo}
@@ -132,7 +132,7 @@ const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
               <img
                 src={checkLogo}
                 alt="check logo"
-                className="aspect-square h-6 animate-[wiggle_1s_ease-in-out_infinite]"
+                className="aspect-square h-6 animate-[wiggle_0.5s_ease-in-out_infinite]"
               />
             </section>
           </section>
