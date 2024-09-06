@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.4b867093.css",
+    "main.js": "/portfolio/static/js/main.9937d70e.js",
+    "static/media/vhs-static.gif": "/portfolio/static/media/vhs-static.2c7b11d8bf0a994394fc.gif",
+    "static/media/university-logo.webp": "/portfolio/static/media/university-logo.3a1f8020368393bd8b2a.webp",
+    "static/media/email-logo.webp": "/portfolio/static/media/email-logo.f8cea43c1b1d48de25b9.webp",
+    "static/media/profile-pic.webp": "/portfolio/static/media/profile-pic.fe6bed79319bb704388d.webp",
+    "static/media/arcade-machine.png": "/portfolio/static/media/arcade-machine.f37395d00173540cb638.png",
+    "static/media/Monocraft.ttf": "/portfolio/static/media/Monocraft.d2201aeb746218a4c4bb.ttf",
+    "static/media/linkedin-logo.webp": "/portfolio/static/media/linkedin-logo.a1784fe5ad5f3e5fa08f.webp",
+    "static/media/floppy-top.png": "/portfolio/static/media/floppy-top.86d1b94466d151859973.png",
+    "static/media/VCR_OSD_MONO.ttf": "/portfolio/static/media/VCR_OSD_MONO.57f51a0d8f0f2239ce8f.ttf",
+    "static/media/check-1.png": "/portfolio/static/media/check-1.b6e8b06dcf578d89b508.png",
+    "static/media/pc-blink-pixelated.webp": "/portfolio/static/media/pc-blink-pixelated.e4e9ab07f7eea49f3fef.webp",
+    "static/media/github-logo.webp": "/portfolio/static/media/github-logo.97622575bada7792d013.webp",
+    "index.html": "/portfolio/index.html",
+    "main.4b867093.css.map": "/portfolio/static/css/main.4b867093.css.map",
+    "main.9937d70e.js.map": "/portfolio/static/js/main.9937d70e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b867093.css",
+    "static/js/main.9937d70e.js"
+  ]
+}
