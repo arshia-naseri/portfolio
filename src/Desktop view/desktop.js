@@ -1,12 +1,9 @@
-import { useRef, useEffect } from "react";
-import smoothscroll from "smoothscroll-polyfill";
+import { useRef } from "react";
 import Navbar from "./_navbar";
 import MainPage from "./pages/main-page";
 import ProjectPage from "./pages/project-page";
 import AboutPage from "./pages/about-page";
 import ArcadePage from "./pages/arcade-page";
-
-window.__forceSmoothScrollPolyfill__ = true;
 
 const Desktop = () => {
   const navBarRef = useRef();
@@ -15,12 +12,8 @@ const Desktop = () => {
   const aboutSectionRef = useRef();
   const arcadeSectionRef = useRef();
 
-  useEffect(() => {
-    smoothscroll.polyfill();
-  }, []);
-
   return (
-    <main className="DesktopMain">
+    <main>
       <Navbar
         navBarRef={navBarRef}
         mainSectionRef={mainSectionRef}

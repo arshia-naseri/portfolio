@@ -1,5 +1,5 @@
 import { useContext, useRef } from "react";
-import { materialContext } from "../../App";
+import { materialContext } from "../../main";
 import arcadeMachinePic from "../../Assets/images/arcade-machine.png";
 
 const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {

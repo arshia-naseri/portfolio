@@ -1,35 +1,8 @@
+import { useContext } from "react";
+import { materialContext } from "../../main";
 const MainPage = ({ mainSectionRef, projectsSectionRef }) => {
-  const getFormatedTime = () => {
-    const now = new Date();
-    let hours = now.getHours() % 12 ? now.getHours() % 12 : 12;
-    let minuts =
-      now.getMinutes() < 10 ? `0${now.getMinutes()}` : now.getMinutes();
+  const { main } = useContext(materialContext);
 
-    let period = now.getHours() >= 12 ? "PM" : "AM";
-    return `${period} ${hours}:${minuts}`;
-  };
-
-  const getFormatedDate = () => {
-    const now = new Date();
-    const monthNames = [
-      "JAN",
-      "FEB",
-      "MAR",
-      "APR",
-      "MAY",
-      "JUN",
-      "JUL",
-      "AUG",
-      "SEP",
-      "OCT",
-      "NOV",
-      "DEC",
-    ];
-
-    return `${
-      monthNames[now.getMonth()]
-    } ${now.getDate()} ${now.getFullYear()}`;
-  };
   return (
     <>
       <section
@@ -66,8 +39,8 @@ const MainPage = ({ mainSectionRef, projectsSectionRef }) => {
               ↓
             </div>
             <section className="animate-text-flicker flex flex-col items-end font-vcr text-xl">
-              <div>{getFormatedTime()}</div>
-              <div>{getFormatedDate()}</div>
+              <div>{main.getFormatedTime()}</div>
+              <div>{main.getFormatedDate()}</div>
             </section>
           </section>
         </section>
