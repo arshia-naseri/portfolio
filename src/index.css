@@ -87,8 +87,8 @@
   }
 
   #DesktopNavBar {
-    animation: navbar-scroll-animation linear forwards;
-    animation-timeline: scroll(y);
+    /* animation: navbar-scroll-animation linear forwards;
+    animation-timeline: scroll(y); */
   }
 
   @keyframes navbar-scroll-animation {
