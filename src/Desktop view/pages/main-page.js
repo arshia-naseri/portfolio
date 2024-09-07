@@ -11,7 +11,7 @@ const MainPage = ({ mainSectionRef, projectsSectionRef }) => {
       >
         <div
           data-overlay
-          className="mainVhsStaticDiv pointer-events-none absolute left-0 top-0 z-20 h-full w-full"
+          className="mainVhsStaticDiv pointer-events-none absolute left-0 top-0 -z-10 h-full w-full"
         />
         <section className="inline-flex h-full w-full flex-col">
           <nav className="ml-auto flex flex-col items-end font-vcr text-xl text-mainWhite">
@@ -24,7 +24,7 @@ const MainPage = ({ mainSectionRef, projectsSectionRef }) => {
               <div className="animate-rec-button size-3 rounded-full bg-red-500"></div>
             </section>
           </nav>
-          <section className="animate-text-flicker mx-auto my-auto font-vcr text-9xl tracking-[3rem] text-mainWhite">
+          <section className="animate-text-flicker mx-auto my-auto font-vcr text-9xl tracking-[3rem] text-mainWhite opacity-90">
             ARSHIA
           </section>
           <section className="flex justify-between text-mainWhite">

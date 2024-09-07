@@ -83,7 +83,7 @@
   /* ? REMEMBER that this based on 4 pages total, re-adjust for more/less pages  */
   .mainVhsStaticDiv {
     background: url("./Assets/images/vhs-static.gif");
-    opacity: 20%;
+    opacity: 40%;
   }
 
   #DesktopNavBar {
