@@ -92,6 +92,12 @@
     animation-timeline: scroll(y);
   }
 
+  @supports (animation-timeline: scroll(y)) {
+    #DesktopNavBar {
+      background-color: red;
+    }
+  }
+
   @keyframes navbar-scroll-animation {
     18% {
       scale: 0.7;
