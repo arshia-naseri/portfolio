@@ -24,9 +24,9 @@ const MainPage = ({ mainSectionRef }) => {
                 <div className="animate-rec-button size-3 rounded-full bg-red-500"></div>
               </section>
             </nav>
-            <section className="animate-text-flicker mx-auto my-auto font-vcr text-5xl tracking-[1rem] text-mainWhite opacity-90">
+            <div className="animate-text-flicker mx-auto my-auto font-vcr text-5xl tracking-[1rem] text-mainWhite opacity-90">
               ARSHIA
-            </section>
+            </div>
             <section className="flex justify-between text-mainWhite">
               <div
                 // onClick={() =>
