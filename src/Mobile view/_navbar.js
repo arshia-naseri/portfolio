@@ -19,7 +19,7 @@ const Navbar = ({
   return (
     <>
       <main
-        className={`${showNavbar ? "left-0" : "-left-full"} fixed z-50 h-dvh w-dvw bg-vcrBlack/85 font-vcr text-mainWhite transition-all`}
+        className={`${showNavbar ? "left-0" : "-left-full"} fixed z-50 h-dvh w-dvw overflow-hidden bg-vcrBlack/85 font-vcr text-mainWhite transition-all`}
       >
         <section className="m-4 h-fit w-full">
           <div

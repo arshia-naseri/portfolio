@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { materialContext } from "../../main";
-const MainPage = ({ mainSectionRef }) => {
+const MainPage = ({ mainSectionRef, projectsSectionRef }) => {
   const { main } = useContext(materialContext);
   return (
     <>
@@ -29,11 +29,11 @@ const MainPage = ({ mainSectionRef }) => {
             </div>
             <section className="flex justify-between text-mainWhite">
               <div
-                // onClick={() =>
-                //   projectsSectionRef.current.scrollIntoView({
-                //     behavior: "smooth",
-                //   })
-                // }
+                onClick={() =>
+                  projectsSectionRef.current.scrollIntoView({
+                    behavior: "smooth",
+                  })
+                }
                 className="noHighlightClicked animate-text-flicker animate-[bounce_1s_infinite,textflicker_0.06s_infinite_alternate] cursor-pointer font-minecraft text-5xl"
               >
                 ↓

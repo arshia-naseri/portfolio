@@ -223,7 +223,7 @@
     background-color: rgb(208, 208, 208);
   }
 
-  /* Mobile View */
+  /* Mobile */
   #btnBurgerMenu {
     animation: changeBurgerMenuColor ease-in-out forwards;
     animation-timeline: scroll(y);

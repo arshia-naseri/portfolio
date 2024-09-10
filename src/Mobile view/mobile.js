@@ -30,7 +30,10 @@ const Mobile = () => {
         </div>
 
         <section>
-          <MainPage mainSectionRef={mainSectionRef} />
+          <MainPage
+            mainSectionRef={mainSectionRef}
+            projectsSectionRef={projectsSectionRef}
+          />
           <ProjectsPage projectsSectionRef={projectsSectionRef} />
           <section ref={aboutSectionRef} className="h-dvh bg-red-200"></section>
           <section
