@@ -69,13 +69,18 @@ function Main() {
     },
   };
 
+  // ? For checking if device is not desktop
+  // ! is not widely used yet ↓
+  // const isMobile = () =>
+  //   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+  //     navigator.userAgent,
+  //   );
+
   useEffect(() => {
     const handleResize = () => {
       SetShowMobileView(window.innerWidth < 640);
     };
-
     window.addEventListener("resize", handleResize);
-
     handleResize();
     smoothscroll.polyfill();
     return () => {
