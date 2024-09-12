@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import Navbar from "./_navbar";
 import MainPage from "./pages/main-page";
-import ProjectsPage from "./pages/projects-page";
+import ProjectsPage from "./pages/project-page";
 import AboutPage from "./pages/about-page";
 
 const Mobile = () => {
