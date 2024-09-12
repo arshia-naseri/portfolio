@@ -11,6 +11,10 @@ const Navbar = ({
   };
 
   const goToPage = (pageRef) => {
+    if (pageRef === mainSectionRef) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
     pageRef.current.scrollIntoView({
       behavior: "smooth",
     });
