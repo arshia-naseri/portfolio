@@ -6,7 +6,7 @@ const MainPage = ({ mainSectionRef, projectsSectionRef }) => {
     <>
       <section
         ref={mainSectionRef}
-        className="h-dvh bg-vcrBlack p-4 blur-[.5px]"
+        className="h-screen bg-vcrBlack p-4 blur-[.5px]"
       >
         <div
           data-overlay
