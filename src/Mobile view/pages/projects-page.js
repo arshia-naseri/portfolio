@@ -15,8 +15,28 @@ const ProjectsPage = ({ projectsSectionRef }) => {
           <section className="mt-20 flex flex-col gap-5">
             {/* Buttons */}
             <section className="ml-auto flex h-fit w-fit gap-1 text-5xl">
-              <div className="cursor-pointer">◄</div>
-              <div className="cursor-pointer">►</div>
+              <div
+                className="cursor-pointer"
+                onTouchStart={(e) => {
+                  e.currentTarget.style.transform = "scale(1.5)";
+                }}
+                onTouchEnd={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                }}
+              >
+                ◄
+              </div>
+              <div
+                className="cursor-pointer"
+                onTouchStart={(e) => {
+                  e.currentTarget.style.transform = "scale(1.5)";
+                }}
+                onTouchEnd={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                }}
+              >
+                ►
+              </div>
             </section>
 
             {/* Carosel container */}
