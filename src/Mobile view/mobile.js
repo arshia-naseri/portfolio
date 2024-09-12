@@ -27,7 +27,7 @@ const Mobile = () => {
           onClick={() => setShowNavbar(true)}
           className="noHighlightClicked fixed z-20 m-2 cursor-pointer text-4xl text-mainWhite blur-[.5px]"
           onTouchStart={(e) => {
-            e.currentTarget.style.transform = "scale(2)";
+            e.currentTarget.style.transform = "scale(1.5)";
           }}
           onTouchEnd={(e) => {
             e.currentTarget.style.transform = "scale(1)";
