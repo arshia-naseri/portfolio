@@ -41,6 +41,7 @@ const Mobile = () => {
             mainSectionRef={mainSectionRef}
             projectsSectionRef={projectsSectionRef}
           />
+          <div className="h-10 bg-gradient-to-b from-vcrBlack to-mainWhite" />
           <ProjectsPage projectsSectionRef={projectsSectionRef} />
           <AboutPage aboutSectionRef={aboutSectionRef} />
           <section
