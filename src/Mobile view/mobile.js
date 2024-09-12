@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
+import Navbar from "./_navbar";
 import MainPage from "./pages/main-page";
 import ProjectsPage from "./pages/projects-page";
-import Navbar from "./_navbar";
+import AboutPage from "./pages/about-page";
 
 const Mobile = () => {
   const mainSectionRef = useRef();
@@ -25,6 +26,12 @@ const Mobile = () => {
           id="btnBurgerMenu"
           onClick={() => setShowNavbar(true)}
           className="noHighlightClicked fixed z-20 m-2 cursor-pointer text-4xl text-mainWhite blur-[.5px]"
+          onTouchStart={(e) => {
+            e.currentTarget.style.transform = "scale(2)";
+          }}
+          onTouchEnd={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
+          }}
         >
           ☰
         </div>
@@ -35,7 +42,7 @@ const Mobile = () => {
             projectsSectionRef={projectsSectionRef}
           />
           <ProjectsPage projectsSectionRef={projectsSectionRef} />
-          <section ref={aboutSectionRef} className="h-dvh bg-red-200"></section>
+          <AboutPage aboutSectionRef={aboutSectionRef} />
           <section
             ref={arcadeSectionRef}
             className="h-dvh bg-blue-200"

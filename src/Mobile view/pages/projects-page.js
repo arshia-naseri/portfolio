@@ -8,7 +8,7 @@ const ProjectsPage = ({ projectsSectionRef }) => {
         className="flex h-dvh items-end justify-center border-b border-vcrBlack/20 bg-mainWhite font-vcr"
       >
         <main className="h-[90%] w-full">
-          <div className="ml-auto mr-auto w-fit text-2xl tracking-[0.5rem]">
+          <div className="boldTextFont ml-auto mr-auto w-fit text-3xl tracking-[0.5rem]">
             PROJECTS
           </div>
 

@@ -241,4 +241,14 @@
       color: var(--color-outline);
     }
   }
+
+  .boldTextFont {
+    --color-outline: var(--color-vcrBlack);
+    --size-outline-width: 0.5px;
+    text-shadow:
+      var(--size-outline-width) 0 var(--color-outline),
+      calc(var(--size-outline-width) * -1) 0 var(--color-outline),
+      0 var(--size-outline-width) var(--color-outline),
+      0 calc(var(--size-outline-width) * -1) var(--color-outline);
+  }
 }
