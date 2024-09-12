@@ -36,12 +36,12 @@ const Mobile = () => {
           ☰
         </div>
 
-        <section>
+        <section className="bg-mainWhite">
           <MainPage
             mainSectionRef={mainSectionRef}
             projectsSectionRef={projectsSectionRef}
           />
-          <div className="h-10 bg-gradient-to-b from-vcrBlack to-mainWhite" />
+          <div className="h-10 -translate-y-1 bg-gradient-to-b from-vcrBlack to-mainWhite" />
           <ProjectsPage projectsSectionRef={projectsSectionRef} />
           <AboutPage aboutSectionRef={aboutSectionRef} />
           <section
