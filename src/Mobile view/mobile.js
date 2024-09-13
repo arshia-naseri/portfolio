@@ -3,6 +3,7 @@ import Navbar from "./_navbar";
 import MainPage from "./pages/main-page";
 import ProjectsPage from "./pages/project-page";
 import AboutPage from "./pages/about-page";
+import ArcadePage from "./pages/arcade-page";
 
 const Mobile = () => {
   const mainSectionRef = useRef();
@@ -44,10 +45,10 @@ const Mobile = () => {
           <div className="h-10 -translate-y-1 bg-gradient-to-b from-vcrBlack to-mainWhite" />
           <ProjectsPage projectsSectionRef={projectsSectionRef} />
           <AboutPage aboutSectionRef={aboutSectionRef} />
-          <section
-            ref={arcadeSectionRef}
-            className="h-dvh bg-blue-200"
-          ></section>
+          <ArcadePage
+            arcadeSectionRef={arcadeSectionRef}
+            mainSectionRef={mainSectionRef}
+          />
         </section>
       </main>
     </>
