@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.e03752f6.css",
-    "main.js": "/portfolio/static/js/main.f3a312ff.js",
+    "main.css": "/portfolio/static/css/main.c8085083.css",
+    "main.js": "/portfolio/static/js/main.dc5be572.js",
     "static/media/vhs-static.gif": "/portfolio/static/media/vhs-static.df32a20414e84238dc3f.gif",
     "static/media/university-logo.webp": "/portfolio/static/media/university-logo.3a1f8020368393bd8b2a.webp",
     "static/media/warning-logo.webp": "/portfolio/static/media/warning-logo.01f279d44ab9004deaa0.webp",
@@ -16,11 +16,11 @@
     "static/media/pc-blink-pixelated.webp": "/portfolio/static/media/pc-blink-pixelated.e4e9ab07f7eea49f3fef.webp",
     "static/media/github-logo.webp": "/portfolio/static/media/github-logo.97622575bada7792d013.webp",
     "index.html": "/portfolio/index.html",
-    "main.e03752f6.css.map": "/portfolio/static/css/main.e03752f6.css.map",
-    "main.f3a312ff.js.map": "/portfolio/static/js/main.f3a312ff.js.map"
+    "main.c8085083.css.map": "/portfolio/static/css/main.c8085083.css.map",
+    "main.dc5be572.js.map": "/portfolio/static/js/main.dc5be572.js.map"
   },
   "entrypoints": [
-    "static/css/main.e03752f6.css",
-    "static/js/main.f3a312ff.js"
+    "static/css/main.c8085083.css",
+    "static/js/main.dc5be572.js"
   ]
 }
