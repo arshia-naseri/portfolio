@@ -10,8 +10,8 @@ const AboutPage = ({ aboutSectionRef }) => {
         className="flex h-screen items-end justify-center bg-mainWhite font-vcr"
       >
         <main className="h-[90%] w-full">
-          <div className="boldTextFont ml-auto mr-auto w-fit text-3xl tracking-[0.5rem]">
-            ABOUT ME
+          <div className="boldTextFont ml-auto mr-auto flex w-fit text-3xl tracking-[0.5rem]">
+            ABOUT M<div className="tracking-normal">E</div>
           </div>
 
           <section className="mt-7 flex flex-col items-center">

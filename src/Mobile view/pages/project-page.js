@@ -3,6 +3,8 @@ import FloppyDisk from "../../Componants/_floppyDisk";
 
 const ProjectsPage = ({ projectsSectionRef }) => {
   const projectCarouselRef = useRef();
+  const btnNextProject = useRef();
+  const btnPreProject = useRef();
 
   const getScrollPercentage = (elm) => {
     return (elm.scrollLeft / (elm.scrollWidth - elm.clientWidth)) * 100;
@@ -106,6 +108,19 @@ const ProjectsPage = ({ projectsSectionRef }) => {
     });
   };
 
+  const changeBtnOpacity = (e) => {
+    if (getScrollPercentage(e.currentTarget) < 10) {
+      btnPreProject.current.style.opacity = 0.4;
+      btnNextProject.current.style.opacity = 1;
+    } else if (getScrollPercentage(e.currentTarget) > 90) {
+      btnNextProject.current.style.opacity = 0.4;
+      btnPreProject.current.style.opacity = 1;
+    } else {
+      btnPreProject.current.style.opacity = 1;
+      btnNextProject.current.style.opacity = 1;
+    }
+  };
+
   return (
     <>
       <section
@@ -113,16 +128,17 @@ const ProjectsPage = ({ projectsSectionRef }) => {
         className="flex h-screen items-end justify-center bg-mainWhite font-vcr"
       >
         <main className="h-[90%] w-full">
-          <div className="boldTextFont ml-auto mr-auto w-fit text-3xl tracking-[0.5rem]">
-            PROJECTS
+          <div className="boldTextFont ml-auto mr-auto flex w-fit text-3xl tracking-[0.5rem]">
+            PROJECT<div className="tracking-normal">S</div>
           </div>
 
           <section className="mt-20 flex flex-col gap-5">
             {/* Buttons */}
-            <section className="ml-auto flex h-fit w-fit gap-1 text-5xl">
+            <section className="flex h-fit w-screen justify-between gap-1 px-4 text-6xl">
               <div
-                className="cursor-pointer"
+                className="cursor-pointer opacity-40"
                 onClick={preProjectPage}
+                ref={btnPreProject}
                 onTouchStart={(e) => {
                   e.currentTarget.style.transform = "scale(1.5)";
                 }}
@@ -135,6 +151,7 @@ const ProjectsPage = ({ projectsSectionRef }) => {
               <div
                 className="cursor-pointer"
                 onClick={nextProjectPage}
+                ref={btnNextProject}
                 onTouchStart={(e) => {
                   e.currentTarget.style.transform = "scale(1.5)";
                 }}
@@ -148,8 +165,9 @@ const ProjectsPage = ({ projectsSectionRef }) => {
 
             {/* Carosel container */}
             <section
-              ref={projectCarouselRef}
               className="relative flex gap-16 overflow-x-scroll p-5"
+              ref={projectCarouselRef}
+              onScroll={changeBtnOpacity}
               style={{ scrollbarWidth: "none" }}
             >
               <FloppyDisk

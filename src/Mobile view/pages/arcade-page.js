@@ -8,8 +8,8 @@ const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
         className="flex h-screen items-end justify-center bg-mainWhite font-vcr"
       >
         <main className="h-[90%] w-full">
-          <div className="boldTextFont ml-auto mr-auto w-fit text-3xl tracking-[0.5rem]">
-            ARCADE
+          <div className="boldTextFont ml-auto mr-auto flex w-fit text-3xl tracking-[0.5rem]">
+            ARCAD<div className="tracking-normal">E</div>
           </div>
 
           <section className="mt-20 flex flex-col items-center gap-5">
