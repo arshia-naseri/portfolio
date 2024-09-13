@@ -68,8 +68,6 @@ const ProjectsPage = ({ projectsSectionRef }) => {
       left: pushLeftValue,
       behavior: "smooth",
     });
-
-    navigator.vibrate(200);
   };
 
   const preProjectPage = (e) => {
