@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.cbd44d8b.css",
-    "main.js": "/portfolio/static/js/main.0905e4fe.js",
+    "main.css": "/portfolio/static/css/main.e03752f6.css",
+    "main.js": "/portfolio/static/js/main.f3a312ff.js",
     "static/media/vhs-static.gif": "/portfolio/static/media/vhs-static.df32a20414e84238dc3f.gif",
     "static/media/university-logo.webp": "/portfolio/static/media/university-logo.3a1f8020368393bd8b2a.webp",
+    "static/media/warning-logo.webp": "/portfolio/static/media/warning-logo.01f279d44ab9004deaa0.webp",
     "static/media/email-logo.webp": "/portfolio/static/media/email-logo.f8cea43c1b1d48de25b9.webp",
     "static/media/profile-pic.webp": "/portfolio/static/media/profile-pic.fe6bed79319bb704388d.webp",
     "static/media/arcade-machine.png": "/portfolio/static/media/arcade-machine.f37395d00173540cb638.png",
@@ -15,11 +16,11 @@
     "static/media/pc-blink-pixelated.webp": "/portfolio/static/media/pc-blink-pixelated.e4e9ab07f7eea49f3fef.webp",
     "static/media/github-logo.webp": "/portfolio/static/media/github-logo.97622575bada7792d013.webp",
     "index.html": "/portfolio/index.html",
-    "main.cbd44d8b.css.map": "/portfolio/static/css/main.cbd44d8b.css.map",
-    "main.0905e4fe.js.map": "/portfolio/static/js/main.0905e4fe.js.map"
+    "main.e03752f6.css.map": "/portfolio/static/css/main.e03752f6.css.map",
+    "main.f3a312ff.js.map": "/portfolio/static/js/main.f3a312ff.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbd44d8b.css",
-    "static/js/main.0905e4fe.js"
+    "static/css/main.e03752f6.css",
+    "static/js/main.f3a312ff.js"
   ]
 }
