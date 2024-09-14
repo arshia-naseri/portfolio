@@ -13,7 +13,7 @@ const Desktop = () => {
   const arcadeSectionRef = useRef();
 
   return (
-    <main>
+    <>
       <Navbar
         navBarRef={navBarRef}
         mainSectionRef={mainSectionRef}
@@ -21,27 +21,29 @@ const Desktop = () => {
         aboutSectionRef={aboutSectionRef}
         arcadeSectionRef={arcadeSectionRef}
       />
-      <section>
-        <MainPage
-          mainSectionRef={mainSectionRef}
-          projectsSectionRef={projectsSectionRef}
-        />
-        <ProjectPage
-          projectsSectionRef={projectsSectionRef}
-          aboutSectionRef={aboutSectionRef}
-        />
+      <main>
+        <section>
+          <MainPage
+            mainSectionRef={mainSectionRef}
+            projectsSectionRef={projectsSectionRef}
+          />
+          <ProjectPage
+            projectsSectionRef={projectsSectionRef}
+            aboutSectionRef={aboutSectionRef}
+          />
 
-        <AboutPage
-          aboutSectionRef={aboutSectionRef}
-          arcadeSectionRef={arcadeSectionRef}
-        />
+          <AboutPage
+            aboutSectionRef={aboutSectionRef}
+            arcadeSectionRef={arcadeSectionRef}
+          />
 
-        <ArcadePage
-          arcadeSectionRef={arcadeSectionRef}
-          mainSectionRef={mainSectionRef}
-        />
-      </section>
-    </main>
+          <ArcadePage
+            arcadeSectionRef={arcadeSectionRef}
+            mainSectionRef={mainSectionRef}
+          />
+        </section>
+      </main>
+    </>
   );
 };
 

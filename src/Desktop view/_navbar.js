@@ -1,5 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 const Navbar = ({
   navBarRef,
   mainSectionRef,
@@ -8,6 +7,23 @@ const Navbar = ({
   arcadeSectionRef,
 }) => {
   const { scrollY } = useScroll();
+  const colorVCR = "rgb(29, 31, 34)";
+  const colorMainWhite = "rgb(240, 234, 214)";
+  const textShadowWidth = "1px";
+
+  const isMainPageInView = useInView(mainSectionRef, {
+    margin: "-20% 0px -40% 0px",
+  });
+  const isProjectPageInView = useInView(projectsSectionRef, {
+    margin: "-20% 0px -40% 0px",
+  });
+  const isAboutPageInView = useInView(aboutSectionRef, {
+    margin: "-20% 0px -40% 0px",
+  });
+  const isArcadePageInView = useInView(arcadeSectionRef, {
+    margin: "-10% 0px -40% 0px",
+  });
+
   const rotate = useTransform(scrollY, [0, 3360 * 0.2], [0, 90]);
   const translateX = useTransform(scrollY, [0, 3360 * 0.2], [0, 10]);
   const color = useTransform(
@@ -16,12 +32,21 @@ const Navbar = ({
     ["rgb(240, 234, 214)", "rgb(29, 31, 34)"],
   );
 
+  const textShadowVCR = `${textShadowWidth} 0 ${colorVCR},
+        -${textShadowWidth} 0 ${colorVCR},
+        0 ${textShadowWidth} ${colorVCR},
+        0 -${textShadowWidth} ${colorVCR}`;
+
+  const textShadowMainWhite = `${textShadowWidth} 0 ${colorMainWhite},
+        -${textShadowWidth} 0 ${colorMainWhite},
+        0 ${textShadowWidth} ${colorMainWhite},
+        0 -${textShadowWidth} ${colorMainWhite}`;
+
   return (
     <>
       <motion.ul
         ref={navBarRef}
-        onClick={() => console.log(translateX.current)}
-        // id="DesktopNavBar"
+        onClick={() => console.log(isProjectPageInView)}
         className="text-red fixed z-10 ml-8 mt-8 flex origin-top-left justify-evenly gap-3 font-vcr text-xl tracking-[.3rem] text-mainWhite blur-[.6px] transition-all"
         style={{ rotate, translateX, color }}
       >
@@ -30,6 +55,9 @@ const Navbar = ({
             mainSectionRef.current.scrollIntoView({ behavior: "smooth" })
           }
           className="noHighlightClicked cursor-pointer stroke-red-600 stroke-[3px] shadow-mainWhite"
+          style={{
+            textShadow: isMainPageInView ? textShadowMainWhite : "none",
+          }}
         >
           TITLE
         </li>
@@ -39,6 +67,9 @@ const Navbar = ({
             projectsSectionRef.current.scrollIntoView({ behavior: "smooth" })
           }
           className="noHighlightClicked cursor-pointer"
+          style={{
+            textShadow: isProjectPageInView ? textShadowVCR : "none",
+          }}
         >
           PROJECTS
         </li>
@@ -48,6 +79,9 @@ const Navbar = ({
             aboutSectionRef.current.scrollIntoView({ behavior: "smooth" })
           }
           className="noHighlightClicked cursor-pointer"
+          style={{
+            textShadow: isAboutPageInView ? textShadowVCR : "none",
+          }}
         >
           ABOUT ME
         </li>
@@ -57,6 +91,9 @@ const Navbar = ({
             arcadeSectionRef.current.scrollIntoView({ behavior: "smooth" })
           }
           className="noHighlightClicked cursor-pointer"
+          style={{
+            textShadow: isArcadePageInView ? textShadowVCR : "none",
+          }}
         >
           ARCADE
         </li>
