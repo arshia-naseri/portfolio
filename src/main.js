@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import smoothscroll from "smoothscroll-polyfill";
 import Desktop from "./Desktop view/desktop";
 import Mobile from "./Mobile view/mobile";
 import ProfilePic from "./Assets/images/profile-pic.webp";
@@ -11,7 +10,6 @@ import PcPixelatedPic from "./Assets/images/pc-blink-pixelated.webp";
 
 export const materialContext = createContext();
 
-window.__forceSmoothScrollPolyfill__ = true;
 function Main() {
   const [showMobileView, SetShowMobileView] = useState();
   const getFormatedTime = () => {
@@ -82,7 +80,6 @@ function Main() {
     };
     window.addEventListener("resize", handleResize);
     handleResize();
-    smoothscroll.polyfill();
     return () => {
       window.removeEventListener("resize", handleResize);
     };

@@ -24,12 +24,20 @@ const Navbar = ({
     margin: "-10% 0px -40% 0px",
   });
 
-  const rotate = useTransform(scrollY, [0, 3360 * 0.2], [0, 90]);
-  const translateX = useTransform(scrollY, [0, 3360 * 0.2], [0, 10]);
+  const rotate = useTransform(
+    scrollY,
+    [0, document.documentElement.scrollHeight * 0.2],
+    [0, 90],
+  );
+  const translateX = useTransform(
+    scrollY,
+    [0, document.documentElement.scrollHeight * 0.2],
+    [0, 10],
+  );
   const color = useTransform(
     scrollY,
-    [0, 3360 * 0.2],
-    ["rgb(240, 234, 214)", "rgb(29, 31, 34)"],
+    [0, document.documentElement.scrollHeight * 0.2],
+    [colorMainWhite, colorVCR],
   );
 
   const textShadowVCR = `${textShadowWidth} 0 ${colorVCR},
@@ -58,6 +66,12 @@ const Navbar = ({
           style={{
             textShadow: isMainPageInView ? textShadowMainWhite : "none",
           }}
+          onTouchStart={(e) => {
+            e.currentTarget.style.transform = "scale(1.5)";
+          }}
+          onTouchEnd={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
+          }}
         >
           TITLE
         </li>
@@ -69,6 +83,12 @@ const Navbar = ({
           className="noHighlightClicked cursor-pointer"
           style={{
             textShadow: isProjectPageInView ? textShadowVCR : "none",
+          }}
+          onTouchStart={(e) => {
+            e.currentTarget.style.transform = "scale(1.5)";
+          }}
+          onTouchEnd={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
           }}
         >
           PROJECTS
@@ -82,6 +102,12 @@ const Navbar = ({
           style={{
             textShadow: isAboutPageInView ? textShadowVCR : "none",
           }}
+          onTouchStart={(e) => {
+            e.currentTarget.style.transform = "scale(1.5)";
+          }}
+          onTouchEnd={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
+          }}
         >
           ABOUT ME
         </li>
@@ -93,6 +119,12 @@ const Navbar = ({
           className="noHighlightClicked cursor-pointer"
           style={{
             textShadow: isArcadePageInView ? textShadowVCR : "none",
+          }}
+          onTouchStart={(e) => {
+            e.currentTarget.style.transform = "scale(1.5)";
+          }}
+          onTouchEnd={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
           }}
         >
           ARCADE

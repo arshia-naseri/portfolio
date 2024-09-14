@@ -24,8 +24,8 @@ const MainPage = ({ mainSectionRef, projectsSectionRef }) => {
               <div className="animate-rec-button size-3 rounded-full bg-red-500"></div>
             </section>
           </nav>
-          <section className="animate-text-flicker mx-auto my-auto font-vcr text-9xl tracking-[3rem] text-mainWhite opacity-90">
-            ARSHIA
+          <section className="animate-text-flicker mx-auto my-auto flex font-vcr text-9xl tracking-[3rem] text-mainWhite opacity-90">
+            ARSHI<div className="tracking-normal">A</div>
           </section>
           <section className="flex justify-between text-mainWhite">
             <div

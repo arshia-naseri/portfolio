@@ -226,25 +226,6 @@
     background-color: rgb(208, 208, 208);
   }
 
-  /* Mobile */
-  #btnBurgerMenu {
-    animation: changeBurgerMenuColor ease-in-out forwards;
-    animation-timeline: scroll(y);
-  }
-
-  @keyframes changeBurgerMenuColor {
-    0%,
-    27% {
-      --color-outline: var(--color-mainWhite);
-      color: var(--color-outline);
-    }
-    28%,
-    100% {
-      --color-outline: var(--color-vcrBlack);
-      color: var(--color-outline);
-    }
-  }
-
   .boldTextFont {
     --color-outline: var(--color-vcrBlack);
     --size-outline-width: 0.5px;
