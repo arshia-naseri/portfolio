@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
-  "homepage": "https://arshia-naseri.github.io/portfolio",
+  "homepage": "www.arshia-naseri.com",
+  "_comment": "https://arshia-naseri.github.io/portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
