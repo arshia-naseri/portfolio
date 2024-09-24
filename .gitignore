@@ -24,3 +24,4 @@ yarn-error.log*
 
 # Custom 
 /src/Assets/windows98-icons
+/.vscode

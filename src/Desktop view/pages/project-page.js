@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import FloppyDisk from "../../Componants/_floppyDisk";
+import ProjectCarousel from "../../Componants/_projectCarousel";
 
 const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
   const projectCarouselRef = useRef();
@@ -172,7 +173,8 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
                 onScroll={changeBtnOpacity}
                 className="win98-scrollbar relative ml-auto mr-auto flex gap-16 overflow-x-scroll p-10 pb-6"
               >
-                <FloppyDisk
+                <ProjectCarousel />
+                {/* <FloppyDisk
                   floppyColor={"bg-red-400"}
                   lineColor={"border-b-red-300"}
                   width={"23rem"}
@@ -196,7 +198,7 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
                   floppyColor={"bg-green-400"}
                   lineColor={"border-b-green-300"}
                   width={"23rem"}
-                />
+                /> */}
               </section>
               <div
                 className="mt-auto flex aspect-square h-[1.2rem] cursor-pointer select-none items-center justify-center border-2 border-[rgb(192,192,192)] bg-[rgb(224,224,224)] font-vcr hover:bg-[rgb(208,208,208)]"

@@ -1,6 +1,6 @@
 import floppyTop from "../Assets/images/floppy-top.png";
 
-const FloppyDisk = ({ floppyColor, lineColor, width }) => {
+const FloppyDisk = ({ floppyColor, lineColor, width, windowID }) => {
   return (
     <>
       <section style={{ width }} className="flex shrink-0 flex-col font-vcr">
@@ -44,7 +44,10 @@ const FloppyDisk = ({ floppyColor, lineColor, width }) => {
                   />
                 </section>
               </div>
-              <button className="win98-project-shadow mt-1 bg-slate-300 p-0.5 text-xs hover:bg-slate-400">
+              <button
+                className="win98-project-shadow mt-1 bg-slate-300 p-0.5 text-xs hover:bg-slate-400"
+                onClick={() => document.getElementById(windowID).showModal()}
+              >
                 <u>C</u>lick for More...
               </button>
             </section>
