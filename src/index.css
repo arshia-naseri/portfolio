@@ -26,6 +26,7 @@
 @layer components {
   /* Desktop */
   /* ?Rec button animation (blink) */
+
   @keyframes blink {
     50% {
       opacity: 0.5;

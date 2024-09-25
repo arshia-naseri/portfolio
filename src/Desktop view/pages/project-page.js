@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import FloppyDisk from "../../Componants/_floppyDisk";
 import ProjectCarousel from "../../Componants/_projectCarousel";
 
 const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {

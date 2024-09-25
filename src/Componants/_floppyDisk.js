@@ -1,6 +1,12 @@
 import floppyTop from "../Assets/images/floppy-top.png";
 
-const FloppyDisk = ({ floppyColor, lineColor, width, windowID }) => {
+const FloppyDisk = ({
+  floppyColor,
+  lineColor,
+  width,
+  windowID,
+  summaryText,
+}) => {
   return (
     <>
       <section style={{ width }} className="flex shrink-0 flex-col font-vcr">
@@ -24,10 +30,7 @@ const FloppyDisk = ({ floppyColor, lineColor, width, windowID }) => {
             </section>
             <section className="h-2/3 bg-[rgb(235,234,230)] p-3">
               <div className="relative line-clamp-4 text-ellipsis text-sm font-thin leading-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Vestibulum tincidunt blandit elementum. Nunc sit amet lorem ex.
-                Duis a massa vel lorem feugiat ornare. Fusce porttitor rutrum
-                luctus. Donec a arcu a tortor luctus venenatis et quis tellus.
+                {summaryText}
                 {/* Lines */}
                 <section className="absolute left-0 top-0 h-full w-full">
                   <div
@@ -46,7 +49,10 @@ const FloppyDisk = ({ floppyColor, lineColor, width, windowID }) => {
               </div>
               <button
                 className="win98-project-shadow mt-1 bg-slate-300 p-0.5 text-xs hover:bg-slate-400"
-                onClick={() => document.getElementById(windowID).showModal()}
+                onClick={() => {
+                  document.body.style.overflowY = "hidden";
+                  document.getElementById(windowID).showModal();
+                }}
               >
                 <u>C</u>lick for More...
               </button>
