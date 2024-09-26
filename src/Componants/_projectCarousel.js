@@ -8,6 +8,7 @@ import bestPresentaitionPic from "../Assets/images/best-presentation.jpeg";
 
 // Logos
 import certificateLogo from "../Assets/images/certificate-logo.webp";
+import toolsLogo from "../Assets/images/tools-logo.webp";
 
 /* 
     FloppyDisk Atrr:
@@ -59,7 +60,7 @@ const ProjectCarousel = () => {
             national and also international level in Nagoya Japan 2017 Robocup.
           </div>
           <br />
-          <section className="flex gap-3">
+          <section className="flex items-center gap-3">
             <img
               src={certificateLogo}
               alt="certificate log"
@@ -107,6 +108,27 @@ const ProjectCarousel = () => {
               </figcaption>
             </figure>
           </section>
+          <br />
+          <div>
+            The purpose of the robots was to rescue injured victims using many
+            different methods such as colour detection, heat detection,
+            algorithm mapping, computer vision and compass navigation.
+          </div>
+          <br />
+          <section className="flex items-center gap-3">
+            <img
+              src={toolsLogo}
+              alt="tools logo"
+              className="aspect-auto w-10"
+            />
+            <div className="boldTextFont text-xl">Tools</div>
+          </section>
+          <br />
+          <div>
+            AVR Atmel, C++, C, Assembly, Python, Machine Learning, Electronics &
+            board design (Altium: PCB Design Software), SolidWorks (Mechanical
+            Design Software)
+          </div>
         </Win98Window>
       </>
     </>
