@@ -35,93 +35,78 @@ const ProjectCarousel = () => {
           summaryText="Kavosh Robotics Team is one of the best junior robotics teams in the world. Kavosh has multiple honours in Germany, China, Brazil, Netherlands, Mexico and many first-place awards in Junior Rescue Leagues of Robocup 2019 Australia, 2018 Canada, and 2017 Japan."
         />
         <Win98Window id="Kavosh-Dialog" windowTitle="Kavosh">
-          <main className="m-3 min-h-full overflow-scroll">
-            {/* Summary Text */}
-            <div>
-              Kavosh Robotics Team is one of the best junior robotics teams in
-              the world. Kavosh has multiple honours in Germany, China, Brazil,
-              Netherlands, Mexico and many first-place awards in Junior Rescue
-              Leagues of Robocup 2019 Australia, 2018 Canada, and 2017 Japan.
-            </div>
-            <br />
-            <div>
-              During my time as a high school student, I decided to join a
-              renounce robotics team with many national and international awards
-              and trophies to expand my knowledge of robotics and programming. I
-              learned so much, not just in the technical field but also in
-              transferable skills which have been detrimental to my day-to-day
-              life.
-            </div>
-            {/* image */}
-            <br />
-            <div>
-              After a long night of coding and debugging and many burned
-              resistors, we managed to earn multiple first-place awards at the
-              national and also international level in Nagoya Japan 2017
-              Robocup.
-            </div>
-            <br />
-            <section className="flex gap-3">
+          {/* Summary Text */}
+          <div>
+            Kavosh Robotics Team is one of the best junior robotics teams in the
+            world. Kavosh has multiple honours in Germany, China, Brazil,
+            Netherlands, Mexico and many first-place awards in Junior Rescue
+            Leagues of Robocup 2019 Australia, 2018 Canada, and 2017 Japan.
+          </div>
+          <br />
+          <div>
+            During my time as a high school student, I decided to join a
+            renounce robotics team with many national and international awards
+            and trophies to expand my knowledge of robotics and programming. I
+            learned so much, not just in the technical field but also in
+            transferable skills which have been detrimental to my day-to-day
+            life.
+          </div>
+          {/* image */}
+          <br />
+          <div>
+            After a long night of coding and debugging and many burned
+            resistors, we managed to earn multiple first-place awards at the
+            national and also international level in Nagoya Japan 2017 Robocup.
+          </div>
+          <br />
+          <section className="flex gap-3">
+            <img
+              src={certificateLogo}
+              alt="certificate log"
+              className="aspect-auto w-10"
+            />
+            <div className="boldTextFont text-xl">Certificates</div>
+          </section>
+          <br />
+          <section className="flex w-full gap-2">
+            {/* World Champion Award */}
+            <figure className="flex-1">
               <img
-                src={certificateLogo}
-                alt="certificate log"
-                className="aspect-auto w-10"
+                src={worldChampionPic}
+                alt="world championship certificate"
+                className="w-full"
               />
-              <div className="boldTextFont text-xl">Certificates</div>
-            </section>
-            <br />
-            <section className="flex w-full gap-2">
-              {/* World Champion Award */}
-              <figure className="flex-1">
-                <img
-                  src={worldChampionPic}
-                  alt="world championship certificate"
-                  className="w-full"
-                />
-                <figcaption className="text-[.7rem]">
-                  World Champion award for individual team RoboCup Nagoya Japan
-                  2017
-                </figcaption>
-              </figure>
+              <figcaption className="text-[.7rem]">
+                World Champion award for individual team RoboCup Nagoya Japan
+                2017
+              </figcaption>
+            </figure>
 
-              {/* Best Presentation Award */}
-              <figure className="flex-1">
-                <img
-                  src={bestPresentaitionPic}
-                  alt="Best Presentation certificate"
-                  className="w-full"
-                />
-                <figcaption className="text-[.7rem]">
-                  Best Presentation of work RoboCup Nagoya Japan 2017
-                </figcaption>
-              </figure>
+            {/* Best Presentation Award */}
+            <figure className="flex-1">
+              <img
+                src={bestPresentaitionPic}
+                alt="Best Presentation certificate"
+                className="w-full"
+              />
+              <figcaption className="text-[.7rem]">
+                Best Presentation of work RoboCup Nagoya Japan 2017
+              </figcaption>
+            </figure>
 
-              {/* Super Team Award */}
-              <figure className="flex-1">
-                <img
-                  src={superTeamPic}
-                  alt="Super Team certificate"
-                  className="w-full"
-                />
-                <figcaption className="text-[.7rem]">
-                  World Championship award for SuperTeam RoboCup Nagoya Japan
-                  2017. Collaboration of teams from various countries.
-                </figcaption>
-              </figure>
-            </section>
-            <div>
-              After a long night of coding and debugging and many burned
-              resistors, we managed to earn multiple first-place awards at the
-              national and also international level in Nagoya Japan 2017
-              Robocup.
-            </div>
-            <div>
-              After a long night of coding and debugging and many burned
-              resistors, we managed to earn multiple first-place awards at the
-              national and also international level in Nagoya Japan 2017
-              Robocup.
-            </div>
-          </main>
+            {/* Super Team Award */}
+            <figure className="flex-1">
+              <img
+                src={superTeamPic}
+                alt="Super Team certificate"
+                className="w-full"
+              />
+              <figcaption className="text-[.7rem]">
+                World Championship award for SuperTeam RoboCup Nagoya Japan
+                2017. Collaboration of teams from various countries.
+              </figcaption>
+            </figure>
+          </section>
         </Win98Window>
       </>
     </>

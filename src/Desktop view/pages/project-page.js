@@ -170,6 +170,7 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
               <section
                 ref={projectCarouselRef}
                 onScroll={changeBtnOpacity}
+                data-scroll-dir="x"
                 className="win98-scrollbar relative ml-auto mr-auto flex gap-16 overflow-x-scroll p-10 pb-6"
               >
                 <ProjectCarousel />
