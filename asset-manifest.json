@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0270e9bb.css",
-    "main.js": "/static/js/main.a109b6a8.js",
+    "main.css": "/static/css/main.c97c3ade.css",
+    "main.js": "/static/js/main.77e7d273.js",
     "static/media/vhs-static.gif": "/static/media/vhs-static.df32a20414e84238dc3f.gif",
     "static/media/university-logo.webp": "/static/media/university-logo.3a1f8020368393bd8b2a.webp",
     "static/media/warning-logo.webp": "/static/media/warning-logo.01f279d44ab9004deaa0.webp",
@@ -9,18 +9,23 @@
     "static/media/profile-pic.webp": "/static/media/profile-pic.fe6bed79319bb704388d.webp",
     "static/media/arcade-machine.png": "/static/media/arcade-machine.f37395d00173540cb638.png",
     "static/media/Monocraft.ttf": "/static/media/Monocraft.d2201aeb746218a4c4bb.ttf",
+    "static/media/best-presentation.jpeg": "/static/media/best-presentation.a5edb540815a54def15f.jpeg",
+    "static/media/world-champion.jpeg": "/static/media/world-champion.0ad074f0e5ee0d112474.jpeg",
+    "static/media/super-team.jpeg": "/static/media/super-team.28cd233b7f293d2fe0b3.jpeg",
     "static/media/linkedin-logo.webp": "/static/media/linkedin-logo.a1784fe5ad5f3e5fa08f.webp",
     "static/media/floppy-top.png": "/static/media/floppy-top.86d1b94466d151859973.png",
     "static/media/VCR_OSD_MONO.ttf": "/static/media/VCR_OSD_MONO.57f51a0d8f0f2239ce8f.ttf",
     "static/media/check-1.png": "/static/media/check-1.b6e8b06dcf578d89b508.png",
     "static/media/pc-blink-pixelated.webp": "/static/media/pc-blink-pixelated.e4e9ab07f7eea49f3fef.webp",
+    "static/media/tools-logo.webp": "/static/media/tools-logo.f8aee0bdcbacdc7ee677.webp",
+    "static/media/certificate-logo.webp": "/static/media/certificate-logo.870e52c39186e5790498.webp",
     "static/media/github-logo.webp": "/static/media/github-logo.97622575bada7792d013.webp",
     "index.html": "/index.html",
-    "main.0270e9bb.css.map": "/static/css/main.0270e9bb.css.map",
-    "main.a109b6a8.js.map": "/static/js/main.a109b6a8.js.map"
+    "main.c97c3ade.css.map": "/static/css/main.c97c3ade.css.map",
+    "main.77e7d273.js.map": "/static/js/main.77e7d273.js.map"
   },
   "entrypoints": [
-    "static/css/main.0270e9bb.css",
-    "static/js/main.a109b6a8.js"
+    "static/css/main.c97c3ade.css",
+    "static/js/main.77e7d273.js"
   ]
 }
