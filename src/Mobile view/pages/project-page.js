@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import FloppyDisk from "../../Componants/_floppyDisk";
+import ProjectCarousel from "../../Componants/_projectCarousel";
 
 const ProjectsPage = ({ projectsSectionRef }) => {
   const projectCarouselRef = useRef();
@@ -170,31 +171,7 @@ const ProjectsPage = ({ projectsSectionRef }) => {
               onScroll={changeBtnOpacity}
               style={{ scrollbarWidth: "none" }}
             >
-              <FloppyDisk
-                floppyColor={"bg-red-400"}
-                lineColor={"border-b-red-300"}
-                width={"23rem"}
-              />
-              <FloppyDisk
-                floppyColor={"bg-orange-400"}
-                lineColor={"border-b-orange-300"}
-                width={"23rem"}
-              />
-              <FloppyDisk
-                floppyColor={"bg-blue-400"}
-                lineColor={"border-b-blue-300"}
-                width={"23rem"}
-              />
-              <FloppyDisk
-                floppyColor={"bg-cyan-400"}
-                lineColor={"border-b-cyan-300"}
-                width={"23rem"}
-              />
-              <FloppyDisk
-                floppyColor={"bg-green-400"}
-                lineColor={"border-b-green-300"}
-                width={"23rem"}
-              />
+              <ProjectCarousel />
             </section>
           </section>
         </main>

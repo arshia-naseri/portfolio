@@ -21,7 +21,7 @@ const Win98Window = ({ id, windowTitle = "Default", children }) => {
       <dialog
         data-popup-dialog
         id={id}
-        className={`win98-window max-h-[80vh] min-w-[max(30vw,fit-content)] max-w-[60vw] flex-col overflow-hidden bg-[rgb(192,192,192)] outline-none backdrop:bg-black/50 ${!isEasyToRead && "font-vcr"}`}
+        className={`win98-window h-full w-full flex-col overflow-hidden bg-[rgb(192,192,192)] outline-none backdrop:bg-black/50 sm:max-h-[80vh] sm:min-w-[max(30vw,fit-content)] sm:max-w-[60vw] ${!isEasyToRead && "font-vcr"}`}
       >
         <nav className="absolute left-0 top-0 flex h-6 w-full items-center gap-3 bg-gradient-to-r from-[rgb(0,0,125)] to-[rgb(60,130,300)] px-1">
           <div className="text-white">{windowTitle}</div>
@@ -49,7 +49,7 @@ const Win98Window = ({ id, windowTitle = "Default", children }) => {
 
         <main
           data-scroll-dir="y"
-          className="win98-scrollbar m-3 mr-0 max-h-[70vh] overflow-y-auto pr-5"
+          className="win98-scrollbar m-3 mr-0 max-h-[90vh] overflow-y-auto pr-5 sm:max-h-[70vh]"
         >
           {children}
         </main>

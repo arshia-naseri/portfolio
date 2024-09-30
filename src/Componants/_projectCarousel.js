@@ -71,9 +71,9 @@ const ProjectCarousel = () => {
             <div className="boldTextFont text-xl">Certificates</div>
           </section>
           <br />
-          <section className="flex w-full gap-2">
+          <section className="mb-2 flex w-full max-w-full flex-wrap gap-2 *:min-w-40 *:flex-1">
             {/* World Champion Award */}
-            <figure className="flex-1">
+            <figure>
               <img
                 src={worldChampionPic}
                 alt="world championship certificate"
@@ -86,7 +86,7 @@ const ProjectCarousel = () => {
             </figure>
 
             {/* Best Presentation Award */}
-            <figure className="flex-1">
+            <figure>
               <img
                 src={bestPresentaitionPic}
                 alt="Best Presentation certificate"
@@ -98,7 +98,7 @@ const ProjectCarousel = () => {
             </figure>
 
             {/* Super Team Award */}
-            <figure className="flex-1">
+            <figure>
               <img
                 src={superTeamPic}
                 alt="Super Team certificate"
