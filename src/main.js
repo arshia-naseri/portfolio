@@ -104,10 +104,12 @@ function Main() {
               alt="construction logo"
               className="w-10"
             />
-            <div className="text-xl">
-              The Following Page is under Construction!!!
-            </div>
+            <div className="text-xl">This Page is under Construction!!!</div>
           </section>
+          <div className="mt-5">
+            Close this window (Press X in the navigation bar) to view this page
+            pre-production
+          </div>
         </Win98Window>
       </materialContext.Provider>
     </>
