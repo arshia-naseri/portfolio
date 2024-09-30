@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9676d004.css",
-    "main.js": "/static/js/main.e3e0f90a.js",
+    "main.js": "/static/js/main.679c19bb.js",
     "static/media/vhs-static.gif": "/static/media/vhs-static.df32a20414e84238dc3f.gif",
     "static/media/university-logo.webp": "/static/media/university-logo.3a1f8020368393bd8b2a.webp",
     "static/media/warning-logo.webp": "/static/media/warning-logo.01f279d44ab9004deaa0.webp",
@@ -16,16 +16,17 @@
     "static/media/floppy-top.png": "/static/media/floppy-top.86d1b94466d151859973.png",
     "static/media/VCR_OSD_MONO.ttf": "/static/media/VCR_OSD_MONO.57f51a0d8f0f2239ce8f.ttf",
     "static/media/check-1.png": "/static/media/check-1.b6e8b06dcf578d89b508.png",
+    "static/media/construction-logo.webp": "/static/media/construction-logo.3a41b1b2b7fb7dc8f68d.webp",
     "static/media/pc-blink-pixelated.webp": "/static/media/pc-blink-pixelated.e4e9ab07f7eea49f3fef.webp",
     "static/media/tools-logo.webp": "/static/media/tools-logo.f8aee0bdcbacdc7ee677.webp",
     "static/media/certificate-logo.webp": "/static/media/certificate-logo.870e52c39186e5790498.webp",
     "static/media/github-logo.webp": "/static/media/github-logo.97622575bada7792d013.webp",
     "index.html": "/index.html",
     "main.9676d004.css.map": "/static/css/main.9676d004.css.map",
-    "main.e3e0f90a.js.map": "/static/js/main.e3e0f90a.js.map"
+    "main.679c19bb.js.map": "/static/js/main.679c19bb.js.map"
   },
   "entrypoints": [
     "static/css/main.9676d004.css",
-    "static/js/main.e3e0f90a.js"
+    "static/js/main.679c19bb.js"
   ]
 }
