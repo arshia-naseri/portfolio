@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { phonetBtnClick } from "./_phoneAttr";
 
 /*
   NavHeight:
@@ -26,14 +27,16 @@ const Win98Window = ({ id, windowTitle = "Default", children }) => {
         <nav className="absolute left-0 top-0 flex h-6 w-full items-center gap-3 bg-gradient-to-r from-[rgb(0,0,125)] to-[rgb(60,130,300)] px-1">
           <div className="text-white">{windowTitle}</div>
           <button
-            className="win98-window ml-auto flex h-3 select-none items-center justify-center bg-[rgb(192,192,192)] px-1 text-sm hover:bg-[rgb(160,160,160)]"
+            className="noHighlightClicked win98-window ml-auto flex h-3 items-center justify-center bg-[rgb(192,192,192)] px-1 text-sm hover:bg-[rgb(160,160,160)]"
             onClick={() => setIsEasyToRead(!isEasyToRead)}
+            {...phonetBtnClick}
           >
             {isEasyToRead ? "Make it Window98 Style" : "Make it Easy 2 Read"}
           </button>
           <button
-            className="win98-window flex aspect-square h-3 items-center justify-center bg-[rgb(192,192,192)] p-0 text-sm hover:bg-[rgb(160,160,160)]"
+            className="noHighlightClicked win98-window flex aspect-square h-3 items-center justify-center bg-[rgb(192,192,192)] p-0 text-sm hover:bg-[rgb(160,160,160)]"
             onClick={closeDialog}
+            {...phonetBtnClick}
           >
             X
           </button>

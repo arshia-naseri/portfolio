@@ -1,4 +1,5 @@
 import floppyTop from "../Assets/images/floppy-top.png";
+import { phonetBtnClick } from "./_phoneAttr";
 
 const FloppyDisk = ({
   floppyColor,
@@ -10,7 +11,7 @@ const FloppyDisk = ({
 }) => {
   return (
     <>
-      <section style={{ width }} className="flex shrink-0 flex-col">
+      <section style={{ width }} className="flex shrink-0 flex-col font-sans">
         <img
           alt="Floppy top"
           src={floppyTop}
@@ -49,11 +50,12 @@ const FloppyDisk = ({
                 </section>
               </div>
               <button
-                className="win98-project-shadow mt-1 bg-slate-300 p-0.5 text-xs hover:bg-slate-400"
+                className="noHighlightClicked win98-project-shadow mt-1 bg-slate-300 p-0.5 text-xs hover:bg-slate-400"
                 onClick={() => {
                   document.body.style.overflowY = "hidden";
                   document.getElementById(windowID).showModal();
                 }}
+                {...phonetBtnClick}
               >
                 <u>C</u>lick for More...
               </button>
@@ -65,6 +67,8 @@ const FloppyDisk = ({
             <div className="mx-auto mb-[20%] mt-auto aspect-[2/1.5] w-3 rounded-sm bg-mainWhite"></div>
           </section>
         </section>
+
+        {/* Bottom */}
         <section className="aspect-[472.98/20] w-full -translate-y-[3%] rounded-b-xl bg-[rgb(29,31,34)]"></section>
       </section>
     </>

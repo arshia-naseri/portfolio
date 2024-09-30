@@ -1,4 +1,5 @@
 import warningLogo from "../../Assets/images/warning-logo.webp";
+import { phonetBtnClick } from "../../Componants/_phoneAttr";
 
 const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
   return (
@@ -35,12 +36,7 @@ const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
                   behavior: "smooth",
                 })
               }
-              onTouchStart={(e) => {
-                e.currentTarget.style.transform = "scale(1.5)";
-              }}
-              onTouchEnd={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-              }}
+              {...phonetBtnClick}
             >
               <div className="font-minecraft text-5xl">⇑</div>
               <div className="translate-y-[5px]">Go To Top</div>

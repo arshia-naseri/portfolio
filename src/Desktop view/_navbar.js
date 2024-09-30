@@ -1,4 +1,6 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { phonetBtnClick } from "../Componants/_phoneAttr";
+
 const Navbar = ({
   navBarRef,
   mainSectionRef,
@@ -66,12 +68,7 @@ const Navbar = ({
           style={{
             textShadow: isMainPageInView ? textShadowMainWhite : "none",
           }}
-          onTouchStart={(e) => {
-            e.currentTarget.style.transform = "scale(1.5)";
-          }}
-          onTouchEnd={(e) => {
-            e.currentTarget.style.transform = "scale(1)";
-          }}
+          {...phonetBtnClick}
         >
           TITLE
         </li>
