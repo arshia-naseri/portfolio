@@ -15,7 +15,8 @@ import toolsLogo from "../Assets/images/tools-logo.webp";
         - floppyColor: String 
         - lineColor: String
         - width: String
-        - windowID: String (Must be equal to wind98Window's id)
+        - windowID: String (Must be equal to wind98Window's id !!!)
+        - summaryText: String (It is also added in children part of Window98Window)
     
     Win98Window Attr: 
         -id: String
@@ -32,6 +33,7 @@ const ProjectCarousel = () => {
           floppyColor={"bg-red-400"}
           lineColor={"border-b-red-300"}
           width={floppyWidth}
+          diskTitle="Kavosh"
           windowID="Kavosh-Dialog"
           summaryText="Kavosh Robotics Team is one of the best junior robotics teams in the world. Kavosh has multiple honours in Germany, China, Brazil, Netherlands, Mexico and many first-place awards in Junior Rescue Leagues of Robocup 2019 Australia, 2018 Canada, and 2017 Japan."
         />
@@ -128,6 +130,37 @@ const ProjectCarousel = () => {
             AVR Atmel, C++, C, Assembly, Python, Machine Learning, Electronics &
             board design (Altium: PCB Design Software), SolidWorks (Mechanical
             Design Software)
+          </div>
+        </Win98Window>
+      </>
+      {/* Weather App */}
+      <>
+        <FloppyDisk
+          floppyColor={"bg-blue-400"}
+          lineColor={"border-b-blue-300"}
+          width={floppyWidth}
+          diskTitle="Weather App"
+          windowID="WeatherApp-Dialog"
+          summaryText="My aim was to craft a charming weather application that seamlessly integrates API requests and leverages React to showcase locations that hold personal significance to me, aptly labeled as 'Residences.'"
+        />
+        <Win98Window id="WeatherApp-Dialog" windowTitle="Weather App">
+          <div>
+            In this pet project, my aim was to craft a charming weather
+            application that seamlessly integrates API requests and leverages
+            React to showcase locations that hold personal significance to me,
+            aptly labeled as "Residences."
+          </div>
+          <br />
+          <div>
+            Moreover, I took great care to ensure that this app is user-friendly
+            across various devices, boasting distinct designs tailored for
+            phones, laptops, and tablets. You can even explore the envisioned
+            design through the provided Figma link.
+          </div>
+          <br />
+          <div>
+            (P.S. This project used to be hosted by Heroku, however since the
+            free version was slow, it was moved to GitHub pages)
           </div>
         </Win98Window>
       </>

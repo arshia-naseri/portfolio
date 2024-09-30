@@ -1,0 +1,2 @@
+* Add a real-time clock to main page
++ Change size of mobile case

@@ -4,12 +4,13 @@ const FloppyDisk = ({
   floppyColor,
   lineColor,
   width,
+  diskTitle,
   windowID,
   summaryText,
 }) => {
   return (
     <>
-      <section style={{ width }} className="flex shrink-0 flex-col font-vcr">
+      <section style={{ width }} className="flex shrink-0 flex-col">
         <img
           alt="Floppy top"
           src={floppyTop}
@@ -25,7 +26,7 @@ const FloppyDisk = ({
               className={` ${floppyColor} flex h-1/3 w-full items-center justify-end px-4`}
             >
               <div className="w-3/5 rounded-xl bg-[rgb(235,234,230)] p-0.5 text-center text-xl">
-                Kavosh
+                {diskTitle}
               </div>
             </section>
             <section className="h-2/3 bg-[rgb(235,234,230)] p-3">
