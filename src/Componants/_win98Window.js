@@ -52,7 +52,7 @@ const Win98Window = ({ id, windowTitle = "Default", children }) => {
 
         <main
           data-scroll-dir="y"
-          className="win98-scrollbar m-3 mr-0 max-h-[70svh] overflow-y-auto pr-5"
+          className="win98-scrollbar m-3 mr-0 max-h-[50svh] overflow-y-auto pr-5"
         >
           {children}
         </main>
