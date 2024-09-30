@@ -1,3 +1,5 @@
+import { phonetBtnClick } from "../Componants/_phoneAttr";
+
 const Navbar = ({
   showNavbar,
   setShowNavbar,
@@ -25,12 +27,7 @@ const Navbar = ({
           <div
             onClick={closeNavbar}
             className="noHighlightClicked mt-auto cursor-pointer text-3xl"
-            onTouchStart={(e) => {
-              e.currentTarget.style.transform = "scale(1.5)";
-            }}
-            onTouchEnd={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-            }}
+            {...phonetBtnClick}
           >
             X
           </div>
@@ -38,12 +35,7 @@ const Navbar = ({
             <section
               onClick={() => goToPage(mainSectionRef)}
               className="flex cursor-pointer gap-4"
-              onTouchStart={(e) => {
-                e.currentTarget.style.transform = "scale(1.5)";
-              }}
-              onTouchEnd={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-              }}
+              {...phonetBtnClick}
             >
               <div className="tracking-normal">P.1</div>
               <div>TITLE</div>
@@ -51,12 +43,7 @@ const Navbar = ({
             <section
               onClick={() => goToPage(projectsSectionRef)}
               className="flex cursor-pointer gap-4"
-              onTouchStart={(e) => {
-                e.currentTarget.style.transform = "scale(1.5)";
-              }}
-              onTouchEnd={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-              }}
+              {...phonetBtnClick}
             >
               <div className="tracking-normal">P.2</div>
               <div>PROJECTS</div>
@@ -64,12 +51,7 @@ const Navbar = ({
             <section
               onClick={() => goToPage(aboutSectionRef)}
               className="flex cursor-pointer gap-4"
-              onTouchStart={(e) => {
-                e.currentTarget.style.transform = "scale(1.5)";
-              }}
-              onTouchEnd={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-              }}
+              {...phonetBtnClick}
             >
               <div className="tracking-normal">P.3</div>
               <div>ABOUT ME</div>
@@ -77,12 +59,7 @@ const Navbar = ({
             <section
               onClick={() => goToPage(arcadeSectionRef)}
               className="flex cursor-pointer gap-4"
-              onTouchStart={(e) => {
-                e.currentTarget.style.transform = "scale(1.5)";
-              }}
-              onTouchEnd={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-              }}
+              {...phonetBtnClick}
             >
               <div className="tracking-normal">P.4</div>
               <div>ARCADE</div>

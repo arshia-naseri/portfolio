@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import FloppyDisk from "../../Componants/_floppyDisk";
 import ProjectCarousel from "../../Componants/_projectCarousel";
+import { phonetBtnClick } from "../../Componants/_phoneAttr";
 
 const ProjectsPage = ({ projectsSectionRef }) => {
   const projectCarouselRef = useRef();
@@ -140,12 +140,7 @@ const ProjectsPage = ({ projectsSectionRef }) => {
                 className="cursor-pointer opacity-40"
                 onClick={preProjectPage}
                 ref={btnPreProject}
-                onTouchStart={(e) => {
-                  e.currentTarget.style.transform = "scale(1.5)";
-                }}
-                onTouchEnd={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                }}
+                {...phonetBtnClick}
               >
                 ◄
               </div>
@@ -153,12 +148,7 @@ const ProjectsPage = ({ projectsSectionRef }) => {
                 className="cursor-pointer"
                 onClick={nextProjectPage}
                 ref={btnNextProject}
-                onTouchStart={(e) => {
-                  e.currentTarget.style.transform = "scale(1.5)";
-                }}
-                onTouchEnd={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                }}
+                {...phonetBtnClick}
               >
                 ►
               </div>

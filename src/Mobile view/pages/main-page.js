@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { materialContext } from "../../main";
+import { phonetBtnClick } from "../../Componants/_phoneAttr";
+
 const MainPage = ({ mainSectionRef, projectsSectionRef }) => {
   const { main } = useContext(materialContext);
   return (
@@ -34,12 +36,7 @@ const MainPage = ({ mainSectionRef, projectsSectionRef }) => {
                 })
               }
               className="noHighlightClicked animate-text-flicker animate-[bounce_1s_infinite,textflicker_0.06s_infinite_alternate] cursor-pointer font-minecraft text-5xl"
-              onTouchStart={(e) => {
-                e.currentTarget.style.transform = "scale(1.5)";
-              }}
-              onTouchEnd={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-              }}
+              {...phonetBtnClick}
             >
               ↓
             </div>

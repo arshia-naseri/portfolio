@@ -5,6 +5,7 @@ import MainPage from "./pages/main-page";
 import ProjectsPage from "./pages/project-page";
 import AboutPage from "./pages/about-page";
 import ArcadePage from "./pages/arcade-page";
+import { phonetBtnClick } from "../Componants/_phoneAttr";
 
 const Mobile = () => {
   const mainSectionRef = useRef();
@@ -38,12 +39,7 @@ const Mobile = () => {
           onClick={() => setShowNavbar(true)}
           className="noHighlightClicked fixed z-20 m-2 cursor-pointer text-4xl text-mainWhite blur-[.5px]"
           style={{ color }}
-          onTouchStart={(e) => {
-            e.currentTarget.style.transform = "scale(1.5)";
-          }}
-          onTouchEnd={(e) => {
-            e.currentTarget.style.transform = "scale(1)";
-          }}
+          {...phonetBtnClick}
         >
           ☰
         </motion.div>

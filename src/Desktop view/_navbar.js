@@ -81,12 +81,7 @@ const Navbar = ({
           style={{
             textShadow: isProjectPageInView ? textShadowVCR : "none",
           }}
-          onTouchStart={(e) => {
-            e.currentTarget.style.transform = "scale(1.5)";
-          }}
-          onTouchEnd={(e) => {
-            e.currentTarget.style.transform = "scale(1)";
-          }}
+          {...phonetBtnClick}
         >
           PROJECTS
         </li>
@@ -99,12 +94,7 @@ const Navbar = ({
           style={{
             textShadow: isAboutPageInView ? textShadowVCR : "none",
           }}
-          onTouchStart={(e) => {
-            e.currentTarget.style.transform = "scale(1.5)";
-          }}
-          onTouchEnd={(e) => {
-            e.currentTarget.style.transform = "scale(1)";
-          }}
+          {...phonetBtnClick}
         >
           ABOUT ME
         </li>
@@ -117,12 +107,7 @@ const Navbar = ({
           style={{
             textShadow: isArcadePageInView ? textShadowVCR : "none",
           }}
-          onTouchStart={(e) => {
-            e.currentTarget.style.transform = "scale(1.5)";
-          }}
-          onTouchEnd={(e) => {
-            e.currentTarget.style.transform = "scale(1)";
-          }}
+          {...phonetBtnClick}
         >
           ARCADE
         </li>
