@@ -8,6 +8,10 @@ import EmailLogo from "./Assets/images/email-logo.webp";
 import LinkedInLogo from "./Assets/images/linkedin-logo.webp";
 import GithubLogo from "./Assets/images/github-logo.webp";
 import PcPixelatedPic from "./Assets/images/pc-blink-pixelated.webp";
+import Win98Window from "./Componants/_win98Window";
+
+// Resources
+import constructionLogo from "./Assets/images/construction-logo.webp";
 
 export const materialContext = createContext();
 window.__forceSmoothScrollPolyfill__ = true;
@@ -82,6 +86,8 @@ function Main() {
     window.addEventListener("resize", handleResize);
     handleResize();
     smoothscroll.polyfill();
+
+    document.getElementById("starupMessage-Dialog").showModal();
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -91,6 +97,18 @@ function Main() {
     <>
       <materialContext.Provider value={material}>
         {showMobileView ? <Mobile /> : <Desktop />}
+        <Win98Window id="starupMessage-Dialog" windowTitle="Welcome...">
+          <section className="flex items-center gap-2">
+            <img
+              src={constructionLogo}
+              alt="construction logo"
+              className="w-10"
+            />
+            <div className="text-xl">
+              The Following Page is under Construction!!!
+            </div>
+          </section>
+        </Win98Window>
       </materialContext.Provider>
     </>
   );
