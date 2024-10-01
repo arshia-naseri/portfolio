@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.1364cc7d.css",
-    "main.js": "/static/js/main.7247e7cc.js",
+    "main.css": "/static/css/main.8ffcb8a6.css",
+    "main.js": "/static/js/main.209f7873.js",
     "static/media/vhs-static.gif": "/static/media/vhs-static.df32a20414e84238dc3f.gif",
     "static/media/university-logo.webp": "/static/media/university-logo.3a1f8020368393bd8b2a.webp",
     "static/media/warning-logo.webp": "/static/media/warning-logo.01f279d44ab9004deaa0.webp",
+    "static/media/weather-app-screenshot.jpeg": "/static/media/weather-app-screenshot.398d7ec0cefad4574943.jpeg",
     "static/media/email-logo.webp": "/static/media/email-logo.f8cea43c1b1d48de25b9.webp",
     "static/media/profile-pic.webp": "/static/media/profile-pic.fe6bed79319bb704388d.webp",
     "static/media/arcade-machine.png": "/static/media/arcade-machine.f37395d00173540cb638.png",
@@ -14,6 +15,8 @@
     "static/media/super-team.jpeg": "/static/media/super-team.28cd233b7f293d2fe0b3.jpeg",
     "static/media/linkedin-logo.webp": "/static/media/linkedin-logo.a1784fe5ad5f3e5fa08f.webp",
     "static/media/floppy-top.png": "/static/media/floppy-top.86d1b94466d151859973.png",
+    "static/media/figma-logo.webp": "/static/media/figma-logo.53c0bb3bd31e626d1a1b.webp",
+    "static/media/weather-logo.webp": "/static/media/weather-logo.39d9c4f96b8e58b2eb15.webp",
     "static/media/VCR_OSD_MONO.ttf": "/static/media/VCR_OSD_MONO.57f51a0d8f0f2239ce8f.ttf",
     "static/media/check-1.png": "/static/media/check-1.b6e8b06dcf578d89b508.png",
     "static/media/construction-logo.webp": "/static/media/construction-logo.3a41b1b2b7fb7dc8f68d.webp",
@@ -22,11 +25,11 @@
     "static/media/certificate-logo.webp": "/static/media/certificate-logo.870e52c39186e5790498.webp",
     "static/media/github-logo.webp": "/static/media/github-logo.97622575bada7792d013.webp",
     "index.html": "/index.html",
-    "main.1364cc7d.css.map": "/static/css/main.1364cc7d.css.map",
-    "main.7247e7cc.js.map": "/static/js/main.7247e7cc.js.map"
+    "main.8ffcb8a6.css.map": "/static/css/main.8ffcb8a6.css.map",
+    "main.209f7873.js.map": "/static/js/main.209f7873.js.map"
   },
   "entrypoints": [
-    "static/css/main.1364cc7d.css",
-    "static/js/main.7247e7cc.js"
+    "static/css/main.8ffcb8a6.css",
+    "static/js/main.209f7873.js"
   ]
 }
