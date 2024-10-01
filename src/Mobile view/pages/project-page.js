@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import ProjectCarousel from "../../Componants/_projectCarousel";
-import { phonetBtnClick } from "../../Componants/_phoneAttr";
+import { phonetBtnClick } from "../../Componants/_globalFunc";
 
 const ProjectsPage = ({ projectsSectionRef }) => {
   const projectCarouselRef = useRef();

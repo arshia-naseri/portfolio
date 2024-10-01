@@ -1,5 +1,5 @@
 import floppyTop from "../Assets/images/floppy-top.png";
-import { phonetBtnClick } from "./_phoneAttr";
+import { phonetBtnClick } from "./_globalFunc";
 
 const FloppyDisk = ({
   floppyColor,

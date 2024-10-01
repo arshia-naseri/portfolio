@@ -5,7 +5,7 @@ import MainPage from "./pages/main-page";
 import ProjectsPage from "./pages/project-page";
 import AboutPage from "./pages/about-page";
 import ArcadePage from "./pages/arcade-page";
-import { phonetBtnClick } from "../Componants/_phoneAttr";
+import { phonetBtnClick } from "../Componants/_globalFunc";
 
 const Mobile = () => {
   const mainSectionRef = useRef();

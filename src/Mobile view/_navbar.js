@@ -1,4 +1,4 @@
-import { phonetBtnClick } from "../Componants/_phoneAttr";
+import { phonetBtnClick } from "../Componants/_globalFunc";
 
 const Navbar = ({
   showNavbar,

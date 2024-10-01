@@ -16,6 +16,7 @@ module.exports = {
       colors: {
         vcrBlack: "rgb(29,31,34)",
         mainWhite: "rgb(240,234,214)",
+        url: "rgb(40,65,184)",
       },
     },
   },

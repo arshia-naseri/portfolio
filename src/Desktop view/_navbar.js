@@ -1,5 +1,5 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { phonetBtnClick } from "../Componants/_phoneAttr";
+import { phonetBtnClick } from "../Componants/_globalFunc";
 
 const Navbar = ({
   navBarRef,

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { phonetBtnClick } from "./_phoneAttr";
+import { phonetBtnClick } from "./_globalFunc";
 
 /*
   NavHeight:
