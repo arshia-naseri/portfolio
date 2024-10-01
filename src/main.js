@@ -3,15 +3,15 @@ import smoothscroll from "smoothscroll-polyfill";
 import Desktop from "./Desktop view/desktop";
 import Mobile from "./Mobile view/mobile";
 import ProfilePic from "./Assets/images/profile-pic.webp";
-import UniversityLogo from "./Assets/images/university-logo.webp";
-import EmailLogo from "./Assets/images/email-logo.webp";
-import LinkedInLogo from "./Assets/images/linkedin-logo.webp";
-import GithubLogo from "./Assets/images/github-logo.webp";
-import PcPixelatedPic from "./Assets/images/pc-blink-pixelated.webp";
+import UniversityLogo from "./Assets/logos/university-logo.webp";
+import EmailLogo from "./Assets/logos/email-logo.webp";
+import LinkedInLogo from "./Assets/logos/linkedin-logo.webp";
+import GithubLogo from "./Assets/logos/github-logo.webp";
+import PcPixelatedPic from "./Assets/logos/pc-blink-pixelated.webp";
 import Win98Window from "./Componants/_win98Window";
 
 // Resources
-import constructionLogo from "./Assets/images/construction-logo.webp";
+import constructionLogo from "./Assets/logos/construction-logo.webp";
 
 export const materialContext = createContext();
 window.__forceSmoothScrollPolyfill__ = true;

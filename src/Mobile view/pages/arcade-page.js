@@ -1,4 +1,4 @@
-import warningLogo from "../../Assets/images/warning-logo.webp";
+import warningLogo from "../../Assets/logos/warning-logo.webp";
 import { phonetBtnClick } from "../../Componants/_phoneAttr";
 
 const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {

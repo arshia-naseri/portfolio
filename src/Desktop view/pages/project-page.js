@@ -171,34 +171,9 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
                 ref={projectCarouselRef}
                 onScroll={changeBtnOpacity}
                 data-scroll-dir="x"
-                className="win98-scrollbar relative ml-auto mr-auto flex gap-16 overflow-x-scroll p-10 pb-6"
+                className="win98-scrollbar relative ml-auto mr-auto flex gap-16 overflow-x-auto p-10 pb-6"
               >
                 <ProjectCarousel />
-                {/* <FloppyDisk
-                  floppyColor={"bg-red-400"}
-                  lineColor={"border-b-red-300"}
-                  width={"23rem"}
-                />
-                <FloppyDisk
-                  floppyColor={"bg-orange-400"}
-                  lineColor={"border-b-orange-300"}
-                  width={"23rem"}
-                />
-                <FloppyDisk
-                  floppyColor={"bg-blue-400"}
-                  lineColor={"border-b-blue-300"}
-                  width={"23rem"}
-                />
-                <FloppyDisk
-                  floppyColor={"bg-cyan-400"}
-                  lineColor={"border-b-cyan-300"}
-                  width={"23rem"}
-                />
-                <FloppyDisk
-                  floppyColor={"bg-green-400"}
-                  lineColor={"border-b-green-300"}
-                  width={"23rem"}
-                /> */}
               </section>
               <div
                 className="mt-auto flex aspect-square h-[1.2rem] cursor-pointer select-none items-center justify-center border-2 border-[rgb(192,192,192)] bg-[rgb(224,224,224)] font-vcr hover:bg-[rgb(208,208,208)]"

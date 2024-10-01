@@ -7,8 +7,9 @@ import superTeamPic from "../Assets/images/super-team.jpeg";
 import bestPresentaitionPic from "../Assets/images/best-presentation.jpeg";
 
 // Logos
-import certificateLogo from "../Assets/images/certificate-logo.webp";
-import toolsLogo from "../Assets/images/tools-logo.webp";
+import certificateLogo from "../Assets/logos/certificate-logo.webp";
+import toolsLogo from "../Assets/logos/tools-logo.webp";
+import FigmaLogo from "../Assets/logos/figma-logo.webp";
 
 /* 
     FloppyDisk Atrr:
@@ -148,16 +149,19 @@ const ProjectCarousel = () => {
             In this pet project, my aim was to craft a charming weather
             application that seamlessly integrates API requests and leverages
             React to showcase locations that hold personal significance to me,
-            aptly labeled as "Residences."
+            aptly labeled as "Residences"
           </div>
           <br />
           <div>
             Moreover, I took great care to ensure that this app is user-friendly
             across various devices, boasting distinct designs tailored for
             phones, laptops, and tablets. You can even explore the envisioned
-            design through the provided Figma link.
+            design through the provided Figma link
           </div>
           <br />
+          <section>
+            <img src="" />
+          </section>
           <div>
             (P.S. This project used to be hosted by Heroku, however since the
             free version was slow, it was moved to GitHub pages)
