@@ -6,6 +6,7 @@ const FloppyDisk = ({
   lineColor,
   width,
   diskTitle,
+  disKTitleFontSize = "text-xl",
   windowID,
   summaryText,
 }) => {
@@ -24,9 +25,11 @@ const FloppyDisk = ({
           {/* Centre */}
           <section className="flex h-full flex-grow-[7] basis-0 flex-col overflow-hidden rounded-lg">
             <section
-              className={` ${floppyColor} flex h-1/3 w-full items-center justify-end px-4`}
+              className={` ${floppyColor} relative flex h-1/3 w-full items-center justify-end px-4`}
             >
-              <div className="w-3/5 rounded-xl bg-[rgb(235,234,230)] p-0.5 text-center text-xl">
+              <div
+                className={`min-w-[60%] max-w-[80%] rounded-xl bg-[rgb(235,234,230)] p-0.5 text-center ${disKTitleFontSize}`}
+              >
                 {diskTitle}
               </div>
             </section>
