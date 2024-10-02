@@ -25,7 +25,7 @@ const Win98Window = ({ id, windowTitle = "Default", children }) => {
         className={`win98-window h-svh w-full flex-col overflow-hidden bg-[rgb(192,192,192)] outline-none backdrop:bg-black/50 sm:max-h-[80vh] sm:min-w-[max(30vw,fit-content)] sm:max-w-[60vw] ${isEasyToRead ? "font-sans" : "font-vcr"}`}
       >
         <nav className="absolute left-0 top-0 flex h-8 w-full items-center gap-3 bg-gradient-to-r from-[rgb(0,0,125)] to-[rgb(60,130,300)] px-1 sm:h-6">
-          <div className="overflow-hidden text-ellipsis text-white">
+          <div className="overflow-hidden text-ellipsis whitespace-nowrap text-white">
             {windowTitle}
           </div>
           <button

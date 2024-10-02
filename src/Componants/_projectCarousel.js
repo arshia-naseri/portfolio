@@ -125,7 +125,7 @@ const FIGMA_LINK_COMP = ({ url, text = "Click 2 see Figma Design" }) => {
 /*
   Project Componants
 */
-const PrKavosh = ({ floppyWidth }) => {
+const PrKavosh = ({ floppyWidth, ProjectID = "Kavosh-Dialog" }) => {
   const summaryText =
     "Kavosh Robotics Team is one of the best junior robotics teams in the world. Kavosh has multiple honours in Germany, China, Brazil, Netherlands, and Mexico and many first-place awards in Junior Rescue Leagues of Robocup 2019 Australia, 2018 Canada, and 2017 Japan.";
   return (
@@ -135,13 +135,10 @@ const PrKavosh = ({ floppyWidth }) => {
         lineColor={"border-b-red-300"}
         width={floppyWidth}
         diskTitle="Kavosh"
-        windowID="Kavosh-Dialog"
+        windowID={ProjectID}
         summaryText={summaryText}
       />
-      <Win98Window
-        id="Kavosh-Dialog"
-        windowTitle="KavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavosh"
-      >
+      <Win98Window id={ProjectID} windowTitle="Kavosh">
         {/* Summary Text */}
         <div>{summaryText}</div>
         <br />
@@ -238,7 +235,7 @@ const PrKavosh = ({ floppyWidth }) => {
   );
 };
 
-const PrWeatherApp = ({ floppyWidth }) => {
+const PrWeatherApp = ({ floppyWidth, ProjectID = "WeatherApp-Dialog" }) => {
   const summaryText = `In this pet project, I aimed to craft a charming weather application that seamlessly integrates API requests and leverages React to showcase locations that hold personal significance to me, aptly labelled as "Residences"`;
   return (
     <>
@@ -247,10 +244,10 @@ const PrWeatherApp = ({ floppyWidth }) => {
         lineColor={"border-b-blue-300"}
         width={floppyWidth}
         diskTitle="Weather App"
-        windowID="WeatherApp-Dialog"
+        windowID={ProjectID}
         summaryText={summaryText}
       />
-      <Win98Window id="WeatherApp-Dialog" windowTitle="Weather App">
+      <Win98Window id={ProjectID} windowTitle="Weather App">
         <div>{summaryText}</div>
         <br />
         {/* Website Screenshot */}
@@ -310,7 +307,10 @@ const PrWeatherApp = ({ floppyWidth }) => {
   );
 };
 
-const PrChessMastersAcademy = ({ floppyWidth }) => {
+const PrChessMastersAcademy = ({
+  floppyWidth,
+  ProjectID = "ChessMastersAcademy-Dialog",
+}) => {
   const summaryText =
     "This project is intended to create a digital card for a business contact list. This action would make a lasting impression on said clients and have a more professional appeal.";
   return (
@@ -321,13 +321,10 @@ const PrChessMastersAcademy = ({ floppyWidth }) => {
         width={floppyWidth}
         diskTitle="Chess Masters Academy"
         // disKTitleFontSize="text-base"
-        windowID="ChessMastersAcademy-Dialog"
+        windowID={ProjectID}
         summaryText={summaryText}
       />
-      <Win98Window
-        id="ChessMastersAcademy-Dialog"
-        windowTitle="Chess Masters Academy"
-      >
+      <Win98Window id={ProjectID} windowTitle="Chess Masters Academy">
         <div>{summaryText}</div>
         <br />
         <div>
