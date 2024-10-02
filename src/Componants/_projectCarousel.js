@@ -138,7 +138,10 @@ const PrKavosh = ({ floppyWidth }) => {
         windowID="Kavosh-Dialog"
         summaryText={summaryText}
       />
-      <Win98Window id="Kavosh-Dialog" windowTitle="Kavosh">
+      <Win98Window
+        id="Kavosh-Dialog"
+        windowTitle="KavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavoshKavosh"
+      >
         {/* Summary Text */}
         <div>{summaryText}</div>
         <br />
