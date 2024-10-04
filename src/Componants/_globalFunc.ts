@@ -24,6 +24,7 @@ export class projectCarouselClass {
   carouselElm: HTMLElement;
   btnRightElm: HTMLElement;
   btnLeftElm: HTMLElement;
+  carouselLimitPercentage;
   constructor(
     carouselElm: HTMLElement,
     btnRightElm: HTMLElement,
@@ -32,6 +33,7 @@ export class projectCarouselClass {
     this.carouselElm = carouselElm;
     this.btnRightElm = btnRightElm;
     this.btnLeftElm = btnLeftElm;
+    this.carouselLimitPercentage = 20;
   }
 
   getScrollPercentage() {
@@ -42,7 +44,7 @@ export class projectCarouselClass {
     );
   }
 
-  isProjectInView(projectElm: HTMLElement, acceptOffset = 0.2) {
+  isProjectInView(projectElm: HTMLElement, acceptOffset = 0.15) {
     const leftValue =
       projectElm.getBoundingClientRect().left -
       this.carouselElm.getBoundingClientRect().left;
@@ -65,18 +67,22 @@ export class projectCarouselClass {
   }
 
   btnRightClicked(e: HTMLElement) {
+    let pushLeftValue;
+    if (this.getScrollPercentage() > 100 - this.carouselLimitPercentage) {
+      pushLeftValue =
+        this.carouselElm.scrollWidth - this.carouselElm.clientWidth;
+      this.carouselElm.scrollTo({
+        left: pushLeftValue,
+        behavior: "smooth",
+      });
+      return;
+    }
     // Get all floppy disks that are NOT dialog
     const projectElms = Array.from(this.carouselElm.children).filter(
       (elm) => elm.tagName.toLowerCase() !== "dialog",
     );
-    let pushLeftValue;
-    // for (let projectElm of projectElms) {
-    //   console.log(this.isProjectInView(projectElm as HTMLElement));
-    // }
 
-    for (let index = 0; index < projectElms.length; index++) {
-      let projectElm = projectElms[index];
-      // console.log(index, this.isProjectInView(projectElm as HTMLElement));
+    for (let projectElm of projectElms) {
       if (
         this.isProjectInView(projectElm as HTMLElement) ||
         projectElm.getBoundingClientRect().left < 0
@@ -87,13 +93,12 @@ export class projectCarouselClass {
         projectElm.getBoundingClientRect().left -
         this.carouselElm.getBoundingClientRect().left +
         this.carouselElm.scrollLeft;
+      this.carouselElm.scrollTo({
+        left: pushLeftValue,
+        behavior: "smooth",
+      });
       break;
     }
-    console.log("*****");
-    this.carouselElm.scrollTo({
-      left: pushLeftValue,
-      behavior: "smooth",
-    });
   }
 
   printCarouselElm() {
