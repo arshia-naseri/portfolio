@@ -1,4 +1,4 @@
-import { phonetBtnClick } from "../Componants/_globalFunc";
+import { phonetBtnClick } from "../Componants/_globalFunc.ts";
 
 const Navbar = ({
   showNavbar,

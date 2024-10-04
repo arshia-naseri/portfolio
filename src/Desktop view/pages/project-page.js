@@ -1,10 +1,29 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import ProjectCarousel from "../../Componants/_projectCarousel";
+import { projectCarouselClass } from "../../Componants/_globalFunc.ts";
 
 const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
   const projectCarouselRef = useRef();
   const btnNextProject = useRef();
   const btnPreProject = useRef();
+
+  // Initilize CarouselObj
+  const carouselObj = useRef(null);
+  useEffect(() => {
+    if (
+      projectCarouselRef.current &&
+      btnNextProject.current &&
+      btnPreProject.current &&
+      !carouselObj.current
+    ) {
+      carouselObj.current = new projectCarouselClass(
+        projectCarouselRef.current,
+        btnNextProject.current,
+        btnPreProject.current,
+      );
+      // carouselObj.current.printCarouselElm(); // Call your method after initialization
+    }
+  }, []);
 
   const getScrollPercentage = (elm) => {
     return (elm.scrollLeft / (elm.scrollWidth - elm.clientWidth)) * 100;
@@ -12,6 +31,7 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
 
   const isProjectInView = (
     projectElm,
+    err = 0,
     parentElm = projectCarouselRef.current,
   ) => {
     let leftValue =
@@ -23,10 +43,10 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
       projectElm.getBoundingClientRect().right;
 
     if (
-      leftValue >= 0 &&
-      leftValue <= parentElm.getBoundingClientRect().width &&
-      rightValue >= 0 &&
-      rightValue <= parentElm.getBoundingClientRect().width
+      leftValue >= -err &&
+      leftValue <= parentElm.getBoundingClientRect().width + err &&
+      rightValue >= -err &&
+      rightValue <= parentElm.getBoundingClientRect().width + err
     ) {
       return true;
     }
@@ -50,9 +70,9 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
       index++
     ) {
       let currentProject = projectCarouselRef.current.children[index];
-
+      if (currentProject.tagName === "DIALOG") continue;
       if (
-        isProjectInView(currentProject) ||
+        isProjectInView(currentProject, 10) ||
         currentProject.getBoundingClientRect().left < 0
       ) {
         continue;
@@ -87,8 +107,9 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
       index--
     ) {
       let currentProject = projectCarouselRef.current.children[index];
+      if (currentProject.tagName === "DIALOG") continue;
       if (
-        isProjectInView(currentProject) ||
+        isProjectInView(currentProject, 10) ||
         currentProject.getBoundingClientRect().left > 0
       ) {
         continue;
@@ -144,6 +165,7 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
             PROJECTS
           </div>
           <section className="relative flex flex-col gap-3">
+            {/* Main Button */}
             <section className="noHighlightClicked ml-auto mr-5 flex gap-1 font-vcr text-7xl">
               <div
                 ref={btnPreProject}
@@ -154,12 +176,16 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
               </div>
               <div
                 ref={btnNextProject}
-                onClick={nextProjectPage}
+                onClick={(e) =>
+                  carouselObj.current.btnRightClicked(e.currentTarget)
+                }
                 className="cursor-pointer"
               >
                 ►
               </div>
             </section>
+
+            {/* Project Container */}
             <section className="win98-project-shadow flex">
               <div
                 className="mt-auto flex aspect-square h-[1.2rem] cursor-pointer select-none items-center justify-center border-2 border-[rgb(192,192,192)] bg-[rgb(224,224,224)] font-vcr hover:bg-[rgb(208,208,208)]"

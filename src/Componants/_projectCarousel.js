@@ -29,7 +29,7 @@
 
 import FloppyDisk from "./_floppyDisk";
 import Win98Window from "./_win98Window";
-import { urlLink } from "./_globalFunc";
+import { urlLink } from "./_globalFunc.ts";
 
 // Images
 import worldChampionPic from "../Assets/images/world-champion.jpeg";

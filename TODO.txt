@@ -2,3 +2,5 @@
 + Change size of mobile case
 + Block scroll on wind98 mobile
 + Always show scrollbar on mobile
+* Change Next and Pre button to not take dialog tag into considration 
+    + Create global functions 

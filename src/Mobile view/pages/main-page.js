@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { materialContext } from "../../main";
-import { phonetBtnClick } from "../../Componants/_globalFunc";
+import { phonetBtnClick } from "../../Componants/_globalFunc.ts";
 
 const MainPage = ({ mainSectionRef, projectsSectionRef }) => {
   const { main } = useContext(materialContext);

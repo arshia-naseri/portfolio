@@ -1,5 +1,5 @@
 import warningLogo from "../../Assets/logos/warning-logo.webp";
-import { phonetBtnClick } from "../../Componants/_globalFunc";
+import { phonetBtnClick } from "../../Componants/_globalFunc.ts";
 
 const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
   return (

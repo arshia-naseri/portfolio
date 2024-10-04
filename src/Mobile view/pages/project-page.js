@@ -1,11 +1,32 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import ProjectCarousel from "../../Componants/_projectCarousel";
-import { phonetBtnClick } from "../../Componants/_globalFunc";
+import {
+  phonetBtnClick,
+  projectCarouselClass,
+} from "../../Componants/_globalFunc.ts";
 
 const ProjectsPage = ({ projectsSectionRef }) => {
   const projectCarouselRef = useRef();
   const btnNextProject = useRef();
   const btnPreProject = useRef();
+
+  // Initilize CarouselObj
+  const carouselObj = useRef(null);
+  useEffect(() => {
+    if (
+      projectCarouselRef.current &&
+      btnNextProject.current &&
+      btnPreProject.current &&
+      !carouselObj.current
+    ) {
+      carouselObj.current = new projectCarouselClass(
+        projectCarouselRef.current,
+        btnNextProject.current,
+        btnPreProject.current,
+      );
+      // carouselObj.current.printCarouselElm(); // Call your method after initialization
+    }
+  }, []);
 
   const getScrollPercentage = (elm) => {
     return (elm.scrollLeft / (elm.scrollWidth - elm.clientWidth)) * 100;
@@ -13,25 +34,29 @@ const ProjectsPage = ({ projectsSectionRef }) => {
 
   const isProjectInView = (
     projectElm,
+    err = 5,
     parentElm = projectCarouselRef.current,
   ) => {
-    let leftValue =
-      projectElm.getBoundingClientRect().left -
-      parentElm.getBoundingClientRect().left;
+    console.log(window.innerWidth);
 
-    let rightValue =
-      parentElm.getBoundingClientRect().right -
-      projectElm.getBoundingClientRect().right;
+    return true;
+    // let leftValue =
+    //   projectElm.getBoundingClientRect().left -
+    //   parentElm.getBoundingClientRect().left;
 
-    if (
-      leftValue >= 0 &&
-      leftValue <= parentElm.getBoundingClientRect().width &&
-      rightValue >= 0 &&
-      rightValue <= parentElm.getBoundingClientRect().width
-    ) {
-      return true;
-    }
-    return false;
+    // let rightValue =
+    //   parentElm.getBoundingClientRect().right -
+    //   projectElm.getBoundingClientRect().right;
+
+    // if (
+    //   leftValue >= -err &&
+    //   leftValue <= parentElm.getBoundingClientRect().width + err &&
+    //   rightValue >= -err &&
+    //   rightValue <= parentElm.getBoundingClientRect().width - err
+    // ) {
+    //   return true;
+    // }
+    // return false;
   };
 
   const nextProjectPage = (e) => {
@@ -51,7 +76,7 @@ const ProjectsPage = ({ projectsSectionRef }) => {
       index++
     ) {
       let currentProject = projectCarouselRef.current.children[index];
-
+      if (currentProject.tagName === "DIALOG") continue;
       if (
         isProjectInView(currentProject) ||
         currentProject.getBoundingClientRect().left < 0
@@ -88,6 +113,8 @@ const ProjectsPage = ({ projectsSectionRef }) => {
       index--
     ) {
       let currentProject = projectCarouselRef.current.children[index];
+
+      if (currentProject.tagName === "DIALOG") continue;
       if (
         isProjectInView(currentProject) ||
         currentProject.getBoundingClientRect().left > 0
@@ -146,7 +173,9 @@ const ProjectsPage = ({ projectsSectionRef }) => {
               </div>
               <div
                 className="cursor-pointer"
-                onClick={nextProjectPage}
+                onClick={(e) =>
+                  carouselObj.current.btnRightClicked(e.currentTarget)
+                }
                 ref={btnNextProject}
                 {...phonetBtnClick}
               >
