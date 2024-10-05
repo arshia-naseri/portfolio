@@ -382,10 +382,6 @@ const ProjectCarousel = () => {
       <PrKavosh floppyWidth={floppyWidth} />
       <PrWeatherApp floppyWidth={floppyWidth} />
       <PrChessMastersAcademy floppyWidth={floppyWidth} />
-
-      <PrKavosh floppyWidth={floppyWidth} />
-      <PrWeatherApp floppyWidth={floppyWidth} />
-      <PrChessMastersAcademy floppyWidth={floppyWidth} />
     </>
   );
 };
