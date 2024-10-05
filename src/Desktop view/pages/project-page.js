@@ -25,123 +25,6 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
     }
   }, []);
 
-  const getScrollPercentage = (elm) => {
-    return (elm.scrollLeft / (elm.scrollWidth - elm.clientWidth)) * 100;
-  };
-
-  const isProjectInView = (
-    projectElm,
-    err = 0,
-    parentElm = projectCarouselRef.current,
-  ) => {
-    let leftValue =
-      projectElm.getBoundingClientRect().left -
-      parentElm.getBoundingClientRect().left;
-
-    let rightValue =
-      parentElm.getBoundingClientRect().right -
-      projectElm.getBoundingClientRect().right;
-
-    if (
-      leftValue >= -err &&
-      leftValue <= parentElm.getBoundingClientRect().width + err &&
-      rightValue >= -err &&
-      rightValue <= parentElm.getBoundingClientRect().width + err
-    ) {
-      return true;
-    }
-    return false;
-  };
-
-  const nextProjectPage = (e) => {
-    let alreadyPushed = false;
-    let pushLeftValue;
-
-    if (getScrollPercentage(projectCarouselRef.current) > 75) {
-      alreadyPushed = true;
-      pushLeftValue =
-        projectCarouselRef.current.scrollWidth -
-        projectCarouselRef.current.clientWidth;
-    }
-
-    for (
-      let index = 0;
-      index < projectCarouselRef.current.children.length && !alreadyPushed;
-      index++
-    ) {
-      let currentProject = projectCarouselRef.current.children[index];
-      if (currentProject.tagName === "DIALOG") continue;
-      if (
-        isProjectInView(currentProject, 10) ||
-        currentProject.getBoundingClientRect().left < 0
-      ) {
-        continue;
-      }
-
-      pushLeftValue =
-        currentProject.getBoundingClientRect().left -
-        projectCarouselRef.current.getBoundingClientRect().left +
-        projectCarouselRef.current.scrollLeft;
-
-      break;
-    }
-
-    projectCarouselRef.current.scrollTo({
-      left: pushLeftValue,
-      behavior: "smooth",
-    });
-  };
-
-  const preProjectPage = (e) => {
-    let alreadyPushed = false;
-    let pushLeftValue;
-
-    if (getScrollPercentage(projectCarouselRef.current) < 25) {
-      alreadyPushed = true;
-      pushLeftValue = 0;
-    }
-
-    for (
-      let index = projectCarouselRef.current.children.length - 1;
-      index > -1 && !alreadyPushed;
-      index--
-    ) {
-      let currentProject = projectCarouselRef.current.children[index];
-      if (currentProject.tagName === "DIALOG") continue;
-      if (
-        isProjectInView(currentProject, 10) ||
-        currentProject.getBoundingClientRect().left > 0
-      ) {
-        continue;
-      }
-
-      pushLeftValue =
-        currentProject.getBoundingClientRect().left -
-        projectCarouselRef.current.getBoundingClientRect().left +
-        projectCarouselRef.current.scrollLeft;
-
-      break;
-    }
-
-    projectCarouselRef.current.scrollTo({
-      left: pushLeftValue,
-      behavior: "smooth",
-    });
-  };
-
-  const changeBtnOpacity = (e) => {
-    if (getScrollPercentage(e.currentTarget) < 10) {
-      btnPreProject.current.style.opacity = 0.4;
-      btnNextProject.current.style.opacity = 1;
-    } else if (getScrollPercentage(e.currentTarget) > 90) {
-      btnNextProject.current.style.opacity = 0.4;
-      btnPreProject.current.style.opacity = 1;
-    } else {
-      btnPreProject.current.style.opacity = 1;
-      btnNextProject.current.style.opacity = 1;
-    }
-  };
-
   const btnWind98NextClicked = () => {
     projectCarouselRef.current.scrollBy({
       left: projectCarouselRef.current.scrollHeight * 0.3,
@@ -169,7 +52,9 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
             <section className="noHighlightClicked ml-auto mr-5 flex gap-1 font-vcr text-7xl">
               <div
                 ref={btnPreProject}
-                onClick={preProjectPage}
+                onClick={(e) =>
+                  carouselObj.current.btnLeftClicked(e.currentTarget)
+                }
                 className="cursor-pointer opacity-40"
               >
                 ◄
@@ -195,7 +80,7 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
               </div>
               <section
                 ref={projectCarouselRef}
-                onScroll={changeBtnOpacity}
+                onScroll={() => carouselObj.current.changeBtnOpacity()}
                 data-scroll-dir="x"
                 className="win98-scrollbar relative ml-auto mr-auto flex gap-16 overflow-x-auto p-10 pb-6"
               >

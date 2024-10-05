@@ -66,10 +66,41 @@ export class projectCarouselClass {
     return false;
   }
 
+  changeBtnOpacity(opacityVal = "0.4") {
+    if (this.getScrollPercentage() === 0) {
+      this.btnLeftElm.style.opacity = opacityVal;
+    } else if (this.getScrollPercentage() === 100) {
+      this.btnRightElm.style.opacity = opacityVal;
+    } else {
+      this.btnLeftElm.style.opacity = "1";
+      this.btnRightElm.style.opacity = "1";
+    }
+  }
+
+  private pushToFloppyDiskProject(projectElms, dir) {
+    for (let projectElm of projectElms) {
+      if (
+        this.isProjectInView(projectElm as HTMLElement) ||
+        (dir === "right" && projectElm.getBoundingClientRect().left < 0) ||
+        (dir === "left" && projectElm.getBoundingClientRect().left > 0)
+      )
+        continue;
+
+      let pushLeftValue =
+        projectElm.getBoundingClientRect().left -
+        this.carouselElm.getBoundingClientRect().left +
+        this.carouselElm.scrollLeft;
+      this.carouselElm.scrollTo({
+        left: pushLeftValue,
+        behavior: "smooth",
+      });
+      break;
+    }
+  }
+
   btnRightClicked(e: HTMLElement) {
-    let pushLeftValue;
     if (this.getScrollPercentage() > 100 - this.carouselLimitPercentage) {
-      pushLeftValue =
+      let pushLeftValue =
         this.carouselElm.scrollWidth - this.carouselElm.clientWidth;
       this.carouselElm.scrollTo({
         left: pushLeftValue,
@@ -82,23 +113,24 @@ export class projectCarouselClass {
       (elm) => elm.tagName.toLowerCase() !== "dialog",
     );
 
-    for (let projectElm of projectElms) {
-      if (
-        this.isProjectInView(projectElm as HTMLElement) ||
-        projectElm.getBoundingClientRect().left < 0
-      )
-        continue;
+    this.pushToFloppyDiskProject(projectElms, "right");
+  }
 
-      pushLeftValue =
-        projectElm.getBoundingClientRect().left -
-        this.carouselElm.getBoundingClientRect().left +
-        this.carouselElm.scrollLeft;
+  btnLeftClicked(e: HTMLElement) {
+    if (this.getScrollPercentage() < this.carouselLimitPercentage) {
+      let pushLeftValue = 0;
       this.carouselElm.scrollTo({
         left: pushLeftValue,
         behavior: "smooth",
       });
-      break;
+      return;
     }
+    // Get all floppy disks that are NOT dialog
+    const projectElms = Array.from(this.carouselElm.children)
+      .filter((elm) => elm.tagName.toLowerCase() !== "dialog")
+      .reverse();
+
+    this.pushToFloppyDiskProject(projectElms, "left");
   }
 
   printCarouselElm() {
