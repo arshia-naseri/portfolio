@@ -40,6 +40,7 @@ import chessMastersAcademyScreenshot from "../Assets/images/Desktop-ChessMasters
 import NfcExamplePic from "../Assets/images/exampleNFC.webp";
 import portfolioDsktScreenshot from "../Assets/images/portfolioCover-dskt-screeenshot.jpg";
 import portfolioPhoneScreenshot from "../Assets/images/portfolioCover-phone-screeenshot.jpg";
+import ideaBoardScreenshot from "../Assets/images/idea-board-screenshot.webp";
 
 // Logos
 import certificateLogo from "../Assets/logos/certificate-logo.webp";
@@ -392,7 +393,7 @@ const PrChessMastersAcademy = ({
 
 const PrPortfolio = ({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
   const summaryText =
-    "This website, the one that you are currently on, is to showcase my projects more desirably. The surprise at the end of the website is mostly for fun.";
+    "This website, the one that you are currently on, is to showcase my technical projects more desirably. The surprise at the end of the website is mostly for fun.";
   return (
     <>
       <FloppyDisk
@@ -407,14 +408,14 @@ const PrPortfolio = ({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
       <Win98Window id={ProjectID} windowTitle="Portfolio">
         <div>{summaryText}</div>
         <br />
-        <section className="flex gap-10 *:last:text-sm">
+        <section className="flex gap-10">
           <figure>
             <img
               src={portfolioDsktScreenshot}
               alt="portfolio screenshot (desktop)"
               className="win98-window"
             />
-            <figcaption className="mt-1">
+            <figcaption className="mt-1 text-sm">
               Portfolio Desktop Screenshot
             </figcaption>
           </figure>
@@ -424,7 +425,9 @@ const PrPortfolio = ({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
               alt="portfolio screenshot (phone)"
               className="win98-window"
             />
-            <figcaption className="mt-1">Portfolio Phone Screenshot</figcaption>
+            <figcaption className="mt-1 text-sm">
+              Portfolio Phone Screenshot
+            </figcaption>
           </figure>
         </section>
         <br />
@@ -433,12 +436,21 @@ const PrPortfolio = ({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
           technology of their time.
         </div>
         <br />
-
+        <figure className="mx-auto w-[60%]">
+          <img
+            src={ideaBoardScreenshot}
+            alt="idea Board screenshot"
+            className="win98-window"
+          />
+          <figcaption className="mt-1 text-sm">
+            Idea Board Screenshot
+          </figcaption>
+        </figure>
         <br />
         <PROJECT_LINK_COMP
           url="arshia-naseri.com"
           img_src={cdLogo}
-          text="Click 2 see the Website but Already on it ;)"
+          text="Click 2 see the Website but You are Already on it ;)"
         />
         <br />
         <GITHUB_LINK_COMP url="https://github.com/arshia-naseri/portfolio" />
