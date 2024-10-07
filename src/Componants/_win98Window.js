@@ -14,6 +14,7 @@ const Win98Window = ({ id, windowTitle = "Default", children }) => {
   const closeDialog = () => {
     setIsEasyToRead(false);
     document.body.style.overflow = "scroll";
+    document.body.style.position = "";
     document.getElementById(id).close();
   };
 

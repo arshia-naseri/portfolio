@@ -1,3 +1,1 @@
-* Add a real-time clock to main page
-+ Block scroll on wind98 mobile
-+ Always show scrollbar on mobile
+-- Nothin left
