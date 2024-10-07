@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ae568801.css",
-    "main.js": "/static/js/main.ec31e47f.js",
+    "main.css": "/static/css/main.d2a059c4.css",
+    "main.js": "/static/js/main.f5eeef89.js",
     "static/media/vhs-static.gif": "/static/media/vhs-static.df32a20414e84238dc3f.gif",
     "static/media/university-logo.webp": "/static/media/university-logo.3a1f8020368393bd8b2a.webp",
     "static/media/warning-logo.webp": "/static/media/warning-logo.01f279d44ab9004deaa0.webp",
@@ -10,6 +10,7 @@
     "static/media/profile-pic.webp": "/static/media/profile-pic.fe6bed79319bb704388d.webp",
     "static/media/arcade-machine.png": "/static/media/arcade-machine.f37395d00173540cb638.png",
     "static/media/Desktop-ChessMastersAcademy.webp": "/static/media/Desktop-ChessMastersAcademy.5da584c1bd04c9cc8c54.webp",
+    "static/media/idea-board-screenshot.webp": "/static/media/idea-board-screenshot.4cf30c92c98674af4aa7.webp",
     "static/media/Monocraft.ttf": "/static/media/Monocraft.d2201aeb746218a4c4bb.ttf",
     "static/media/best-presentation.jpeg": "/static/media/best-presentation.a5edb540815a54def15f.jpeg",
     "static/media/world-champion.jpeg": "/static/media/world-champion.0ad074f0e5ee0d112474.jpeg",
@@ -31,11 +32,11 @@
     "static/media/certificate-logo.webp": "/static/media/certificate-logo.870e52c39186e5790498.webp",
     "static/media/github-logo.webp": "/static/media/github-logo.97622575bada7792d013.webp",
     "index.html": "/index.html",
-    "main.ae568801.css.map": "/static/css/main.ae568801.css.map",
-    "main.ec31e47f.js.map": "/static/js/main.ec31e47f.js.map"
+    "main.d2a059c4.css.map": "/static/css/main.d2a059c4.css.map",
+    "main.f5eeef89.js.map": "/static/js/main.f5eeef89.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae568801.css",
-    "static/js/main.ec31e47f.js"
+    "static/css/main.d2a059c4.css",
+    "static/js/main.f5eeef89.js"
   ]
 }
