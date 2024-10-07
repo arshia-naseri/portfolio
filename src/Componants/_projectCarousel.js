@@ -38,6 +38,8 @@ import bestPresentaitionPic from "../Assets/images/best-presentation.jpeg";
 import weatherAppScreenshot from "../Assets/images/weather-app-screenshot.jpeg";
 import chessMastersAcademyScreenshot from "../Assets/images/Desktop-ChessMastersAcademy.webp";
 import NfcExamplePic from "../Assets/images/exampleNFC.webp";
+import portfolioDsktScreenshot from "../Assets/images/portfolioCover-dskt-screeenshot.jpg";
+import portfolioPhoneScreenshot from "../Assets/images/portfolioCover-phone-screeenshot.jpg";
 
 // Logos
 import certificateLogo from "../Assets/logos/certificate-logo.webp";
@@ -46,6 +48,7 @@ import FigmaLogo from "../Assets/logos/figma-logo.webp";
 import weatherLogo from "../Assets/logos/weather-logo.webp";
 import githubLogo from "../Assets/logos/github-logo.webp";
 import contactPageLogo from "../Assets/logos/contact-page-logo.webp";
+import cdLogo from "../Assets/logos/cd-logo.webp";
 
 /* 
   URL to project componants
@@ -370,6 +373,89 @@ const PrChessMastersAcademy = ({
         />
         <br />
         <GITHUB_LINK_COMP url="https://github.com/arshia-naseri/chess-masters-academy-2.0" />
+        <br />
+        <section className="flex items-center gap-3">
+          <img
+            src={toolsLogo}
+            alt="tools logo"
+            className="aspect-auto w-10"
+            loading="lazy"
+          />
+          <div className="boldTextFont text-xl">Tools</div>
+        </section>
+        <br />
+        <div>React, JavaScript, CSS, HTML</div>
+      </Win98Window>
+    </>
+  );
+};
+
+const PrPortfolio = ({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
+  const summaryText =
+    "This website, the one that you are currently on, is to showcase my projects more desirably. The surprise at the end of the website is mostly for fun.";
+  return (
+    <>
+      <FloppyDisk
+        floppyColor={"bg-purple-400"}
+        lineColor={"border-b-purple-300"}
+        width={floppyWidth}
+        diskTitle="Portfolio"
+        // disKTitleFontSize="text-base"
+        windowID={ProjectID}
+        summaryText={summaryText}
+      />
+      <Win98Window id={ProjectID} windowTitle="Portfolio">
+        <div>{summaryText}</div>
+        <br />
+        <section className="flex gap-10 *:last:text-sm">
+          <figure>
+            <img
+              src={portfolioDsktScreenshot}
+              alt="portfolio screenshot (desktop)"
+              className="win98-window"
+            />
+            <figcaption className="mt-1">
+              Portfolio Desktop Screenshot
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src={portfolioPhoneScreenshot}
+              alt="portfolio screenshot (phone)"
+              className="win98-window"
+            />
+            <figcaption className="mt-1">Portfolio Phone Screenshot</figcaption>
+          </figure>
+        </section>
+        <br />
+        <div>
+          The inspiration for this project stems from the nostalgic, yet pillar,
+          technology of their time.
+        </div>
+        <br />
+
+        <br />
+        <PROJECT_LINK_COMP
+          url="arshia-naseri.com"
+          img_src={cdLogo}
+          text="Click 2 see the Website but Already on it ;)"
+        />
+        <br />
+        <GITHUB_LINK_COMP url="https://github.com/arshia-naseri/portfolio" />
+        <br />
+        <FIGMA_LINK_COMP url="https://www.figma.com/design/AI8q3XtUCFU2XWjEpjBFl3/Portfolio-%F0%9F%92%BC?m=auto&t=ioEQFQqsU8UZ05bW-1" />
+        <br />
+        <section className="flex items-center gap-3">
+          <img
+            src={toolsLogo}
+            alt="tools logo"
+            className="aspect-auto w-10"
+            loading="lazy"
+          />
+          <div className="boldTextFont text-xl">Tools</div>
+        </section>
+        <br />
+        <div>React, JavaScript, CSS, HTML, Figma, Framer Motion</div>
       </Win98Window>
     </>
   );
@@ -382,6 +468,7 @@ const ProjectCarousel = () => {
       <PrKavosh floppyWidth={floppyWidth} />
       <PrWeatherApp floppyWidth={floppyWidth} />
       <PrChessMastersAcademy floppyWidth={floppyWidth} />
+      <PrPortfolio floppyWidth={floppyWidth} />
     </>
   );
 };
