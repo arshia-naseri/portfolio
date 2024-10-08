@@ -1,5 +1,5 @@
 import floppyTop from "../Assets/images/floppy-top.png";
-import { phonetBtnClick } from "./_globalFunc.ts";
+import { phonetBtnClick, openDialog } from "./_globalFunc.ts";
 
 const FloppyDisk = ({
   floppyColor,
@@ -54,10 +54,7 @@ const FloppyDisk = ({
               </div>
               <button
                 className="noHighlightClicked win98-project-shadow mt-1 bg-slate-300 p-0.5 text-xs hover:bg-slate-400"
-                onClick={() => {
-                  document.body.style.overflowY = "hidden";
-                  document.getElementById(windowID).showModal();
-                }}
+                onClick={() => openDialog(windowID)}
                 {...phonetBtnClick}
               >
                 <u>C</u>lick for More...

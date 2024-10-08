@@ -1,1 +1,3 @@
--- Nothin left
++ Add controls page 
++ Make Read Me file page
++ Google analytics

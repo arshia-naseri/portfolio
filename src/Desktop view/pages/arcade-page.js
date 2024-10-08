@@ -1,6 +1,9 @@
 import { useContext, useRef } from "react";
 import { materialContext } from "../../main";
 import arcadeMachinePic from "../../Assets/images/arcade-machine.png";
+import controlsLogo from "../../Assets/logos/input-devices-logo.webp";
+import Win98Window from "../../Componants/_win98Window";
+import { phonetBtnClick, openDialog } from "../../Componants/_globalFunc.ts";
 
 const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
   const { arcade } = useContext(materialContext);
@@ -45,6 +48,16 @@ const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
               Use Desktop for an Awesome Experience!
             </div>
           </section>
+          <br />
+          <br />
+          <section
+            className="flex items-center gap-3 text-lg hover:cursor-pointer"
+            onClick={() => openDialog("arcadeInput-Dialog")}
+            {...phonetBtnClick}
+          >
+            <img src={controlsLogo} alt="controls logo" className="w-10" />
+            <div className="pointer-events-none">Click for Controls</div>
+          </section>
           <section
             className="mb-10 mt-auto flex cursor-pointer items-center gap-3"
             onClick={() =>
@@ -57,6 +70,9 @@ const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
             <div className="text-3xl">Go To Top</div>
           </section>
         </main>
+        <Win98Window id="arcadeInput-Dialog" windowTitle="Game Controls">
+          <section>hello</section>
+        </Win98Window>
       </section>
     </>
   );

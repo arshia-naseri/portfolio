@@ -145,3 +145,8 @@ export class projectCarouselClass {
     console.log(this.btnLeftElm);
   }
 }
+
+export const openDialog = (id: string) => {
+  document.body.style.overflowY = "hidden";
+  (document.getElementById(id) as HTMLDialogElement).showModal();
+};

@@ -1,10 +1,13 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { materialContext } from "../../main";
 import checkLogo from "../../Assets/logos/check-1.png";
 
+import Win98Window from "../../Componants/_win98Window";
+import { openDialog, phonetBtnClick } from "../../Componants/_globalFunc.ts";
+
 const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
   const { about } = useContext(materialContext);
-  const copyDialog = useRef();
+  // const copyDialog = useRef();
   const copyText = async (text) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -13,10 +16,10 @@ const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
     }
   };
 
-  const closeDialog = () => {
-    document.body.style.overflow = "auto";
-    copyDialog.current.close();
-  };
+  // const closeDialog = () => {
+  //   document.body.style.overflow = "auto";
+  //   copyDialog.current.close();
+  // };
   return (
     <>
       <section
@@ -73,6 +76,7 @@ const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
                 title={about.githubURL}
                 target="_blank"
                 rel="noreferrer"
+                {...phonetBtnClick}
               >
                 <img
                   src={about.githubLogo}
@@ -85,9 +89,10 @@ const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
                 title={about.emailURL}
                 onClick={(e) => {
                   copyText(about.emailURL);
-                  copyDialog.current.showModal();
-                  document.body.style.overflow = "hidden";
+                  openDialog("copyConfirm-Dialog");
                 }}
+                className="hover:cursor-pointer"
+                {...phonetBtnClick}
               >
                 <img src={about.emailLogo} alt="email logo" className="w-10" />
               </div>
@@ -96,6 +101,7 @@ const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
                 title={about.linkedInURL}
                 target="_blank"
                 rel="noreferrer"
+                {...phonetBtnClick}
               >
                 <img
                   src={about.linkedInLogo}
@@ -108,36 +114,15 @@ const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
         </main>
       </section>
 
-      <dialog
-        ref={copyDialog}
-        id="copyDialog"
-        className="win98-window mt-[20vh] w-3/5 font-minecraft outline-none after:!bg-opacity-90"
-        onClick={(e) => (e.target.id === "copyDialog" ? closeDialog() : null)}
-      >
-        <main className="h-full w-full bg-[rgb(192,192,192)]">
-          <nav className="flex h-fit items-center bg-gradient-to-r from-[rgb(0,0,125)] to-[rgb(60,130,300)] px-1">
-            <div className="text-white">Email Copied</div>
-            <button
-              className="win98-window ml-auto flex aspect-square h-3 items-center justify-center bg-[rgb(192,192,192)] p-0 font-vcr text-sm hover:bg-[rgb(160,160,160)]"
-              onClick={closeDialog}
-            >
-              X
-            </button>
-          </nav>
-
-          <section className="flex flex-col p-3">
-            <div>You just copied MY email!</div>
-            <section className="flex gap-2">
-              <div>{about.emailURL}</div>
-              <img
-                src={checkLogo}
-                alt="check logo"
-                className="aspect-square h-6 animate-[wiggle_0.5s_ease-in-out_infinite]"
-              />
-            </section>
-          </section>
-        </main>
-      </dialog>
+      <Win98Window id="copyConfirm-Dialog" windowTitle="Email Copied">
+        <div>You just copied MY email!</div>
+        <br />
+        <section className="flex gap-2">
+          <div>{about.emailURL}</div>
+          <br />
+          <img src={checkLogo} alt="check logo" className="aspect-square h-6" />
+        </section>
+      </Win98Window>
     </>
   );
 };
