@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.7505dd83.css",
-    "main.js": "/static/js/main.e0970381.js",
+    "main.css": "/static/css/main.94a9b9e1.css",
+    "main.js": "/static/js/main.43f9944b.js",
     "static/media/vhs-static.gif": "/static/media/vhs-static.df32a20414e84238dc3f.gif",
     "static/media/university-logo.webp": "/static/media/university-logo.3a1f8020368393bd8b2a.webp",
     "static/media/warning-logo.webp": "/static/media/warning-logo.01f279d44ab9004deaa0.webp",
@@ -9,6 +9,7 @@
     "static/media/email-logo.webp": "/static/media/email-logo.f8cea43c1b1d48de25b9.webp",
     "static/media/profile-pic.webp": "/static/media/profile-pic.fe6bed79319bb704388d.webp",
     "static/media/arcade-machine.png": "/static/media/arcade-machine.f37395d00173540cb638.png",
+    "static/media/ctrls-settings-screenshot.jpeg": "/static/media/ctrls-settings-screenshot.1191d8d2d0b8cfb6b986.jpeg",
     "static/media/Desktop-ChessMastersAcademy.webp": "/static/media/Desktop-ChessMastersAcademy.5da584c1bd04c9cc8c54.webp",
     "static/media/idea-board-screenshot.webp": "/static/media/idea-board-screenshot.4cf30c92c98674af4aa7.webp",
     "static/media/Monocraft.ttf": "/static/media/Monocraft.d2201aeb746218a4c4bb.ttf",
@@ -26,6 +27,7 @@
     "static/media/cd-logo.webp": "/static/media/cd-logo.e2ac2c0b9b8c7fe2ec7a.webp",
     "static/media/check-1.png": "/static/media/check-1.b6e8b06dcf578d89b508.png",
     "static/media/construction-logo.webp": "/static/media/construction-logo.3a41b1b2b7fb7dc8f68d.webp",
+    "static/media/game-controller-logo.webp": "/static/media/game-controller-logo.d36a730c18540194ee7c.webp",
     "static/media/contact-page-logo.webp": "/static/media/contact-page-logo.c4cf5487b12274e19121.webp",
     "static/media/input-devices-logo.webp": "/static/media/input-devices-logo.746dea9104a4b366f1c1.webp",
     "static/media/pc-blink-pixelated.webp": "/static/media/pc-blink-pixelated.e4e9ab07f7eea49f3fef.webp",
@@ -33,11 +35,11 @@
     "static/media/certificate-logo.webp": "/static/media/certificate-logo.870e52c39186e5790498.webp",
     "static/media/github-logo.webp": "/static/media/github-logo.97622575bada7792d013.webp",
     "index.html": "/index.html",
-    "main.7505dd83.css.map": "/static/css/main.7505dd83.css.map",
-    "main.e0970381.js.map": "/static/js/main.e0970381.js.map"
+    "main.94a9b9e1.css.map": "/static/css/main.94a9b9e1.css.map",
+    "main.43f9944b.js.map": "/static/js/main.43f9944b.js.map"
   },
   "entrypoints": [
-    "static/css/main.7505dd83.css",
-    "static/js/main.e0970381.js"
+    "static/css/main.94a9b9e1.css",
+    "static/js/main.43f9944b.js"
   ]
 }
