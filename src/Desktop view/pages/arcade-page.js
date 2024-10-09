@@ -1,9 +1,27 @@
 import { useContext, useRef } from "react";
 import { materialContext } from "../../main";
-import arcadeMachinePic from "../../Assets/images/arcade-machine.png";
-import controlsLogo from "../../Assets/logos/input-devices-logo.webp";
 import Win98Window from "../../Componants/_win98Window";
 import { phonetBtnClick, openDialog } from "../../Componants/_globalFunc.ts";
+// Logos
+import controlsLogo from "../../Assets/logos/input-devices-logo.webp";
+import gameControllerLogo from "../../Assets/logos/game-controller-logo.webp";
+// Images
+import arcadeMachinePic from "../../Assets/images/arcade-machine.png";
+import ctrlsSettingsScreenshot from "../../Assets/images/ctrls-settings-screenshot.jpeg";
+
+const CtrlItem = ({ move, keyboard }) => {
+  return (
+    <>
+      <section className="flex gap-0">
+        <div className="pr-2">{move}</div>
+        <div className="relative flex-grow">
+          <div className="absolute left-0 top-1/2 my-auto h-[1px] w-full border-t-2 border-dotted border-t-vcrBlack"></div>
+        </div>
+        <div className="ml-auto pl-2">{keyboard}</div>
+      </section>
+    </>
+  );
+};
 
 const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
   const { arcade } = useContext(materialContext);
@@ -71,7 +89,42 @@ const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
           </section>
         </main>
         <Win98Window id="arcadeInput-Dialog" windowTitle="Game Controls">
-          <section>hello</section>
+          {/* Title */}
+          <section className="flex gap-3">
+            <img
+              src={gameControllerLogo}
+              alt="game controller logo"
+              className="w-16"
+            />
+            <div className="items-center text-xl">Game Ctrls</div>
+          </section>
+          <br />
+          <section className="flex w-full flex-col gap-2 px-3">
+            <CtrlItem move="START" keyboard="Enter/return" />
+            <CtrlItem move="COIN" keyboard="Right Shift" />
+            <CtrlItem move="P1 Up" keyboard="Arrow Up" />
+            <CtrlItem move="P1 Right" keyboard="Arrow Right" />
+            <CtrlItem move="P1 Down" keyboard="Arrow Down" />
+            <CtrlItem move="P1 Left" keyboard="Arrow Left" />
+            <CtrlItem move="Punch" keyboard="X" />
+            <CtrlItem move="Leg Kick" keyboard="Z" />
+            <CtrlItem move="Defence" keyboard="Q" />
+          </section>
+          <br />
+          <section>
+            <b className="text-xl">OR</b> use the control settings:
+          </section>
+          <br />
+          <figure className="mx-auto w-[60%]">
+            <img
+              src={ctrlsSettingsScreenshot}
+              alt="ctrls Settings screenshot"
+              className="win98-window"
+            />
+            <figcaption className="text-sm">
+              Control Settings Screenshot
+            </figcaption>
+          </figure>
         </Win98Window>
       </section>
     </>
