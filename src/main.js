@@ -97,7 +97,8 @@ function Main() {
     <>
       <materialContext.Provider value={material}>
         {showMobileView ? <Mobile /> : <Desktop />}
-        <Win98Window id="starupMessage-Dialog" windowTitle="Welcome...">
+        {/* Popup start message */}
+        {/* <Win98Window id="starupMessage-Dialog" windowTitle="Welcome...">
           <section className="flex items-center gap-2">
             <img
               src={constructionLogo}
@@ -110,7 +111,7 @@ function Main() {
             Close this window (Press X in the navigation bar) to view this page
             pre-production
           </div>
-        </Win98Window>
+        </Win98Window> */}
       </materialContext.Provider>
     </>
   );
