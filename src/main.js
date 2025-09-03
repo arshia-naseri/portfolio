@@ -87,7 +87,8 @@ function Main() {
     handleResize();
     smoothscroll.polyfill();
 
-    document.getElementById("starupMessage-Dialog").showModal();
+    //? starupMessage Dialog
+    // document.getElementById("starupMessage-Dialog").showModal();
     return () => {
       window.removeEventListener("resize", handleResize);
     };
