@@ -43,7 +43,7 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
         ref={projectsSectionRef}
         className="min-h-screen border-b border-vcrBlack/20 bg-mainWhite p-8 pl-20"
       >
-        <section className="mt-7 flex h-full w-full flex-col bg-red-300">
+        <section className="mt-7 flex h-full w-full flex-col">
           <div className="px-10 font-vcr text-5xl tracking-[1rem]">
             PROJECTS
           </div>

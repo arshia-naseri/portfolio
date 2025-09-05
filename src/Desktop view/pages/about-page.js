@@ -24,7 +24,7 @@ const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
     <>
       <section
         ref={aboutSectionRef}
-        className="h-screen border-b border-vcrBlack/20 bg-mainWhite p-8 pl-20 font-vcr"
+        className="min-h-screen border-b border-vcrBlack/20 bg-mainWhite p-8 pl-20 font-vcr"
       >
         <main className="mt-7 flex h-full flex-col">
           <div className="px-10 text-5xl tracking-[1rem]">ABOUT ME</div>
@@ -59,7 +59,8 @@ const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
               </a>
             </section>
           </section>
-          <section className="flex items-center">
+
+          <footer className="flex items-center">
             <div
               className="noHighlightClicked animate-[bounce_1s_infinite] cursor-pointer font-minecraft text-5xl"
               onClick={() =>
@@ -110,7 +111,7 @@ const AboutPage = ({ aboutSectionRef, arcadeSectionRef }) => {
                 />
               </a>
             </section>
-          </section>
+          </footer>
         </main>
       </section>
 
