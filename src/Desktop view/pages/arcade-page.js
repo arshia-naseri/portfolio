@@ -74,7 +74,9 @@ const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
             {...phonetBtnClick}
           >
             <img src={controlsLogo} alt="controls logo" className="w-10" />
-            <div className="pointer-events-none">Click for Controls</div>
+            <div className="scale-100 underline hover:scale-105">
+              Click for Controls
+            </div>
           </section>
           <section
             className="mb-10 mt-auto flex cursor-pointer items-center gap-3"
