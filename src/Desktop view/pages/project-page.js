@@ -41,9 +41,9 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
     <>
       <section
         ref={projectsSectionRef}
-        className="h-screen border-b border-vcrBlack/20 bg-mainWhite p-8 pl-20"
+        className="min-h-screen border-b border-vcrBlack/20 bg-mainWhite p-8 pl-20"
       >
-        <section className="mt-7 flex h-full w-full flex-col">
+        <section className="mt-7 flex h-full w-full flex-col bg-red-300">
           <div className="px-10 font-vcr text-5xl tracking-[1rem]">
             PROJECTS
           </div>
@@ -95,7 +95,7 @@ const ProjectPage = ({ projectsSectionRef, aboutSectionRef }) => {
             </section>
           </section>
           <div
-            className="noHighlightClicked mt-auto animate-[bounce_1s_infinite] cursor-pointer font-minecraft text-5xl"
+            className="noHighlightClicked mt-10 animate-[bounce_1s_infinite] cursor-pointer font-minecraft text-5xl"
             onClick={() =>
               aboutSectionRef.current.scrollIntoView({
                 behavior: "smooth",
