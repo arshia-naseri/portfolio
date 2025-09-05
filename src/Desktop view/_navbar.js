@@ -42,6 +42,12 @@ const Navbar = ({
     [colorMainWhite, colorVCR],
   );
 
+  const fontSize = useTransform(
+    scrollY,
+    [0, document.documentElement.scrollHeight * 0.2],
+    ["1.25rem", "1rem"],
+  );
+
   const textShadowVCR = `${textShadowWidth} 0 ${colorVCR},
         -${textShadowWidth} 0 ${colorVCR},
         0 ${textShadowWidth} ${colorVCR},
@@ -58,7 +64,7 @@ const Navbar = ({
         ref={navBarRef}
         onClick={() => console.log(isProjectPageInView)}
         className="text-red fixed z-10 ml-8 mt-8 flex origin-top-left justify-evenly gap-3 font-vcr text-xl tracking-[.3rem] text-mainWhite blur-[.6px] transition-all"
-        style={{ rotate, translateX, color }}
+        style={{ rotate, translateX, color, fontSize }}
       >
         <li
           onClick={() =>

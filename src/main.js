@@ -81,7 +81,7 @@ function Main() {
 
   useEffect(() => {
     const handleResize = () => {
-      SetShowMobileView(window.innerWidth < 640);
+      SetShowMobileView(window.innerWidth < 640 || window.innerHeight < 550);
     };
     window.addEventListener("resize", handleResize);
     handleResize();
