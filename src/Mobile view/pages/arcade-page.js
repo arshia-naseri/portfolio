@@ -6,7 +6,7 @@ const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
     <>
       <section
         ref={arcadeSectionRef}
-        className="flex h-screen items-end justify-center bg-mainWhite font-vcr"
+        className="flex h-full items-end justify-center bg-mainWhite font-vcr"
       >
         <main className="h-[90%] w-full">
           <div className="boldTextFont ml-auto mr-auto flex w-fit text-3xl tracking-[0.5rem]">
