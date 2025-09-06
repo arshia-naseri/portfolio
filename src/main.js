@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useRef } from "react";
 import smoothscroll from "smoothscroll-polyfill";
 import Desktop from "./Desktop view/desktop";
 import Mobile from "./Mobile view/mobile";
@@ -69,6 +69,7 @@ function Main() {
     },
     arcade: {
       pcPixelatedPic: PcPixelatedPic,
+      arcadeFrame: useRef(),
     },
   };
 
@@ -81,7 +82,22 @@ function Main() {
 
   useEffect(() => {
     const handleResize = () => {
-      SetShowMobileView(window.innerWidth < 640 || window.innerHeight < 550);
+      if (window.innerWidth < 640 || window.innerHeight < 550) {
+        SetShowMobileView(true);
+      } else {
+        SetShowMobileView(false);
+        if (material.arcade.arcadeFrame.current != null) {
+          const frame = material.arcade.arcadeFrame.current;
+          const container = frame.parentElement;
+          const baseW = 800;
+          const baseH = 500;
+          const openingW = container.clientWidth * 0.8;
+          const openingH = container.clientHeight * 0.56;
+          const sx = openingW / baseW;
+          const sy = openingH / baseH;
+          frame.style.transform = `scale(${sx}, ${sy})`;
+        }
+      }
     };
     window.addEventListener("resize", handleResize);
     handleResize();

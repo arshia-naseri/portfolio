@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useEffect } from "react";
 import { materialContext } from "../../main";
 import Win98Window from "../../Componants/_win98Window";
 import { phonetBtnClick, openDialog } from "../../Componants/_globalFunc.ts";
@@ -27,7 +27,7 @@ const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
   const { arcade } = useContext(materialContext);
   const arcadePicRef = useRef();
   const arcadeFrameRef = useRef();
-
+  console.log(window.innerWidth * 5.62782);
   return (
     <>
       <section
@@ -36,20 +36,19 @@ const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
       >
         <section className="absolute right-0 top-0 h-full">
           <iframe
-            src="https://www.retrogames.cc/embed/42476-mortal-kombat-rev-5-0-t-unit-03-19-93.html"
-            frameBorder="no"
+            src="https://archive.org/embed/arcade_mk"
+            width="800"
+            height="500"
+            loading="lazy"
             allowFullScreen={true}
             webkitallowfullscreen="true"
             mozallowfullscreen="true"
-            scrolling="no"
             title="arcade frame"
-            className="absolute left-[17.3%] top-[15.4%] h-[56%] w-[79.5%]"
-            ref={arcadeFrameRef}
-            loading="lazy"
+            ref={arcade.arcadeFrame}
+            className="absolute left-[17.2%] top-[15.5%] origin-top-left"
           />
           <img
             src={arcadeMachinePic}
-            ref={arcadePicRef}
             alt="arcade machine pic"
             className="h-full"
           />
