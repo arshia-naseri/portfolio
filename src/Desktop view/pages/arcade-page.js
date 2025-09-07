@@ -1,4 +1,4 @@
-import { useContext, useRef, useEffect } from "react";
+import { useContext } from "react";
 import { materialContext } from "../../main";
 import Win98Window from "../../Componants/_win98Window";
 import { phonetBtnClick, openDialog } from "../../Componants/_globalFunc.ts";
@@ -7,7 +7,6 @@ import controlsLogo from "../../Assets/logos/input-devices-logo.webp";
 import gameControllerLogo from "../../Assets/logos/game-controller-logo.webp";
 // Images
 import arcadeMachinePic from "../../Assets/images/arcade-machine.png";
-import ctrlsSettingsScreenshot from "../../Assets/images/ctrls-settings-screenshot.jpeg";
 
 const CtrlItem = ({ move, keyboard }) => {
   return (
@@ -25,14 +24,12 @@ const CtrlItem = ({ move, keyboard }) => {
 
 const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
   const { arcade } = useContext(materialContext);
-  const arcadePicRef = useRef();
-  const arcadeFrameRef = useRef();
   console.log(window.innerWidth * 5.62782);
   return (
     <>
       <section
         ref={arcadeSectionRef}
-        className="relative h-screen bg-mainWhite p-8 pl-20 font-vcr"
+        className="relative min-h-screen bg-mainWhite p-8 pl-20 font-vcr"
       >
         <section className="absolute right-0 top-0 h-full">
           <iframe
@@ -55,15 +52,38 @@ const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
         </section>
         <main className="mt-7 flex h-full flex-col">
           <div className="px-10 text-5xl tracking-[1rem]">ARCADE</div>
-          <section className="mt-32 flex items-center gap-3">
+          <section className="mt-28 flex items-center gap-3">
             <img
               src={arcade.pcPixelatedPic}
               alt="pc pixelated pic"
               className="w-8"
             />
             <div className="w-72 text-xl">
-              Use Desktop for an Awesome Experience!
+              Use <span className="boldTextFont">Desktop</span> for an Awesome
+              Experience!
             </div>
+          </section>
+          <br />
+          <br />
+          <section>
+            <div className="boldTextFont text-2xl">Start Arcade Game</div>
+            <ol type="1" className="w-80 list-inside list-decimal">
+              <li>Press ⏻ to start emulator</li>
+              <li>Wait for emulator to start up</li>
+              <li>Press X when I asked to press a button</li>
+              <li>
+                Press <span className="underline">9</span> for inserting coin
+                into Machine
+              </li>
+              <li>
+                Press <span className="underline">1</span> for single player/
+                Press <span className="underline">2</span> for two player
+              </li>
+              <li>
+                Select character unsing arrow keys and Press{" "}
+                <span className="underline">X</span>
+              </li>
+            </ol>
           </section>
           <br />
           <br />
@@ -74,11 +94,12 @@ const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
           >
             <img src={controlsLogo} alt="controls logo" className="w-10" />
             <div className="scale-100 underline hover:scale-105">
-              Click for Controls
+              Click for Game Controls
             </div>
           </section>
+
           <section
-            className="mb-10 mt-auto flex cursor-pointer items-center gap-3"
+            className="mt-24 flex cursor-pointer items-center gap-3"
             onClick={() =>
               mainSectionRef.current.scrollIntoView({
                 behavior: "smooth",
@@ -101,31 +122,41 @@ const ArcadePage = ({ arcadeSectionRef, mainSectionRef }) => {
           </section>
           <br />
           <section className="flex w-full flex-col gap-2 px-3">
-            <CtrlItem move="START" keyboard="Enter/return" />
-            <CtrlItem move="COIN" keyboard="Right Shift" />
-            <CtrlItem move="P1 Up" keyboard="Arrow Up" />
-            <CtrlItem move="P1 Right" keyboard="Arrow Right" />
-            <CtrlItem move="P1 Down" keyboard="Arrow Down" />
-            <CtrlItem move="P1 Left" keyboard="Arrow Left" />
-            <CtrlItem move="Punch" keyboard="X" />
-            <CtrlItem move="Leg Kick" keyboard="Z" />
-            <CtrlItem move="Defence" keyboard="Q" />
+            <div className="boldTextFont text-2xl">Player1</div>
+            <CtrlItem move="Up" keyboard="UP" />
+            <CtrlItem move="Down" keyboard="DOWN" />
+            <CtrlItem move="Left" keyboard="LEFT" />
+            <CtrlItem move="Right" keyboard="RIGHT" />
+            <CtrlItem move="HighPunch" keyboard="LCONTROL or Mouse B1" />
+            <CtrlItem move="Block" keyboard="LALT or Mouse B3" />
+            <CtrlItem move="HighKick" keyboard="SPACE or Mouse B2" />
+            <CtrlItem move="LowPunch" keyboard="LSHIFT" />
+            <CtrlItem move="LowKick" keyboard="Z" />
+            <CtrlItem move="Block2" keyboard="X" />
+            <br />
+            <div className="boldTextFont text-2xl">Player2</div>
+            <CtrlItem move="Up" keyboard="R" />
+            <CtrlItem move="Down" keyboard="F" />
+            <CtrlItem move="Left" keyboard="D" />
+            <CtrlItem move="Right" keyboard="G" />
+            <CtrlItem move="HighPunch" keyboard="A" />
+            <CtrlItem move="Block" keyboard="S" />
+            <CtrlItem move="HighKick" keyboard="Q" />
+            <CtrlItem move="LowPunch" keyboard="W" />
+            <CtrlItem move="LowKick" keyboard="E" />
+            <CtrlItem move="Block2" keyboard="n/a" />
+            <br />
+
+            <div className="boldTextFont text-2xl">System</div>
+            <CtrlItem move="Player1Start" keyboard="1" />
+            <CtrlItem move="Player2Start" keyboard="2" />
+            <CtrlItem move="Coin1" keyboard="5" />
+            <CtrlItem move="Coin2" keyboard="6" />
+            <CtrlItem move="Coin3" keyboard="7" />
+            <CtrlItem move="Coin4" keyboard="8" />
+            <CtrlItem move="Service1" keyboard="9" />
+            <CtrlItem move="Tilt" keyboard="T" />
           </section>
-          <br />
-          <section>
-            <b className="text-xl">OR</b> use the control settings:
-          </section>
-          <br />
-          <figure className="mx-auto w-[60%]">
-            <img
-              src={ctrlsSettingsScreenshot}
-              alt="ctrls Settings screenshot"
-              className="win98-window"
-            />
-            <figcaption className="text-sm">
-              Control Settings Screenshot
-            </figcaption>
-          </figure>
         </Win98Window>
       </section>
     </>

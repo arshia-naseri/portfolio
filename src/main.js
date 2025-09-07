@@ -99,17 +99,19 @@ function Main() {
         }
       }
     };
-    window.addEventListener("resize", handleResize);
+    // Run once immediately, and again after all assets load
     handleResize();
+    window.addEventListener("load", handleResize);
+    window.addEventListener("resize", handleResize);
     smoothscroll.polyfill();
 
     //? starupMessage Dialog
     // document.getElementById("starupMessage-Dialog").showModal();
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("load", handleResize);
     };
   }, []);
-
   return (
     <>
       <materialContext.Provider value={material}>
