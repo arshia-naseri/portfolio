@@ -29,6 +29,7 @@
 
 import FloppyDisk from "./_floppyDisk";
 import Win98Window from "./_win98Window";
+import { memo } from "react";
 import { urlLink } from "./_globalFunc.ts";
 
 // Images
@@ -54,7 +55,7 @@ import cdLogo from "../Assets/logos/cd-logo.webp";
 /* 
   URL to project componants
 */
-const PROJECT_LINK_COMP = ({
+const PROJECT_LINK_COMP = memo(({
   url,
   img_src,
   img_width = "40px",
@@ -66,6 +67,7 @@ const PROJECT_LINK_COMP = ({
         <img
           src={img_src}
           loading="lazy"
+          decoding="async"
           alt="weather logo"
           style={{ width: img_width }}
         />
@@ -81,15 +83,16 @@ const PROJECT_LINK_COMP = ({
       </section>
     </>
   );
-};
+});
 
-const GITHUB_LINK_COMP = ({ url, text = "Click 2 see Github Repository" }) => {
+const GITHUB_LINK_COMP = memo(({ url, text = "Click 2 see Github Repository" }) => {
   return (
     <>
       <section className="flex items-center gap-3">
         <img
           src={githubLogo}
           loading="lazy"
+          decoding="async"
           alt="github logo"
           className="w-8"
         />
@@ -105,13 +108,13 @@ const GITHUB_LINK_COMP = ({ url, text = "Click 2 see Github Repository" }) => {
       </section>
     </>
   );
-};
+});
 
-const FIGMA_LINK_COMP = ({ url, text = "Click 2 see Figma Design" }) => {
+const FIGMA_LINK_COMP = memo(({ url, text = "Click 2 see Figma Design" }) => {
   return (
     <>
       <section className="flex items-center gap-3">
-        <img src={FigmaLogo} loading="lazy" alt="figma logo" className="w-8" />
+        <img src={FigmaLogo} loading="lazy" decoding="async" alt="figma logo" className="w-8" />
         <a
           target="_blank"
           rel="noreferrer"
@@ -124,12 +127,12 @@ const FIGMA_LINK_COMP = ({ url, text = "Click 2 see Figma Design" }) => {
       </section>
     </>
   );
-};
+});
 
 /*
   Project Componants
 */
-const PrKavosh = ({ floppyWidth, ProjectID = "Kavosh-Dialog" }) => {
+const PrKavosh = memo(({ floppyWidth, ProjectID = "Kavosh-Dialog" }) => {
   const summaryText =
     "Kavosh Robotics Team is one of the best junior robotics teams in the world. Kavosh has multiple honours in Germany, China, Brazil, Netherlands, and Mexico and many first-place awards in Junior Rescue Leagues of Robocup 2019 Australia, 2018 Canada, and 2017 Japan.";
   return (
@@ -167,6 +170,7 @@ const PrKavosh = ({ floppyWidth, ProjectID = "Kavosh-Dialog" }) => {
             alt="certificate log"
             className="aspect-auto w-10"
             loading="lazy"
+            decoding="async"
           />
           <div className="boldTextFont text-xl">Certificates</div>
         </section>
@@ -180,6 +184,7 @@ const PrKavosh = ({ floppyWidth, ProjectID = "Kavosh-Dialog" }) => {
               alt="world championship certificate"
               className="win98-window w-full"
               loading="lazy"
+              decoding="async"
             />
             <figcaption className="mt-1 text-[.7rem]">
               World Champion award for individual team RoboCup Nagoya Japan 2017
@@ -192,6 +197,8 @@ const PrKavosh = ({ floppyWidth, ProjectID = "Kavosh-Dialog" }) => {
               src={bestPresentaitionPic}
               alt="Best Presentation certificate"
               className="win98-window w-full"
+              loading="lazy"
+              decoding="async"
             />
             <figcaption className="mt-1 text-[.7rem]">
               Best Presentation of work RoboCup Nagoya Japan 2017
@@ -205,6 +212,7 @@ const PrKavosh = ({ floppyWidth, ProjectID = "Kavosh-Dialog" }) => {
               alt="Super Team certificate"
               className="win98-window w-full"
               loading="lazy"
+              decoding="async"
             />
             <figcaption className="mt-1 text-[.7rem]">
               World Championship award for SuperTeam RoboCup Nagoya Japan 2017.
@@ -225,6 +233,7 @@ const PrKavosh = ({ floppyWidth, ProjectID = "Kavosh-Dialog" }) => {
             alt="tools logo"
             className="aspect-auto w-10"
             loading="lazy"
+            decoding="async"
           />
           <div className="boldTextFont text-xl">Tools</div>
         </section>
@@ -237,9 +246,9 @@ const PrKavosh = ({ floppyWidth, ProjectID = "Kavosh-Dialog" }) => {
       </Win98Window>
     </>
   );
-};
+});
 
-const PrWeatherApp = ({ floppyWidth, ProjectID = "WeatherApp-Dialog" }) => {
+const PrWeatherApp = memo(({ floppyWidth, ProjectID = "WeatherApp-Dialog" }) => {
   const summaryText = `In this pet project, I aimed to craft a charming weather application that seamlessly integrates API requests and leverages React to showcase locations that hold personal significance to me, aptly labelled as "Residences"`;
   return (
     <>
@@ -260,6 +269,8 @@ const PrWeatherApp = ({ floppyWidth, ProjectID = "WeatherApp-Dialog" }) => {
             src={weatherAppScreenshot}
             alt="weather app screenshot"
             className="win98-window w-full"
+            loading="lazy"
+            decoding="async"
           />
           <figcaption className="mt-1 text-sm">
             Screenshot of the Project
@@ -301,6 +312,7 @@ const PrWeatherApp = ({ floppyWidth, ProjectID = "WeatherApp-Dialog" }) => {
             alt="tools logo"
             className="aspect-auto w-10"
             loading="lazy"
+            decoding="async"
           />
           <div className="boldTextFont text-xl">Tools</div>
         </section>
@@ -309,9 +321,9 @@ const PrWeatherApp = ({ floppyWidth, ProjectID = "WeatherApp-Dialog" }) => {
       </Win98Window>
     </>
   );
-};
+});
 
-const PrChessMastersAcademy = ({
+const PrChessMastersAcademy = memo(({
   floppyWidth,
   ProjectID = "ChessMastersAcademy-Dialog",
 }) => {
@@ -342,6 +354,7 @@ const PrChessMastersAcademy = ({
             src={chessMastersAcademyScreenshot}
             alt="cma screenshot"
             loading="lazy"
+            decoding="async"
             className="win98-window"
           />
           <figcaption className="mt-1 text-sm">
@@ -360,6 +373,7 @@ const PrChessMastersAcademy = ({
             src={NfcExamplePic}
             alt="nfc example"
             loading="lazy"
+            decoding="async"
             className="win98-window"
           />
           <figcaption className="mt-1 text-sm">
@@ -381,6 +395,7 @@ const PrChessMastersAcademy = ({
             alt="tools logo"
             className="aspect-auto w-10"
             loading="lazy"
+            decoding="async"
           />
           <div className="boldTextFont text-xl">Tools</div>
         </section>
@@ -389,9 +404,9 @@ const PrChessMastersAcademy = ({
       </Win98Window>
     </>
   );
-};
+});
 
-const PrPortfolio = ({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
+const PrPortfolio = memo(({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
   const summaryText =
     "This website, the one that you are currently on, is to showcase my technical projects more desirably. The surprise at the end of the website is mostly for fun.";
   return (
@@ -414,6 +429,8 @@ const PrPortfolio = ({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
               src={portfolioDsktScreenshot}
               alt="portfolio screenshot (desktop)"
               className="win98-window"
+              loading="lazy"
+              decoding="async"
             />
             <figcaption className="mt-1 text-sm">
               Portfolio Desktop Screenshot
@@ -424,6 +441,8 @@ const PrPortfolio = ({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
               src={portfolioPhoneScreenshot}
               alt="portfolio screenshot (phone)"
               className="win98-window"
+              loading="lazy"
+              decoding="async"
             />
             <figcaption className="mt-1 text-sm">
               Portfolio Phone Screenshot
@@ -441,6 +460,8 @@ const PrPortfolio = ({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
             src={ideaBoardScreenshot}
             alt="idea Board screenshot"
             className="win98-window"
+            loading="lazy"
+            decoding="async"
           />
           <figcaption className="mt-1 text-sm">
             Idea Board Screenshot
@@ -463,6 +484,7 @@ const PrPortfolio = ({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
             alt="tools logo"
             className="aspect-auto w-10"
             loading="lazy"
+            decoding="async"
           />
           <div className="boldTextFont text-xl">Tools</div>
         </section>
@@ -471,7 +493,7 @@ const PrPortfolio = ({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
       </Win98Window>
     </>
   );
-};
+});
 
 const ProjectCarousel = () => {
   const floppyWidth = "25rem";
@@ -485,4 +507,4 @@ const ProjectCarousel = () => {
   );
 };
 
-export default ProjectCarousel;
+export default memo(ProjectCarousel);
