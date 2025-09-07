@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.7f8eb6b0.css",
-    "main.js": "/static/js/main.18e27f12.js",
+    "main.css": "/static/css/main.0534d4b7.css",
+    "main.js": "/static/js/main.0fd78eb5.js",
     "static/media/vhs-static.gif": "/static/media/vhs-static.df32a20414e84238dc3f.gif",
     "static/media/university-logo.webp": "/static/media/university-logo.3a1f8020368393bd8b2a.webp",
     "static/media/warning-logo.webp": "/static/media/warning-logo.01f279d44ab9004deaa0.webp",
@@ -9,7 +9,6 @@
     "static/media/email-logo.webp": "/static/media/email-logo.f8cea43c1b1d48de25b9.webp",
     "static/media/profile-pic.webp": "/static/media/profile-pic.fe6bed79319bb704388d.webp",
     "static/media/arcade-machine.png": "/static/media/arcade-machine.f37395d00173540cb638.png",
-    "static/media/ctrls-settings-screenshot.jpeg": "/static/media/ctrls-settings-screenshot.1191d8d2d0b8cfb6b986.jpeg",
     "static/media/Desktop-ChessMastersAcademy.webp": "/static/media/Desktop-ChessMastersAcademy.5da584c1bd04c9cc8c54.webp",
     "static/media/idea-board-screenshot.webp": "/static/media/idea-board-screenshot.4cf30c92c98674af4aa7.webp",
     "static/media/Monocraft.ttf": "/static/media/Monocraft.d2201aeb746218a4c4bb.ttf",
@@ -35,11 +34,11 @@
     "static/media/certificate-logo.webp": "/static/media/certificate-logo.870e52c39186e5790498.webp",
     "static/media/github-logo.webp": "/static/media/github-logo.97622575bada7792d013.webp",
     "index.html": "/index.html",
-    "main.7f8eb6b0.css.map": "/static/css/main.7f8eb6b0.css.map",
-    "main.18e27f12.js.map": "/static/js/main.18e27f12.js.map"
+    "main.0534d4b7.css.map": "/static/css/main.0534d4b7.css.map",
+    "main.0fd78eb5.js.map": "/static/js/main.0fd78eb5.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f8eb6b0.css",
-    "static/js/main.18e27f12.js"
+    "static/css/main.0534d4b7.css",
+    "static/js/main.0fd78eb5.js"
   ]
 }
