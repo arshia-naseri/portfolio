@@ -24,7 +24,6 @@ const ProjectsPage = ({ projectsSectionRef }) => {
         btnNextProject.current,
         btnPreProject.current,
       );
-      // carouselObj.current.printCarouselElm(); // Call your method after initialization
     }
   }, []);
 
