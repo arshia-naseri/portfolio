@@ -1,2 +1,0 @@
-+ Make Read Me file page
-+ Fix Google analyticst (It works)
