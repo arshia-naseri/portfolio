@@ -55,66 +55,71 @@ import cdLogo from "../Assets/logos/cd-logo.webp";
 /* 
   URL to project componants
 */
-const PROJECT_LINK_COMP = memo(({
-  url,
-  img_src,
-  img_width = "40px",
-  text = "Click 2 see the Website",
-}) => {
-  return (
-    <>
-      <section className="flex items-center gap-3">
-        <img
-          src={img_src}
-          loading="lazy"
-          decoding="async"
-          alt="weather logo"
-          style={{ width: img_width }}
-        />
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={url}
-          className="text-url underline"
-          {...urlLink}
-        >
-          {text}
-        </a>
-      </section>
-    </>
-  );
-});
+const PROJECT_LINK_COMP = memo(
+  ({ url, img_src, img_width = "40px", text = "Click 2 see the Website" }) => {
+    return (
+      <>
+        <section className="flex items-center gap-3">
+          <img
+            src={img_src}
+            loading="lazy"
+            decoding="async"
+            alt="weather logo"
+            style={{ width: img_width }}
+          />
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={url}
+            className="text-url underline"
+            {...urlLink}
+          >
+            {text}
+          </a>
+        </section>
+      </>
+    );
+  },
+);
 
-const GITHUB_LINK_COMP = memo(({ url, text = "Click 2 see Github Repository" }) => {
-  return (
-    <>
-      <section className="flex items-center gap-3">
-        <img
-          src={githubLogo}
-          loading="lazy"
-          decoding="async"
-          alt="github logo"
-          className="w-8"
-        />
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={url}
-          className="text-url underline"
-          {...urlLink}
-        >
-          {text}
-        </a>
-      </section>
-    </>
-  );
-});
+const GITHUB_LINK_COMP = memo(
+  ({ url, text = "Click 2 see Github Repository" }) => {
+    return (
+      <>
+        <section className="flex items-center gap-3">
+          <img
+            src={githubLogo}
+            loading="lazy"
+            decoding="async"
+            alt="github logo"
+            className="w-8"
+          />
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={url}
+            className="text-url underline"
+            {...urlLink}
+          >
+            {text}
+          </a>
+        </section>
+      </>
+    );
+  },
+);
 
 const FIGMA_LINK_COMP = memo(({ url, text = "Click 2 see Figma Design" }) => {
   return (
     <>
       <section className="flex items-center gap-3">
-        <img src={FigmaLogo} loading="lazy" decoding="async" alt="figma logo" className="w-8" />
+        <img
+          src={FigmaLogo}
+          loading="lazy"
+          decoding="async"
+          alt="figma logo"
+          className="w-8"
+        />
         <a
           target="_blank"
           rel="noreferrer"
@@ -248,163 +253,164 @@ const PrKavosh = memo(({ floppyWidth, ProjectID = "Kavosh-Dialog" }) => {
   );
 });
 
-const PrWeatherApp = memo(({ floppyWidth, ProjectID = "WeatherApp-Dialog" }) => {
-  const summaryText = `In this pet project, I aimed to craft a charming weather application that seamlessly integrates API requests and leverages React to showcase locations that hold personal significance to me, aptly labelled as "Residences"`;
-  return (
-    <>
-      <FloppyDisk
-        floppyColor={"bg-blue-400"}
-        lineColor={"border-b-blue-300"}
-        width={floppyWidth}
-        diskTitle="Weather App"
-        windowID={ProjectID}
-        summaryText={summaryText}
-      />
-      <Win98Window id={ProjectID} windowTitle="Weather App">
-        <div>{summaryText}</div>
-        <br />
-        {/* Website Screenshot */}
-        <figure className="mx-auto w-[90%]">
-          <img
-            src={weatherAppScreenshot}
-            alt="weather app screenshot"
-            className="win98-window w-full"
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption className="mt-1 text-sm">
-            Screenshot of the Project
-          </figcaption>
-        </figure>
-        <br />
-        <div>
-          Moreover, I took great care to ensure that this app is user-friendly
-          across various devices, boasting distinct designs tailored for phones,
-          laptops, and tablets. You can even explore the envisioned design
-          through the provided Figma link
-        </div>
-        <br />
-        <div>
-          (P.S. This project used to be hosted by Heroku; however, since the
-          free version was slow, the free tier was removed, and it was moved to
-          GitHub pages)
-        </div>
-        <br />
-        <div>
-          With a free trial of the API account, there could be only limited
-          requests in 24 hours. Thus, the program has access to 3 different
-          accounts, which the program switches between to get a result
-        </div>
-        <br />
-        <PROJECT_LINK_COMP
-          url="https://arshia-naseri.github.io/weather-app/"
-          img_src={weatherLogo}
+const PrWeatherApp = memo(
+  ({ floppyWidth, ProjectID = "WeatherApp-Dialog" }) => {
+    const summaryText = `In this pet project, I aimed to craft a charming weather application that seamlessly integrates API requests and leverages React to showcase locations that hold personal significance to me, aptly labelled as "Residences"`;
+    return (
+      <>
+        <FloppyDisk
+          floppyColor={"bg-blue-400"}
+          lineColor={"border-b-blue-300"}
+          width={floppyWidth}
+          diskTitle="Weather App"
+          windowID={ProjectID}
+          summaryText={summaryText}
         />
-        <br />
-        <FIGMA_LINK_COMP url="https://www.figma.com/design/YWbyzjhQV0NlmX0LLmnC1y/Weather-App" />
-        <br />
-        <GITHUB_LINK_COMP url="https://github.com/arshia-naseri/weather-app" />
-        <br />
-        <br />
-        <section className="flex items-center gap-3">
-          <img
-            src={toolsLogo}
-            alt="tools logo"
-            className="aspect-auto w-10"
-            loading="lazy"
-            decoding="async"
+        <Win98Window id={ProjectID} windowTitle="Weather App">
+          <div>{summaryText}</div>
+          <br />
+          {/* Website Screenshot */}
+          <figure className="mx-auto w-[90%]">
+            <img
+              src={weatherAppScreenshot}
+              alt="weather app screenshot"
+              className="win98-window w-full"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption className="mt-1 text-sm">
+              Screenshot of the Project
+            </figcaption>
+          </figure>
+          <br />
+          <div>
+            Moreover, I took great care to ensure that this app is user-friendly
+            across various devices, boasting distinct designs tailored for
+            phones, laptops, and tablets. You can even explore the envisioned
+            design through the provided Figma link
+          </div>
+          <br />
+          <div>
+            (P.S. This project used to be hosted by Heroku; however, since the
+            free version was slow, the free tier was removed, and it was moved
+            to GitHub pages)
+          </div>
+          <br />
+          <div>
+            With a free trial of the API account, there could be only limited
+            requests in 24 hours. Thus, the program has access to 3 different
+            accounts, which the program switches between to get a result
+          </div>
+          <br />
+          <PROJECT_LINK_COMP
+            url="https://arshia-naseri.github.io/weather-app/"
+            img_src={weatherLogo}
           />
-          <div className="boldTextFont text-xl">Tools</div>
-        </section>
-        <br />
-        <div>React, JavaScript, CSS, HTML, REST API, Figma</div>
-      </Win98Window>
-    </>
-  );
-});
+          <br />
+          <FIGMA_LINK_COMP url="https://www.figma.com/design/YWbyzjhQV0NlmX0LLmnC1y/Weather-App" />
+          <br />
+          <GITHUB_LINK_COMP url="https://github.com/arshia-naseri/weather-app" />
+          <br />
+          <br />
+          <section className="flex items-center gap-3">
+            <img
+              src={toolsLogo}
+              alt="tools logo"
+              className="aspect-auto w-10"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="boldTextFont text-xl">Tools</div>
+          </section>
+          <br />
+          <div>React, JavaScript, CSS, HTML, REST API, Figma</div>
+        </Win98Window>
+      </>
+    );
+  },
+);
 
-const PrChessMastersAcademy = memo(({
-  floppyWidth,
-  ProjectID = "ChessMastersAcademy-Dialog",
-}) => {
-  const summaryText =
-    "This project is intended to create a digital card for a business contact list. This action would make a lasting impression on said clients and have a more professional appeal.";
-  return (
-    <>
-      <FloppyDisk
-        floppyColor={"bg-orange-400"}
-        lineColor={"border-b-orange-300"}
-        width={floppyWidth}
-        diskTitle="Chess Masters Academy"
-        // disKTitleFontSize="text-base"
-        windowID={ProjectID}
-        summaryText={summaryText}
-      />
-      <Win98Window id={ProjectID} windowTitle="Chess Masters Academy">
-        <div>{summaryText}</div>
-        <br />
-        <div>
-          This particular project is custom-made for Chess Masters Academy,
-          focusing on the private education of K12 students.
-        </div>
-        <br />
-        {/* Screenshot */}
-        <figure className="mx-auto w-[60%]">
-          <img
-            src={chessMastersAcademyScreenshot}
-            alt="cma screenshot"
-            loading="lazy"
-            decoding="async"
-            className="win98-window"
-          />
-          <figcaption className="mt-1 text-sm">
-            Chess Masters Academy Screenshot (Desktop)
-          </figcaption>
-        </figure>
-        <br />
-        <div>
-          The website is only the first step. The next step is to write the url
-          for the website into a NFC card, so it could be activated when tapped
-          by phone
-        </div>
-        <br />
-        <figure className="mx-auto w-[70%]">
-          <img
-            src={NfcExamplePic}
-            alt="nfc example"
-            loading="lazy"
-            decoding="async"
-            className="win98-window"
-          />
-          <figcaption className="mt-1 text-sm">
-            Example of an NFC Business Card
-          </figcaption>
-        </figure>
-        <br />
-        <PROJECT_LINK_COMP
-          url="https://www.thechessmastersacademy.com"
-          img_src={contactPageLogo}
-          img_width="35px"
+const PrChessMastersAcademy = memo(
+  ({ floppyWidth, ProjectID = "ChessMastersAcademy-Dialog" }) => {
+    const summaryText =
+      "This project is intended to create a digital card for a business contact list. This action would make a lasting impression on said clients and have a more professional appeal.";
+    return (
+      <>
+        <FloppyDisk
+          floppyColor={"bg-orange-400"}
+          lineColor={"border-b-orange-300"}
+          width={floppyWidth}
+          diskTitle="Chess Masters Academy"
+          // disKTitleFontSize="text-base"
+          windowID={ProjectID}
+          summaryText={summaryText}
         />
-        <br />
-        <GITHUB_LINK_COMP url="https://github.com/arshia-naseri/chess-masters-academy-2.0" />
-        <br />
-        <section className="flex items-center gap-3">
-          <img
-            src={toolsLogo}
-            alt="tools logo"
-            className="aspect-auto w-10"
-            loading="lazy"
-            decoding="async"
+        <Win98Window id={ProjectID} windowTitle="Chess Masters Academy">
+          <div>{summaryText}</div>
+          <br />
+          <div>
+            This particular project is custom-made for Chess Masters Academy,
+            focusing on the private education of K12 students.
+          </div>
+          <br />
+          {/* Screenshot */}
+          <figure className="mx-auto w-[60%]">
+            <img
+              src={chessMastersAcademyScreenshot}
+              alt="cma screenshot"
+              loading="lazy"
+              decoding="async"
+              className="win98-window"
+            />
+            <figcaption className="mt-1 text-sm">
+              Chess Masters Academy Screenshot (Desktop)
+            </figcaption>
+          </figure>
+          <br />
+          <div>
+            The website is only the first step. The next step is to write the
+            url for the website into a NFC card, so it could be activated when
+            tapped by phone
+          </div>
+          <br />
+          <figure className="mx-auto w-[70%]">
+            <img
+              src={NfcExamplePic}
+              alt="nfc example"
+              loading="lazy"
+              decoding="async"
+              className="win98-window"
+            />
+            <figcaption className="mt-1 text-sm">
+              Example of an NFC Business Card
+            </figcaption>
+          </figure>
+          <br />
+          <PROJECT_LINK_COMP
+            url="https://arshia-naseri.github.io/chess-masters-academy-2.0/"
+            img_src={contactPageLogo}
+            img_width="35px"
           />
-          <div className="boldTextFont text-xl">Tools</div>
-        </section>
-        <br />
-        <div>React, JavaScript, CSS, HTML</div>
-      </Win98Window>
-    </>
-  );
-});
+          <br />
+          <GITHUB_LINK_COMP url="https://github.com/arshia-naseri/chess-masters-academy-2.0" />
+          <br />
+          <section className="flex items-center gap-3">
+            <img
+              src={toolsLogo}
+              alt="tools logo"
+              className="aspect-auto w-10"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="boldTextFont text-xl">Tools</div>
+          </section>
+          <br />
+          <div>React, JavaScript, CSS, HTML</div>
+        </Win98Window>
+      </>
+    );
+  },
+);
 
 const PrPortfolio = memo(({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
   const summaryText =
