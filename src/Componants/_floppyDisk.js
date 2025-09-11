@@ -28,7 +28,7 @@ const FloppyDisk = ({
               className={` ${floppyColor} relative flex h-1/3 w-full items-center justify-end px-4`}
             >
               <div
-                className={`min-w-[60%] max-w-[80%] rounded-xl bg-[rgb(235,234,230)] p-0.5 text-center ${disKTitleFontSize}`}
+                className={`min-w-[60%] max-w-[90%] rounded-xl bg-[rgb(235,234,230)] p-0.5 px-[0.3rem] text-center ${disKTitleFontSize}`}
               >
                 {diskTitle}
               </div>
@@ -57,7 +57,7 @@ const FloppyDisk = ({
                 onClick={() => openDialog(windowID)}
                 {...phonetBtnClick}
               >
-                <u>C</u>lick for More...
+                <u>Click for More...</u>
               </button>
             </section>
           </section>

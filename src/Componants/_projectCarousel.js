@@ -412,6 +412,168 @@ const PrChessMastersAcademy = memo(
   },
 );
 
+const PrCertificateGen = memo(
+  ({ floppyWidth, ProjectID = "CertificateGen-Dialog" }) => {
+    const summaryText =
+      "During my time as a contractor Automation Intern & Event Organizer at Canadian National Robotic Society (CNRS), I designed this software to batch-generate 600+ certificates and badges, streamlining what used to be a manual, error-prone process.";
+    return (
+      <>
+        <FloppyDisk
+          floppyColor={"bg-green-600"}
+          lineColor={"border-b-green-500"}
+          width={floppyWidth}
+          diskTitle="Certificate Generator"
+          windowID={ProjectID}
+          summaryText={summaryText}
+        />
+        <Win98Window
+          id={ProjectID}
+          windowTitle="2nd FIRA 2025 Certificate & Badge Generator"
+        >
+          {/* Summary */}
+          <div>{summaryText}</div>
+          <br />
+
+          {/* Overview */}
+          <section className="flex items-center gap-3">
+            <img
+              src={certificateLogo}
+              alt="certificate logo"
+              className="aspect-auto w-10"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="boldTextFont text-xl">Overview</div>
+          </section>
+          <br />
+          <div>
+            This project batch-generates participant certificates, award
+            certificates, and badges from a single Excel workbook. It renders
+            names, teams, leagues, and roles onto PNG templates and exports
+            print-quality images as <code>.webp</code> to reduce file size. It
+            was used in practice to produce over 600 units quickly and
+            consistently.
+          </div>
+          <br />
+
+          {/* Example */}
+          <section className="flex items-center gap-3">
+            <img
+              src={certificateLogo}
+              alt="certificate logo"
+              className="aspect-auto w-10"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="boldTextFont text-xl">Example</div>
+          </section>
+          <br />
+          <section className="flex gap-2">
+            {/* Participant Certificate Example */}
+            <figure className="min-w-40 flex-1">
+              <img
+                src="https://raw.githubusercontent.com/arshia-naseri/FIRA_Certificate_Generator/refs/heads/main/Participants/certificate_participant_1.webp"
+                alt="Certification of Participation example"
+                className="win98-window w-full"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="mt-1 text-[.7rem]">
+                Certification of Participation example
+              </figcaption>
+            </figure>
+
+            {/* Award Certificate Example */}
+            <figure className="min-w-40 flex-1">
+              <img
+                src="https://raw.githubusercontent.com/arshia-naseri/FIRA_Certificate_Generator/refs/heads/main/Awards/awards_certification_1.webp"
+                alt="Award Certificates"
+                className="win98-window w-full"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="mt-1 text-[.7rem]">
+                Award Certificates
+              </figcaption>
+            </figure>
+
+            {/* Badge Example */}
+            <figure className="min-w-40 flex-1">
+              <img
+                src="https://raw.githubusercontent.com/arshia-naseri/FIRA_Certificate_Generator/refs/heads/main/Badges/badge_1.webp"
+                alt="Badges"
+                className="win98-window w-full"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="mt-1 text-[.7rem]">Badges</figcaption>
+            </figure>
+          </section>
+          <br />
+
+          {/* Key Behaviors */}
+          <div className="boldTextFont">Key behaviors:</div>
+          <ul className="mt-1 list-disc pl-6">
+            <li>Dynamic text sizing to fit template bounds</li>
+            <li>DPI preserved from template images for print quality</li>
+            <li>Output folders are recreated on each run</li>
+          </ul>
+          <br />
+
+          {/* Requirements */}
+          <section className="flex items-center gap-3">
+            <img
+              src={toolsLogo}
+              alt="tools logo"
+              className="aspect-auto w-10"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="boldTextFont text-xl">Requirements</div>
+          </section>
+          <br />
+          <div>
+            Python 3.8+, TrueType font available (repo includes{" "}
+            <code>Arial Unicode.ttf</code>), and the following Python packages:{" "}
+            <code>pandas</code> (Excel IO), <code>openpyxl</code> (Excel engine
+            for <code>.xlsx</code>), <code>Pillow</code> (image rendering), and{" "}
+            <code>matplotlib</code>
+            (optional, for preview).
+          </div>
+          <br />
+
+          {/* Usage */}
+          <div className="boldTextFont">Usage:</div>
+          <div className="mt-1">
+            Run the CLI (<code>python main.py</code>) and choose: 1) Participant
+            Certificates, 2) Awards, 3) Badges, or 4) Exit. Outputs are written
+            as <code>.webp</code> into auto-regenerated folders (
+            <code>Participants/</code>, <code>Awards/</code>,{" "}
+            <code>Badges/</code>).
+          </div>
+          <br />
+          <GITHUB_LINK_COMP url="https://github.com/arshia-naseri/FIRA_Certificate_Generator" />
+          <br />
+
+          {/* Tools */}
+          <section className="flex items-center gap-3">
+            <img
+              src={toolsLogo}
+              alt="tools logo"
+              className="aspect-auto w-10"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="boldTextFont text-xl">Tools</div>
+          </section>
+          <br />
+          <div>Python, pandas, openpyxl, Pillow, matplotlib</div>
+        </Win98Window>
+      </>
+    );
+  },
+);
+
 const PrPortfolio = memo(({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
   const summaryText =
     "This website, the one that you are currently on, is to showcase my technical projects more desirably. The surprise at the end of the website is mostly for fun.";
@@ -495,7 +657,9 @@ const PrPortfolio = memo(({ floppyWidth, ProjectID = "Portfolio-Dialog" }) => {
           <div className="boldTextFont text-xl">Tools</div>
         </section>
         <br />
-        <div>React, JavaScript, CSS, HTML, Figma, Framer Motion</div>
+        <div className="text-green-600">
+          React, JavaScript, CSS, HTML, Figma, Framer Motion
+        </div>
       </Win98Window>
     </>
   );
@@ -505,6 +669,7 @@ const ProjectCarousel = () => {
   const floppyWidth = "25rem";
   return (
     <>
+      <PrCertificateGen floppyWidth={floppyWidth} />
       <PrKavosh floppyWidth={floppyWidth} />
       <PrWeatherApp floppyWidth={floppyWidth} />
       <PrChessMastersAcademy floppyWidth={floppyWidth} />
